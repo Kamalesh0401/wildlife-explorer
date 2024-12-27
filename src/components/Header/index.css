@@ -1,0 +1,129 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  background-color: inherit;
+  color: black;
+  min-height: 60px;
+  width: 100vw;
+  height: auto;
+  font-family: 'Roboto';
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+}
+
+.header-center {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-link {
+  margin: 0 20px;
+  font-size: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.5s;
+  height: inherit;
+}
+
+.header-link.active {
+  color: #ffffff;
+  cursor: pointer !important;
+  background-color: #3f8804;
+}
+
+.header-link:hover {
+  color: #ffffff;
+  cursor: pointer !important;
+  background-color: #3f8804;
+  border-radius: 50%;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.HeadingText {
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin: 10px 0;
+}
+
+
+
+@media (max-width: 1024px) {
+  .header-container {
+    flex-direction: column;
+    padding: 10px 3%;
+  }
+
+  .header-center {
+    margin: 15px 0;
+  }
+
+  .header-link {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  .hire-me-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    padding: 10px 3%;
+  }
+
+  .header-center {
+    margin: 15px 0;
+  }
+
+  .header-link {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  .hire-me-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    flex-direction: column;
+    padding: 3% 3%;
+  }
+
+  .header-center {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header-link {
+    margin: 5px;
+  }
+
+  .hire-me-button {
+    margin-top: 10px;
+  }
+}
