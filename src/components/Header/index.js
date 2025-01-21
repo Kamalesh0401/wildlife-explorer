@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import "./index.css";
+import './index.css';
 
 const HeaderArray = [
   { Text: "Home", Path: "/" },
@@ -12,13 +12,17 @@ const HeaderArray = [
   { Text: "Threat Section", Path: "/threat" },
   { Text: "Quiz", Path: "/quiz" },
   { Text: "Contact", Path: "/contact" },
-  { Text: "Hero", Path: "/hero" },
   { Text: "About", Path: "/about" },
 ];
 
 const Header = () => {
   const location = useLocation();
   const [Indexposition, setIndexPosition] = useState(0);
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
 
   useEffect(() => {
     const activeIndex = HeaderArray.findIndex(data => location.pathname === data.Path);
@@ -29,38 +33,36 @@ const Header = () => {
 
   return (
     <>
-      <header className={`header-container row col-md-12`}>
-        <div className="header-left col-md-2">
-          <img src={`${process.env.PUBLIC_URL}/images/Logo.png`} alt="Logo" className="header-logo" />
+      <header className="header-container">
+        <div className="header-left">
+          <img
+            src={`${process.env.PUBLIC_URL}/src/assets/images/water.png`}
+            alt="Logo"
+            className="header-logo"
+          />
         </div>
-        <nav className="header-center col-md-10">
+
+        {/* Hamburger Menu for mobile */}
+        {!isMenuOpen && <div className="hamburger" onClick={toggleMenu}>
+          &#9776; {/* Hamburger icon */}
+        </div>}
+
+        {/* Navigation Links */}
+        <nav className={`header-center ${isMenuOpen ? 'active' : ''}`}>
           {HeaderArray.map((data, index) => {
             const isActive = location.pathname === data.Path;
             return (
-              <>
-                <Link key={index} className={`header-link ${isActive ? 'active' : ''}`} to={data.Path}>
-                  {data.Text}
-                </Link>
-              </>
+              <Link
+                key={index}
+                className={`header-link ${isActive ? 'active' : ''}`}
+                to={data.Path}
+                onClick={toggleMenu}
+              >
+                {data.Text}
+              </Link>
             );
           })}
         </nav>
-        {/* {Indexposition === 0 ?
-          <div className="HeadingText row mt-5 mb-5">
-          </div> :
-
-          <div className="HeadingText row mt-5 mb-5">
-            <h2 style={{ color: "#002d5b" }}>{HeaderArray[Indexposition]['Text']}</h2>
-            <hr
-              style={{
-                width: '80%',
-                maxWidth: '100px',
-                margin: '0 auto',
-                border: '2px solid red'
-              }}
-            />
-          </div>
-        } */}
       </header>
     </>
   );

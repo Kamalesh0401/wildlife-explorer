@@ -2,8 +2,179 @@
     background-image: url('../assets/images/deergroup.jpg');
     background-size: cover;
     /* Ensures the image covers the entire area */
-    background-position:center;
+    background-position: center;
     /* Centers the image */
     background-repeat: no-repeat;
     /* Prevents the image from repeating */
+}
+
+.home-header {
+    /* background-image: url('../assets/images/deergroup.jpg'); */
+    background-color: bisque;
+    background-size: cover;
+    /* Ensures the image covers the entire area */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.home-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-section {
+    background: linear-gradient(to bottom, #2c3e50, #34495e);
+    color: #fff;
+    padding: 60px 20px;
+    border-bottom: 5px solid #27ae60;
+}
+
+.hero-title span {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.hero-subtitle {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.explore-btn {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #27ae60;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.explore-btn:hover {
+    background-color: #1e8449;
+    transform: scale(1.05);
+}
+
+.facts-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.facts-section h2 {
+    color: #6e726f;
+    margin-bottom: 20px;
+}
+
+.facts-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.facts-section li {
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.cta-section {
+    margin-top: 40px;
+    padding: 40px;
+    background: linear-gradient(to right, #0197dd, #2ecc71);
+    color: #fff;
+    border-radius: 10px;
+}
+
+.cta-btn {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #fff;
+    color: #27ae60;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #ecf0f1;
+    transform: scale(1.05);
+}
+
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-in-up 1s forwards;
+}
+
+.animate.fade-in {
+    animation: fade-in 3s forwards;
+}
+
+.animate.slide-up {
+    animation: slide-up 1s forwards;
+}
+
+.animate.zoom-in {
+    animation: zoom-in 1s forwards;
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-up {
+    to {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes zoom-in {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .cta-section {
+        padding: 20px;
+    }
 }
