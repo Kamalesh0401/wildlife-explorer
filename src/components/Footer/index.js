@@ -5,6 +5,14 @@ const Footer = () => {
         <>
             <footer className="footer">
                 <div className="footer-container">
+                    <div className="footer-middle">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                            <li><a href="/about">About</a></li>
+                        </ul>
+                    </div>
                     {/* Footer Left: Logo and About */}
                     <div className="footer-left">
                         <h2>Wildlife Explorer</h2>
@@ -15,14 +23,14 @@ const Footer = () => {
                     </div>
 
                     {/* Footer Middle: Navigation Links */}
-                    <div className="footer-middle">
+                    {/* <div className="footer-middle">
                         <h3>Quick Links</h3>
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li><a href="/contact">Contact</a></li>
                             <li><a href="/about">About</a></li>
                         </ul>
-                    </div>
+                    </div> */}
 
                     {/* Footer Right: Social Media Links */}
                     <div className="footer-right">

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -8,6 +7,11 @@ import ThreatsSection from './pages/ThreatsSection';
 import ContactForm from './pages/ContactForm';
 import ForestExplorer from './pages/ForestExplorer';
 import HeroSection from './pages/HeroSection';
+import SpeciesEncyclopedia from './pages/SpeciesEncyclopedia';
+import Community from './pages/Community';
+import Blogs from './pages/Blogs';
+import KidsCorner from './pages/KidsCorner';
+import EndangeredSpecies from './pages/EndangeredSpecies';
 import Quiz from './pages/Quiz';
 import About from './pages/About';
 import { useEffect } from 'react';
@@ -18,7 +22,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({
+      duration: 1000, // Animation duration in ms
+      easing: 'ease-in-out', // Animation easing
+    });
   }, []);
   return (
     <div className="App">
@@ -32,6 +39,11 @@ function App() {
           <Route path="/hero" element={<HeroSection />}></Route>
           <Route path="/quiz" element={<Quiz />}></Route>
           <Route path="/about" element={<About />}></Route>
+          <Route path="/encyclopedia" element={<SpeciesEncyclopedia />}></Route>
+          <Route path="/endangered" element={<EndangeredSpecies />}></Route>
+          <Route path="/community" element={<Community />}></Route>
+          <Route path="/blogs" element={<Blogs />}></Route>
+          <Route path="/kidscorner" element={<KidsCorner />}></Route>
         </Routes>
       </Router>
     </div>

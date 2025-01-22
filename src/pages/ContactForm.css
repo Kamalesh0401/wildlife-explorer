@@ -1,0 +1,128 @@
+/* General Styling */
+.contact-header,
+.contact-footer {
+    text-align: center;
+    background-color: #1c3b3b;
+    color: white;
+    padding: 20px;
+}
+
+.contact-container {
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+}
+
+/* Hero Section */
+.contact-hero-section {
+    text-align: center;
+    /* background: url('/images/contact_bg.jpg') no-repeat center/cover; */
+    background-color: #555;
+    color: white;
+    padding: 100px 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #1c3b3b;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    background-color: #1c3b3b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2a5d5d;
+}
+
+/* Contact Info Section */
+.contact-info-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #e6f5f5;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.info-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Social Media Section */
+.contact-social-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #1c3b3b;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #2a5d5d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-info-section {
+        padding: 30px;
+    }
+
+    .contact-form-section {
+        padding: 20px;
+    }
+}

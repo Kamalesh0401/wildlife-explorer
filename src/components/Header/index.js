@@ -7,12 +7,17 @@ import './index.css';
 
 const HeaderArray = [
   { Text: "Home", Path: "/" },
+  { Text: "About", Path: "/about" },
   { Text: "Forest Explorer", Path: "/forestexplorer" },
   { Text: "WildLife Gallery", Path: "/wildlife" },
+  { Text: "Endangered Species", Path: "/endangered" },
+  { Text: "Species Encyclopedia ", Path: "/encyclopedia" },
   { Text: "Threat Section", Path: "/threat" },
+  { Text: "Wildlife Blog", Path: "/blogs" },
+  { Text: "Kid's Corner", Path: "/kidscorner" },
   { Text: "Quiz", Path: "/quiz" },
+  { Text: "Our Community", Path: "/community" },
   { Text: "Contact", Path: "/contact" },
-  { Text: "About", Path: "/about" },
 ];
 
 const Header = () => {

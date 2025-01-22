@@ -12,6 +12,25 @@ import './style.css';
 import './ForestExplorer.css'; // Import CSS for styling
 
 const ForestExplorer = () => {
+
+    const forestArray = [
+        { name: "Tropical Rainforest", explanation: 'Home to the richest biodiversity on Earth, tropical forests are a treasure trove of life.', image: forest2, style: 'fade-down' },
+        { name: "Temperate Rainforest", explanation: "These forests are known for their stunning seasonal changes and diverse wildlife.", image: forest2, style: 'fade-right' },
+        { name: "Boreal Forest", explanation: "Also known as taiga, these forests are located in colder regions of the world.", image: forest2, style: 'fade-up' },
+        { name: "Tropical Deciduous Forest", explanation: "Forests that shed their leaves in the dry season, found in tropical regions.", image: forest2, style: 'fade-left' },
+        { name: "Temperate Deciduous Forest", explanation: "Forests in temperate regions with trees that shed leaves seasonally.", image: forest2, style: 'fade-up-right' },
+        { name: "Mangrove Forest", explanation: "Coastal forests with salt-tolerant trees growing in brackish water.", image: forest2, style: 'fade-up-left' },
+        { name: "Montane Forest", explanation: "Forests found at high altitudes, with varying vegetation based on elevation.", image: forest2, style: 'fade-down-right' },
+        { name: "Savanna Forest", explanation: "Scattered trees in tropical grasslands with distinct wet and dry seasons.", image: forest2, style: 'fade-down-left' },
+        { name: "Coniferous Forest", explanation: "Forests dominated by conifer trees like pines, spruces, and firs, in cool climates.", image: forest2, style: 'flip-left' },
+        { name: "Dry Forest", explanation: "Found in arid regions, these forests have drought-resistant vegetation.", image: forest2, style: 'flip-right' },
+        { name: "Mediterranean Forest", explanation: "Found in Mediterranean climates, with evergreen and drought-adapted vegetation.", image: forest2, style: 'flip-up' },
+        { name: "Subtropical Forest", explanation: "Located in subtropical regions, with a mix of tropical and temperate species.", image: forest2, style: 'flip-down' },
+        { name: "Flooded Forest", explanation: "Forests that are seasonally or permanently flooded, like in river deltas.", image: forest2, style: 'zoom-in' },
+        { name: "Temperate Mixed Forest", explanation: "Combination of deciduous and coniferous trees, with moderate climates.", image: forest2, style: 'zoom-out' },
+        { name: "Plantation Forest", explanation: "Artificially planted forests for timber, paper, or conservation purposes.", image: forest2, style: 'zoom-in-right' },
+    ];
+
     return (
         <>
             <div className="forest-header">
@@ -31,21 +50,16 @@ const ForestExplorer = () => {
                 <section className="forest-types animate slide-up">
                     <h2>Types of Forests</h2>
                     <div className="forest-grid">
-                        <div className="forest-card">
-                            <img src={forest4} alt="Tropical Forest" />
-                            <h3>Tropical Forest</h3>
-                            <p>Home to the richest biodiversity on Earth, tropical forests are a treasure trove of life.</p>
-                        </div>
-                        <div className="forest-card">
-                            <img src={forest2} alt="Temperate Forest" />
-                            <h3>Temperate Forest</h3>
-                            <p>These forests are known for their stunning seasonal changes and diverse wildlife.</p>
-                        </div>
-                        <div className="forest-card">
-                            <img src={forest3} alt="Boreal Forest" />
-                            <h3>Boreal Forest</h3>
-                            <p>Also known as taiga, these forests are located in colder regions of the world.</p>
-                        </div>
+                        {forestArray.map((element, index) => {
+                            console.log('element : ', element);
+                            return (
+                                <div data-aos={element.style} key={index} className="forest-card">
+                                    <img src={element.image} alt={element.name} />
+                                    <h3>{element.name}</h3>
+                                    <p>{element.explanation}</p>
+                                </div>
+                            );
+                        })}
                     </div>
                 </section>
 
@@ -54,7 +68,6 @@ const ForestExplorer = () => {
                     <h2>Explore the Beauty of Forests</h2>
                     <video controls>
                         <source src={forestvideo} type="video/mp4" />
-                        Your browser does not support the video tag.
                     </video>
                 </section>
 

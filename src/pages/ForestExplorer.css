@@ -45,7 +45,8 @@ body {
 
 .forest-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     gap: 20px;
 }
 
@@ -71,11 +72,10 @@ body {
     padding: 0 10px 15px;
 }
 
-/* Video Section */
 .forest-video {
     margin-top: 40px;
     padding: 20px;
-    background-color: #2ecc71;
+    background-color: #6fe4a1;
     color: #fff;
     border-radius: 10px;
 }
