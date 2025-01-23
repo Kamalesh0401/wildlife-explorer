@@ -1,41 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./SpeciesEncyclopedia.css";
+import { ajax, data } from "jquery";
 
-const speciesData = [
-    {
-        commonName: "Tiger",
-        scientificName: "Panthera tigris",
-        habitat: "Forests, grasslands, and wetlands",
-        diet: "Carnivore",
-        behavior: "Solitary",
-        conservationStatus: "Endangered",
-        threats: "Habitat loss, poaching",
-        funFacts: "Tigers are excellent swimmers and can leap over 30 feet in a single bound.",
-        image: "/assets/images/tiger.jpg",
-        video: "/assets/videos/tiger.mp4",
-    },
-    {
-        commonName: "Bald Eagle",
-        scientificName: "Haliaeetus leucocephalus",
-        habitat: "Near large bodies of open water",
-        diet: "Fish, small mammals",
-        behavior: "Monogamous",
-        conservationStatus: "Least Concern",
-        threats: "Habitat destruction, pollution",
-        funFacts: "Bald Eagles build the largest nests of any bird in North America.",
-        image: "/assets/images/bald-eagle.jpg",
-        video: "/assets/videos/bald-eagle.mp4",
-    },
-    // Add more species data here...
-];
+let speciesData = [];
 
 const SpeciesEncyclopedia = () => {
     const [search, setSearch] = useState("");
     const [filteredSpecies, setFilteredSpecies] = useState(speciesData);
+    const [individualSpecies, setIndividualSpecies] = useState(null);
+
+    useEffect(() => {
+
+        fetch("http://localhost:8080/species")
+            .then((res) => res.json())
+            .then((response) => speciesData = response);
+    }, []);
+
 
     const handleSearch = (e) => {
+        console.log('speciesData : ', speciesData);
         const query = e.target.value.toLowerCase();
         setSearch(query);
         const filtered = speciesData.filter(
@@ -44,7 +29,18 @@ const SpeciesEncyclopedia = () => {
                 species.scientificName.toLowerCase().includes(query)
         );
         setFilteredSpecies(filtered);
+        console.log('filtered : ', filtered);
+        console.log('individualSpecies : ', individualSpecies);
     };
+
+    const getSpeciesDetailsById = (id) => {
+        console.log('getSpeciesDetailsById : ', id);
+        fetch(`http://localhost:8080/species/${id}`)
+            .then((res) => res.json())
+            .then((response) =>
+                setIndividualSpecies(response));
+
+    }
 
     return (
         <>
@@ -94,7 +90,7 @@ const SpeciesEncyclopedia = () => {
                                 <button
                                     className="view-details-btn"
                                     onClick={() =>
-                                        alert(`More details about ${species.commonName} coming soon!`)
+                                        getSpeciesDetailsById(species._id)
                                     }
                                 >
                                     View Details
