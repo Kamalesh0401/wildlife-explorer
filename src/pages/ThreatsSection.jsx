@@ -78,9 +78,17 @@ const ThreatsSection = () => {
     const [threatData, setThreatData] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:8080/threats")
-            .then((res) => res.json())
-            .then((response) => setThreatData(response));
+        const fetchThreats = async () => {
+            try {
+                const res = await fetch("http://localhost:8080/threats");
+                const response = await res.json();
+                setThreatData(response);
+            } catch (ex) {
+                console.error("Error fetching threats: ", ex);
+            }
+        };
+
+        fetchThreats();
     }, []);
 
     return (
@@ -92,8 +100,8 @@ const ThreatsSection = () => {
 
             {/* Content Section */}
             <main>
-                {threatData &&
-                    threatData.map((threat, index) => (
+                {threatData && threatData.length > 0 ?
+                    (threatData.map((threat, index) => (
                         <div key={index} className="threat-container">
                             {/* Hero Section */}
                             <section className="threat-hero-section animate fade-in">
@@ -166,7 +174,7 @@ const ThreatsSection = () => {
                                 </section>
                             )}
                         </div>
-                    ))}
+                    ))) : (<p className="loading-message">Loading threats...</p>)}
                 <section className="threat-container threat-cta-section animate slide-up">
                     <h2>How Can You Help?</h2>
                     <p>

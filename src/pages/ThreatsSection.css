@@ -105,7 +105,12 @@
     }
 } */
 
-
+.threat-header {
+    background-image: url('../assets/images/deergroup.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 .threat-container {
     margin: 2rem auto;

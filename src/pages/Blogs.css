@@ -1,76 +1,105 @@
+.blog-header {
+    background-image: url('../assets/images/deergroup.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Blog Container */
 .blog-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #f5f5f5;
 }
 
+/* Blog Card */
 .blog-card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .blog-image img {
     width: 100%;
     height: auto;
-    display: block;
+    object-fit: cover;
 }
 
 .blog-content {
-    padding: 15px;
+    padding: 20px;
 }
 
 .blog-title {
     font-size: 1.5rem;
-    font-weight: bold;
     margin-bottom: 10px;
-    color: #333;
 }
 
 .blog-summary {
     font-size: 1rem;
-    color: #666;
-    margin-bottom: 10px;
+    color: #555;
+    margin-bottom: 15px;
 }
 
 .blog-metadata {
     font-size: 0.9rem;
-    color: #999;
+    color: #777;
     margin-bottom: 10px;
 }
 
 .blog-tags {
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .blog-tag {
-    background: #007bff;
-    color: #fff;
-    padding: 3px 8px;
+    display: inline-block;
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 5px 10px;
     border-radius: 5px;
-    font-size: 0.8rem;
     margin-right: 5px;
+    font-size: 0.8rem;
 }
 
 .read-more-btn {
-    background: #007bff;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #007BFF;
     color: white;
     border: none;
-    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .read-more-btn:hover {
-    background: #0056b3;
+    background-color: #0056b3;
+}
+
+/* Individual Blog */
+.individual-blog {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #e55050;
 }

@@ -1,4 +1,10 @@
-/* Quiz Container */
+.quiz-header {
+    background-image: url('../assets/images/deergroup.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .quiz-container {
     padding: 50px 20px;
     text-align: center;

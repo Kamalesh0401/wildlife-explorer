@@ -1,0 +1,139 @@
+.endangered-header {
+    background-image: url('../assets/images/deergroup.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.endangered-header,
+.endangered-footer {
+    color: #ecf0f1;
+    padding: 10px 0;
+}
+
+.endangered-main {
+    padding: 20px;
+    background-color: #f7f9fc;
+}
+
+.species-card {
+    background-color: #fff;
+    margin: 25px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+
+.species-hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.species-info-section,
+.species-threats-section,
+.species-protection-section,
+.species-redlist-section {
+    margin-top: 20px;
+}
+
+.info-block h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.threats-list,
+.protection-list {
+    list-style: none;
+    padding: 0;
+}
+
+.threat-item,
+.protection-item {
+    background-color: #f1f1f1;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.species-status {
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.species-status.critically-endangered {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.species-status.endangered {
+    background-color: #ffa500;
+    color: white;
+}
+
+.species-cta-section {
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #27ae60;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #2ecc71;
+}
+
+@media (max-width: 768px) {
+    .species-hero-section {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        margin-bottom: 20px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

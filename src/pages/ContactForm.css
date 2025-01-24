@@ -1,18 +1,23 @@
-/* General Styling */
-.contact-header,
+.contact-header {
+    background-image: url('../assets/images/deergroup.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* .contact-header,
 .contact-footer {
     text-align: center;
     background-color: #1c3b3b;
     color: white;
     padding: 20px;
-}
+} */
 
 .contact-container {
     padding: 50px 20px;
     background-color: #f8f9fa;
 }
 
-/* Hero Section */
 .contact-hero-section {
     text-align: center;
     /* background: url('/images/contact_bg.jpg') no-repeat center/cover; */
@@ -22,7 +27,6 @@
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Contact Form Section */
 .contact-form-section {
     max-width: 800px;
     margin: 0 auto 50px;
@@ -77,7 +81,6 @@ textarea {
     background-color: #2a5d5d;
 }
 
-/* Contact Info Section */
 .contact-info-section {
     text-align: center;
     padding: 50px 20px;
@@ -98,7 +101,6 @@ textarea {
     text-align: center;
 }
 
-/* Social Media Section */
 .contact-social-section {
     text-align: center;
     margin-top: 30px;
@@ -116,7 +118,6 @@ textarea {
     color: #2a5d5d;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .contact-info-section {
         padding: 30px;

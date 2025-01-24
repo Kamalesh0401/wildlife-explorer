@@ -4,42 +4,47 @@ import Footer from "../components/Footer";
 import "./SpeciesEncyclopedia.css";
 import { ajax, data } from "jquery";
 
-let speciesData = [];
-
 const SpeciesEncyclopedia = () => {
     const [search, setSearch] = useState("");
-    const [filteredSpecies, setFilteredSpecies] = useState(speciesData);
-    const [individualSpecies, setIndividualSpecies] = useState(null);
+    const [filteredSpecies, setFilteredSpecies] = useState(null);
+    const [selectedSpecies, setSelectedSpecies] = useState(null);
+    const [speciesData, setSpeciesData] = useState(null);
 
     useEffect(() => {
+        const fetchSpecies = async () => {
+            try {
+                const res = await fetch("http://localhost:8080/species");
+                const response = await res.json();
+                setSpeciesData(response);
+            } catch (ex) {
+                console.error("Error fetching species data: ", ex);
+            }
+        };
 
-        fetch("http://localhost:8080/species")
-            .then((res) => res.json())
-            .then((response) => speciesData = response);
+        fetchSpecies();
     }, []);
 
-
     const handleSearch = (e) => {
-        console.log('speciesData : ', speciesData);
         const query = e.target.value.toLowerCase();
         setSearch(query);
-        const filtered = speciesData.filter(
-            (species) =>
-                species.commonName.toLowerCase().includes(query) ||
-                species.scientificName.toLowerCase().includes(query)
-        );
-        setFilteredSpecies(filtered);
-        console.log('filtered : ', filtered);
-        console.log('individualSpecies : ', individualSpecies);
+        if (query && query.length >= 3) {
+            const filtered = speciesData.filter(
+                (species) =>
+                    species.commonName.toLowerCase().includes(query) ||
+                    species.scientificName.toLowerCase().includes(query)
+            );
+            setFilteredSpecies(filtered);
+        }
     };
 
-    const getSpeciesDetailsById = (id) => {
-        console.log('getSpeciesDetailsById : ', id);
-        fetch(`http://localhost:8080/species/${id}`)
-            .then((res) => res.json())
-            .then((response) =>
-                setIndividualSpecies(response));
-
+    const getSelectedSpecies = async (id) => {
+        try {
+            const res = await fetch(`http://localhost:8080/species/${id}`);
+            const response = await res.json();
+            setSelectedSpecies(response);
+        } catch (ex) {
+            console.error("Error fetching individual species data: ", ex);
+        }
     }
 
     return (
@@ -66,7 +71,7 @@ const SpeciesEncyclopedia = () => {
 
                 {/* Species Cards Section */}
                 <section className="species-grid">
-                    {filteredSpecies.map((species, index) => (
+                    {filteredSpecies && filteredSpecies.map((species, index) => (
                         <div className="species-card" key={index}>
                             <img
                                 src={species.image}
@@ -90,7 +95,7 @@ const SpeciesEncyclopedia = () => {
                                 <button
                                     className="view-details-btn"
                                     onClick={() =>
-                                        getSpeciesDetailsById(species._id)
+                                        getSelectedSpecies(species._id)
                                     }
                                 >
                                     View Details

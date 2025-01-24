@@ -7,13 +7,13 @@ const KidsCorner = () => {
     return (
         <>
             {/* Header */}
-            <div className="about-header">
+            <div className="kids-header">
                 <Header />
             </div>
 
 
             {/* Footer */}
-            <div className="about-footer">
+            <div className="kids-footer">
                 <Footer />
             </div>
         </>

@@ -5,6 +5,8 @@
   padding: 10px;
   background-color: inherit;
   height: 200px;
+  width: inherit;
+  overflow: hidden;
 }
 
 .header-left {

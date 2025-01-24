@@ -1,3 +1,10 @@
+.encyclopedia-header {
+    background-image: url('../assets/images/deergroup.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .encyclopedia-container {
     padding: 20px;
 }

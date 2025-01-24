@@ -23,20 +23,20 @@ const ForestExplorer = () => {
 
     const forestArray = [
         { name: "Tropical Rainforest", explanation: 'Home to the richest biodiversity on Earth, tropical forests are a treasure trove of life.', image: tropicalrainforest, style: 'fade-down' },
-        { name: "Temperate Rainforest", explanation: "These forests are known for their stunning seasonal changes and diverse wildlife.", image: temperaturerainforest, style: 'fade-right' },
-        { name: "Boreal Forest", explanation: "Also known as taiga, these forests are located in colder regions of the world.", image: borealforest, style: 'fade-up' },
-        { name: "Tropical Deciduous Forest", explanation: "Forests that shed their leaves in the dry season, found in tropical regions.", image: tropicaldeciduousforest, style: 'fade-left' },
-        { name: "Temperate Deciduous Forest", explanation: "Forests in temperate regions with trees that shed leaves seasonally.", image: temperatedeciduousforest, style: 'fade-up-right' },
-        { name: "Mangrove Forest", explanation: "Coastal forests with salt-tolerant trees growing in brackish water.", image: mangroveforest, style: 'fade-up-left' },
-        { name: "Montane Forest", explanation: "Forests found at high altitudes, with varying vegetation based on elevation.", image: montaneforest, style: 'fade-down-right' },
-        { name: "Savanna Forest", explanation: "Scattered trees in tropical grasslands with distinct wet and dry seasons.", image: savannaforest, style: 'fade-down-left' },
-        { name: "Coniferous Forest", explanation: "Forests dominated by conifer trees like pines, spruces, and firs, in cool climates.", image: coniferousforest, style: 'flip-left' },
-        { name: "Dry Forest", explanation: "Found in arid regions, these forests have drought-resistant vegetation.", image: dryforest, style: 'flip-right' },
+        { name: "Temperate Rainforest", explanation: "These forests are known for their stunning seasonal changes and diverse wildlife.", image: temperaturerainforest, style: 'fade-down' },
+        { name: "Boreal Forest", explanation: "Also known as taiga, these forests are located in colder regions of the world.", image: borealforest, style: 'fade-down' },
+        { name: "Tropical Deciduous Forest", explanation: "Forests that shed their leaves in the dry season, found in tropical regions.", image: tropicaldeciduousforest, style: 'fade-up' },
+        { name: "Temperate Deciduous Forest", explanation: "Forests in temperate regions with trees that shed leaves seasonally.", image: temperatedeciduousforest, style: 'fade-up' },
+        { name: "Mangrove Forest", explanation: "Coastal forests with salt-tolerant trees growing in brackish water.", image: mangroveforest, style: 'fade-up' },
+        { name: "Montane Forest", explanation: "Forests found at high altitudes, with varying vegetation based on elevation.", image: montaneforest, style: 'zoom-out' },
+        { name: "Savanna Forest", explanation: "Scattered trees in tropical grasslands with distinct wet and dry seasons.", image: savannaforest, style: 'zoom-out' },
+        { name: "Coniferous Forest", explanation: "Forests dominated by conifer trees like pines, spruces, and firs, in cool climates.", image: coniferousforest, style: 'zoom-out' },
+        { name: "Dry Forest", explanation: "Found in arid regions, these forests have drought-resistant vegetation.", image: dryforest, style: 'flip-up' },
         { name: "Mediterranean Forest", explanation: "Found in Mediterranean climates, with evergreen and drought-adapted vegetation.", image: mediterraneanforest, style: 'flip-up' },
-        { name: "Subtropical Forest", explanation: "Located in subtropical regions, with a mix of tropical and temperate species.", image: forest2, style: 'flip-down' },
+        { name: "Subtropical Forest", explanation: "Located in subtropical regions, with a mix of tropical and temperate species.", image: forest2, style: 'flip-up' },
         { name: "Flooded Forest", explanation: "Forests that are seasonally or permanently flooded, like in river deltas.", image: forest2, style: 'zoom-in' },
-        { name: "Temperate Mixed Forest", explanation: "Combination of deciduous and coniferous trees, with moderate climates.", image: forest2, style: 'zoom-out' },
-        { name: "Plantation Forest", explanation: "Artificially planted forests for timber, paper, or conservation purposes.", image: forest2, style: 'zoom-in-right' },
+        { name: "Temperate Mixed Forest", explanation: "Combination of deciduous and coniferous trees, with moderate climates.", image: forest2, style: 'zoom-in' },
+        { name: "Plantation Forest", explanation: "Artificially planted forests for timber, paper, or conservation purposes.", image: forest2, style: 'zoom-in' },
     ];
 
     return (
@@ -72,7 +72,7 @@ const ForestExplorer = () => {
                 </section>
 
                 {/* Video Section */}
-                <section className="forest-video animate zoom-in">
+                <section data-aos='fade-in' className="forest-video animate zoom-in">
                     <h2>Explore the Beauty of Forests</h2>
                     <video controls>
                         <source src={forestvideo} type="video/mp4" />
@@ -80,7 +80,7 @@ const ForestExplorer = () => {
                 </section>
 
                 {/* Conservation Section */}
-                <section className="forest-conservation animate slide-up">
+                <section data-aos='fade-in' className="forest-conservation animate slide-up">
                     <h2>Why Forest Conservation Matters</h2>
                     <p>
                         Forests play a crucial role in maintaining the Earth's ecological balance. They absorb carbon dioxide,

@@ -15,7 +15,7 @@ const HeaderArray = [
   { Text: "Threat Section", Path: "/threat" },
   { Text: "Wildlife Blog", Path: "/blogs" },
   { Text: "Kid's Corner", Path: "/kidscorner" },
-  { Text: "Quiz", Path: "/quiz" },
+  // { Text: "Quiz", Path: "/quiz" },
   { Text: "Our Community", Path: "/community" },
   { Text: "Contact", Path: "/contact" },
 ];
