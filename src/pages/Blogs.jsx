@@ -14,7 +14,7 @@ const Blogs = () => {
             try {
                 const res = await fetch("http://localhost:8080/blogs/");
                 const response = await res.json();
-                setBlogData(response);
+                setBlogData({ ...response, loading: false });
             } catch (ex) {
                 console.error("Error fetching blog data: ", ex);
             }
@@ -24,6 +24,7 @@ const Blogs = () => {
     }, []);
 
     const fetchBlogDetailsById = async (id) => {
+
         setLoading(true);
         try {
             const res = await fetch(`http://localhost:8080/blogs/${id}`);
@@ -56,7 +57,7 @@ const Blogs = () => {
                 ) : (
                     // Blog List View
                     <>
-                        {blogData && blogData.length > 0 ? (
+                        {blogData && blogData?.length > 0 ? (
                             blogData.map((blog, index) => (
                                 <div className="blog-card" key={index}>
                                     {/* Blog Image */}
@@ -88,7 +89,7 @@ const Blogs = () => {
                                             onClick={() => fetchBlogDetailsById(blog._id)}
                                             disabled={loading}
                                         >
-                                            {loading ? "Loading..." : "Read More"}
+                                            {blog.loading ? "Loading..." : "Read More"}
                                         </button>
                                     </div>
                                 </div>

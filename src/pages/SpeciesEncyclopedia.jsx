@@ -1,51 +1,85 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import SpeciesCard from "../components/SpeciesCard";
 import "./SpeciesEncyclopedia.css";
-import { ajax, data } from "jquery";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 const SpeciesEncyclopedia = () => {
     const [search, setSearch] = useState("");
     const [filteredSpecies, setFilteredSpecies] = useState(null);
     const [selectedSpecies, setSelectedSpecies] = useState(null);
     const [speciesData, setSpeciesData] = useState(null);
+    const [master, setMaster] = useState(false);
+    const [loading, setLoading] = useState(false); // Added loading state
+
+    const token = 'gI0vZnwYXry/R8Y5yR5n8A==fEWLtokF2rbFue9r';
+    const key = '47881857-9a836ab9e4de036a26a49459e';
 
     useEffect(() => {
         const fetchSpecies = async () => {
+            setLoading(true); // Show loading
             try {
                 const res = await fetch("http://localhost:8080/species");
                 const response = await res.json();
                 setSpeciesData(response);
             } catch (ex) {
                 console.error("Error fetching species data: ", ex);
+            } finally {
+                setLoading(false); // Hide loading
             }
         };
-
         fetchSpecies();
     }, []);
 
-    const handleSearch = (e) => {
+    const handleSearch = async (e) => {
         const query = e.target.value.toLowerCase();
         setSearch(query);
-        if (query && query.length >= 3) {
-            const filtered = speciesData.filter(
-                (species) =>
-                    species.commonName.toLowerCase().includes(query) ||
-                    species.scientificName.toLowerCase().includes(query)
-            );
-            setFilteredSpecies(filtered);
+
+        if (query.length >= 3) {
+            setLoading(true); // Show loading when searching
+            try {
+                const options = {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-Api-Key": `${token}`
+                    }
+                };
+
+                // Fetch species data
+                const res = await fetch(`https://api.api-ninjas.com/v1/animals?name=${query}`, options);
+                const response = await res.json();
+
+                setSpeciesData(response);
+                setMaster(!response.length);
+
+                const updatedSpecies = await Promise.all(
+                    response.map(async (item) => {
+                        try {
+                            const imageRes = await fetch(`https://pixabay.com/api/?key=${key}&q=${item.name}&image_type=photo`);
+                            const imageData = await imageRes.json();
+                            const imageUrl = imageData.hits?.[0]?.webformatURL || "";
+                            return { ...item, imageUrl };
+                        } catch (error) {
+                            console.error("Error fetching image for:", item.name, error);
+                            return { ...item, imageUrl: "" };
+                        }
+                    })
+                );
+
+                setFilteredSpecies(updatedSpecies);
+            } catch (ex) {
+                console.error("Error fetching species data:", ex);
+            } finally {
+                setLoading(false); // Hide loading when done
+            }
+        }
+        else {
+            setFilteredSpecies(null);
         }
     };
-
-    const getSelectedSpecies = async (id) => {
-        try {
-            const res = await fetch(`http://localhost:8080/species/${id}`);
-            const response = await res.json();
-            setSelectedSpecies(response);
-        } catch (ex) {
-            console.error("Error fetching individual species data: ", ex);
-        }
-    }
 
     return (
         <>
@@ -54,7 +88,6 @@ const SpeciesEncyclopedia = () => {
             </div>
 
             <div className="encyclopedia-container">
-                {/* Search Section */}
                 <section className="search-section">
                     <h1 className="encyclopedia-title">Species Encyclopedia</h1>
                     <p className="encyclopedia-description">
@@ -69,52 +102,50 @@ const SpeciesEncyclopedia = () => {
                     />
                 </section>
 
-                {/* Species Cards Section */}
-                <section className="species-grid">
-                    {filteredSpecies && filteredSpecies.map((species, index) => (
-                        <div className="species-card" key={index}>
-                            <img
-                                src={species.image}
-                                alt={species.commonName}
-                                className="species-image"
-                            />
-                            <div className="species-details">
-                                <h3>{species.commonName}</h3>
-                                <p>
-                                    <strong>Scientific Name:</strong> {species.scientificName}
-                                </p>
-                                <p>
-                                    <strong>Habitat:</strong> {species.habitat}
-                                </p>
-                                <p>
-                                    <strong>Diet:</strong> {species.diet}
-                                </p>
-                                <p>
-                                    <strong>Status:</strong> {species.conservationStatus}
-                                </p>
-                                <button
-                                    className="view-details-btn"
-                                    onClick={() =>
-                                        getSelectedSpecies(species._id)
-                                    }
-                                >
-                                    View Details
-                                </button>
+                {loading ? (
+                    <div className="loading-container">
+                        <FontAwesomeIcon icon={faSpinner} />
+                        <p>Loading species...</p>
+                    </div>
+                ) : (
+                    <section className="species-grid">
+                        {!selectedSpecies ? (
+                            filteredSpecies &&
+                            filteredSpecies.map((species, index) => (
+                                <div className="species-card animate-fade-in" key={index}>
+                                    <img
+                                        src={species.imageUrl || "https://via.placeholder.com/150"}
+                                        alt={species.name}
+                                        className="species-image"
+                                    />
+                                    <div className="species-details">
+                                        <h3>{species.name}</h3>
+                                        <p><strong>Scientific Name:</strong> {species?.taxonomy?.scientific_name}</p>
+                                        <p><strong>Habitat:</strong> {species?.characteristics?.habitat}</p>
+                                        <p><strong>Diet:</strong> {species?.characteristics?.diet}</p>
+                                        <p><strong>Locations:</strong> {species.locations?.join(",")}</p>
+                                        <button
+                                            className="view-details-btn"
+                                            onClick={() => setSelectedSpecies(species)}
+                                        >
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <div className="animate-slide-in">
+                                {/* <button className="back-button" onClick={() => setSelectedSpecies(null)}>
+                                    ← Back to Encyclopedia
+                                </button> */}
+                                <SpeciesCard selectedSpecies={selectedSpecies} setSelectedSpecies={setSelectedSpecies} />
                             </div>
-                        </div>
-                    ))}
-                </section>
-
-                {/* Add AR/Interactive Media Section (Future enhancement) */}
-                <section className="interactive-section">
-                    <h2>Future Features</h2>
-                    <p>Stay tuned for 3D models and augmented reality experiences!</p>
-                </section>
+                        )}
+                    </section>
+                )}
             </div>
 
-            <div className="encyclopedia-footer">
-                <Footer />
-            </div>
+            <Footer />
         </>
     );
 };

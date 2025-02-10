@@ -2,18 +2,18 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import forestvideo from '../assets/images/forestvideo.mp4';
-import temperaturerainforest from '../assets/images/temperature-rainforest.jpg';
-import tropicalrainforest from '../assets/images/tropical-rainforest.jpg';
+import temperaturerainforest from '../assets/images/forest/temperature-rainforest.jpg';
+import tropicalrainforest from '../assets/images/forest/tropical-rainforest.jpg';
 import forest2 from '../assets/images/forest2.jpg';
-import borealforest from '../assets/images/boreal-forest.jpg';
-import tropicaldeciduousforest from '../assets/images/tropical-deciduous-forest.jpg';
-import temperatedeciduousforest from '../assets/images/temperate-deciduous-forest.jpg';
-import mangroveforest from '../assets/images/mangrove-forest.jpg';
-import montaneforest from '../assets/images/montane-forest.jpg';
-import savannaforest from '../assets/images/savanna-forest.jpg';
-import coniferousforest from '../assets/images/coniferous-forest.jpg';
-import dryforest from '../assets/images/dry-forest.jpg';
-import mediterraneanforest from '../assets/images/mediterranean-forest.jpg';
+import borealforest from '../assets/images/forest/boreal-forest.jpg';
+import tropicaldeciduousforest from '../assets/images/forest/tropical-deciduous-forest.jpg';
+import temperatedeciduousforest from '../assets/images/forest/temperate-deciduous-forest.jpg';
+import mangroveforest from '../assets/images/forest/mangrove-forest.jpg';
+import montaneforest from '../assets/images/forest/montane-forest.jpg';
+import savannaforest from '../assets/images/forest/savanna-forest.jpg';
+import coniferousforest from '../assets/images/forest/coniferous-forest.jpg';
+import dryforest from '../assets/images/forest/dry-forest.jpg';
+import mediterraneanforest from '../assets/images/forest/mediterranean-forest.jpg';
 import './style.css';
 
 

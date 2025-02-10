@@ -53,8 +53,8 @@ const IndividualBlog = ({ individualBlog }) => {
 
                         {/* Comments Section */}
                         <div className="blog-comments">
-                            <h3>Comments ({individualBlog.comments.length})</h3>
-                            {individualBlog.comments.map((comment) => (
+                            <h3>Comments {individualBlog.comments?.length ? (individualBlog.comments?.length) : <span style={{ opacity: '0.7' }}>(no comments)</span>}</h3>
+                            {individualBlog.comments?.map((comment) => (
                                 <div key={comment._id} className="comment">
                                     <p><strong>{comment.userName}</strong>: {comment.commentText}</p>
                                     <span className="comment-date">

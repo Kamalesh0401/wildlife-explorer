@@ -8,6 +8,11 @@
 .about-header,
 .about-footer {
     text-align: center;
+    color: white;
+    padding: 20px;
+}
+.about-footer {
+    text-align: center;
     background-color: #1c3b3b;
     color: white;
     padding: 20px;
