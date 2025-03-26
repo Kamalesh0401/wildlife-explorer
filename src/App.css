@@ -1,11 +1,43 @@
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 5px #34d399, 0 0 10px #34d399, 0 0 20px #34d399;
-  }
-  50% {
-    box-shadow: 0 0 10px #34d399, 0 0 15px #34d399, 0 0 25px #34d399;
-  }
-  100% {
-    box-shadow: 0 0 5px #34d399, 0 0 10px #34d399, 0 0 20px #34d399;
-  }
+body {
+  background-color: #222;
+  /* Dark Theme */
+  color: #DDDDDD;
+  /* Light Text */
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: #2E8B57;
+  /* Forest Green */
+  font-family: 'Merriweather', serif;
+}
+
+button {
+  background-color: #FF8C00;
+  /* Sunset Orange */
+  color: white;
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: none;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #8B5A2B;
+  /* Earthy Brown */
+  transform: scale(1.05);
+}
+
+.navbar {
+  background-color: #2E8B57;
+  /* Green Navbar */
+}
+
+.section {
+  padding: 50px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
 }

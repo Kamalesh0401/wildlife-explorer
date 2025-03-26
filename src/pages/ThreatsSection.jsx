@@ -1,6 +1,7 @@
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import WildlifeLoader from '../components/Loader';
 import { useState, useEffect } from 'react';
 import './ThreatsSection.css';
 
@@ -76,15 +77,21 @@ import './ThreatsSection.css';
 
 const ThreatsSection = () => {
     const [threatData, setThreatData] = useState(null);
+    const [loader, setLoader] = useState(false);
 
     useEffect(() => {
         const fetchThreats = async () => {
             try {
+                setLoader(true);
                 const res = await fetch("http://localhost:8080/threats");
                 const response = await res.json();
+                console.error("fetchThreats : ", response);
                 setThreatData(response);
             } catch (ex) {
                 console.error("Error fetching threats: ", ex);
+            }
+            finally {
+                setLoader(false);
             }
         };
 
@@ -92,106 +99,102 @@ const ThreatsSection = () => {
     }, []);
 
     return (
+
+
         <>
-            {/* Header */}
-            <div className="threat-header">
-                <Header />
-            </div>
+            {loader ? <WildlifeLoader /> :
+                <div>
+                    <div className="threat-header">
+                        <Header />
+                    </div>
+                    <main>
+                        {threatData && threatData.length > 0 ?
+                            (threatData.map((threat, index) => (
+                                <div key={index} className="threat-container">
+                                    {/* Hero Section */}
+                                    <section className="threat-hero-section animate fade-in">
+                                        <div className="threat-hero-content">
+                                            <h1 className="threat-title">{threat.name}</h1>
+                                            <p className="threat-subtitle">{threat.description}</p>
+                                        </div>
+                                    </section>
 
-            {/* Content Section */}
-            <main>
-                {threatData && threatData.length > 0 ?
-                    (threatData.map((threat, index) => (
-                        <div key={index} className="threat-container">
-                            {/* Hero Section */}
-                            <section className="threat-hero-section animate fade-in">
-                                <div className="threat-hero-content">
-                                    <h1 className="threat-title">{threat.name}</h1>
-                                    <p className="threat-subtitle">{threat.description}</p>
+                                    {/* Main Section */}
+                                    <section className="threat-main-section animate slide-up">
+                                        <div className="threat-details">
+                                            <div className="threat-image-container">
+                                                <img
+                                                    src={threat.image}
+                                                    alt={threat.name}
+                                                    className="threat-image"
+                                                />
+                                            </div>
+                                            <div className="threat-info">
+                                                <h2 className="section-title">Details</h2>
+                                                <p><strong>Impact Level:</strong> {threat.impactLevel}</p>
+                                                <p><strong>Causes:</strong> {threat.causes}</p>
+                                                <p><strong>Reported Cases:</strong> {threat.reportedCases}</p>
+                                                <p>
+                                                    <strong>Geographic Regions:</strong>{" "}
+                                                    {threat.geographicRegions.join(", ")}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    {/* Affected Species */}
+                                    <section className="affected-species-section animate fade-in">
+                                        <h2 className="section-title">Species Affected</h2>
+                                        <ul className="species-list">
+                                            {threat.speciesAffected.map((species, index) => (
+                                                <li key={index} className="species-item">
+                                                    {species}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </section>
+                                    <section className="mitigation-strategies-section animate zoom-in mt-4">
+                                        <h2 className="section-title">Mitigation Strategies</h2>
+                                        <ul className="strategies-list">
+                                            {threat.mitigationStrategies.map((strategy, index) => (
+                                                <li key={index} className="strategy-item">
+                                                    {strategy}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </section>
+                                    {threat.video && (
+                                        <section className="threat-video-section animate fade-in">
+                                            <h2>Learn More</h2>
+                                            <div className="video-container">
+                                                <iframe
+                                                    src={threat.video}
+                                                    title={`Learn more about ${threat.name}`}
+                                                    frameBorder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowFullScreen
+                                                />
+                                            </div>
+                                        </section>
+                                    )}
                                 </div>
-                            </section>
-
-                            {/* Main Section */}
-                            <section className="threat-main-section animate slide-up">
-                                <div className="threat-details">
-                                    <div className="threat-image-container">
-                                        <img
-                                            src={threat.image}
-                                            alt={threat.name}
-                                            className="threat-image"
-                                        />
-                                    </div>
-                                    <div className="threat-info">
-                                        <h2 className="section-title">Details</h2>
-                                        <p><strong>Impact Level:</strong> {threat.impactLevel}</p>
-                                        <p><strong>Causes:</strong> {threat.causes}</p>
-                                        <p><strong>Reported Cases:</strong> {threat.reportedCases}</p>
-                                        <p>
-                                            <strong>Geographic Regions:</strong>{" "}
-                                            {threat.geographicRegions.join(", ")}
-                                        </p>
-                                    </div>
-                                </div>
-                            </section>
-
-                            {/* Affected Species */}
-                            <section className="affected-species-section animate fade-in">
-                                <h2 className="section-title">Species Affected</h2>
-                                <ul className="species-list">
-                                    {threat.speciesAffected.map((species, index) => (
-                                        <li key={index} className="species-item">
-                                            {species}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </section>
-
-                            {/* Mitigation Strategies */}
-                            <section className="mitigation-strategies-section animate zoom-in mt-4">
-                                <h2 className="section-title">Mitigation Strategies</h2>
-                                <ul className="strategies-list">
-                                    {threat.mitigationStrategies.map((strategy, index) => (
-                                        <li key={index} className="strategy-item">
-                                            {strategy}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </section>
-
-                            {/* Video Section */}
-                            {threat.video && (
-                                <section className="threat-video-section animate fade-in">
-                                    <h2>Learn More</h2>
-                                    <div className="video-container">
-                                        <iframe
-                                            src={threat.video}
-                                            title={`Learn more about ${threat.name}`}
-                                            frameBorder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen
-                                        />
-                                    </div>
-                                </section>
-                            )}
-                        </div>
-                    ))) : (<p className="loading-message">Loading threats...</p>)}
-                <section className="threat-container threat-cta-section animate slide-up">
-                    <h2>How Can You Help?</h2>
-                    <p>
-                        Take part in global conservation efforts, spread awareness, and
-                        support organizations that aim to combat overfishing.
-                    </p>
-                    <a href="/contact" className="cta-btn">
-                        Get Involved
-                    </a>
-                </section>
-            </main>
-            {/* Call-to-Action Section */}
-
-            {/* Footer */}
-            <div className="threat-footer">
-                <Footer />
-            </div>
+                            ))) : (<></>)}
+                        <section className="threat-container threat-cta-section animate slide-up">
+                            <h2>How Can You Help?</h2>
+                            <p>
+                                Take part in global conservation efforts, spread awareness, and
+                                support organizations that aim to combat overfishing.
+                            </p>
+                            <a href="/contact" className="cta-btn">
+                                Get Involved
+                            </a>
+                        </section>
+                    </main>
+                    {/* Call-to-Action Section */}
+                    <div className="threat-footer">
+                        <Footer />
+                    </div>
+                </div>}
         </>
     );
 };
