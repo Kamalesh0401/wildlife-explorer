@@ -2,6 +2,8 @@ import './App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Home from './pages/Home';
+import Homepage from './pages/Homepage';
+import WildlifePage from './pages/WildlifePage';
 import WildlifeGallery from './pages/WildlifeGallery';
 import ThreatsSection from './pages/ThreatsSection';
 import ContactForm from './pages/ContactForm';
@@ -31,7 +33,8 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<WildlifePage />}></Route>
+          {/* <Route path="/" element={<Homepage />}></Route> */}
           <Route path="/wildlife" element={<WildlifeGallery />}></Route>
           <Route path="/threat" element={<ThreatsSection />}></Route>
           <Route path="/contact" element={<ContactForm />}></Route>
