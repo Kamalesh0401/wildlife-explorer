@@ -186,7 +186,6 @@
 } */
 
 
-/* General container styling */
 .wildlife-container {
     display: flex;
     flex-direction: column;
@@ -196,15 +195,14 @@
     font-family: 'Arial', sans-serif;
     padding: 20px;
     box-sizing: border-box;
+    overflow-y: auto;
 }
 
-/* Body content */
 .body-content {
     display: flex;
     flex: 1;
 }
 
-/* Header styling */
 .header {
     border-bottom: 1px solid rgb(87, 87, 87);
     display: flex;
@@ -242,7 +240,6 @@
     display: block;
 }
 
-/* Main content */
 .main-content {
     display: flex;
     flex-direction: column;
@@ -255,7 +252,6 @@
     gap: 20px;
 }
 
-/* Sidebar content */
 .sidebar-content {
     display: flex;
     flex-direction: column;
@@ -264,7 +260,6 @@
     height: 100%;
 }
 
-/* Map section */
 .map-section {
     background-color: #2a2a2a;
     padding: 15px;

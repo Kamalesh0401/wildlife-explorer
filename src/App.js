@@ -33,8 +33,8 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<WildlifePage />}></Route>
-          {/* <Route path="/" element={<Homepage />}></Route> */}
+          {/* <Route path="/" element={<WildlifePage />}></Route> */}
+          <Route path="/" element={<Homepage />}></Route>
           <Route path="/wildlife" element={<WildlifeGallery />}></Route>
           <Route path="/threat" element={<ThreatsSection />}></Route>
           <Route path="/contact" element={<ContactForm />}></Route>
