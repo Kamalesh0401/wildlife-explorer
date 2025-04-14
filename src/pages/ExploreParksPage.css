@@ -1,5 +1,4 @@
-/* General container styling */
-.wildlife-container {
+.explore-parks-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -12,13 +11,11 @@
     overflow-y: auto;
 }
 
-/* Body content */
 .body-content {
     display: flex;
     flex: 1;
 }
 
-/* Header styling */
 .header {
     display: flex;
     align-items: center;
@@ -55,13 +52,11 @@
     transform: scale(1.2);
 }
 
-/* Main content */
 .main-content {
     display: flex;
     flex-direction: column;
     flex: 1;
     margin-left: 60px;
-    /* Account for the Sidebar component's width */
 }
 
 .center-main-content {
@@ -70,7 +65,6 @@
     gap: 20px;
 }
 
-/* Sidebar content */
 .sidebar-content {
     display: flex;
     flex-direction: column;
@@ -107,17 +101,12 @@
 .filter-dropdown {
     background-color: #3a3a3a;
     border: none;
-    padding: 10px;
+    padding: 8px;
     color: #fff;
     border-radius: 5px;
     margin-top: 5px;
     width: 100%;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.filter-dropdown:hover {
-    background-color: #444;
 }
 
 .filter-dropdown:focus {
@@ -125,7 +114,6 @@
     box-shadow: 0 0 5px #00c4b4;
 }
 
-/* Right section */
 .right-section {
     width: 70%;
     display: flex;
@@ -140,119 +128,91 @@
 
 .search-input {
     width: 100%;
-    padding: 12px 40px 12px 15px;
+    padding: 10px 40px 10px 15px;
     background-color: #2a2a2a;
-    border: 2px solid #333;
-    border-radius: 25px;
-    color: #fff;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
     font-size: 14px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .search-input:focus {
-    border-color: #00c4b4;
-    box-shadow: 0 0 8px rgba(0, 196, 180, 0.5);
     outline: none;
+    box-shadow: 0 0 5px #00c4b4;
 }
 
 .search-icon {
     position: absolute;
-    right: 15px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 18px;
     color: #888;
-    transition: color 0.3s ease;
 }
 
-.search-input:focus+.search-icon {
-    color: #00c4b4;
-}
-
-.wildlife-grid {
+.park-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    animation: fadeIn 0.5s ease-in;
 }
 
-.wildlife-card {
+.park-card {
     background-color: #3a3a3a;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 5px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
 }
 
-.wildlife-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+.park-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.wildlife-image-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px 10px 0 0;
-}
-
-.wildlife-image {
+.park-image {
     width: 100%;
-    height: 180px;
+    height: 150px;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
-.wildlife-card:hover .wildlife-image {
-    transform: scale(1.1);
-}
-
-.wildlife-name {
-    font-size: 18px;
+.park-name {
+    font-size: 16px;
     font-weight: bold;
-    margin: 10px 0;
-    color: #00c4b4;
-    text-transform: uppercase;
+    margin: 5px 0;
 }
 
-.wildlife-habitat {
-    font-size: 13px;
-    color: #bbb;
+.park-location {
+    font-size: 12px;
+    color: #888;
+    margin: 5px 0;
+}
+
+.park-description {
+    font-size: 14px;
+    line-height: 1.5;
     margin: 5px 0;
 }
 
 .action-button {
-    background: linear-gradient(90deg, #00c4b4, #009688);
+    background-color: #00c4b4;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 15px;
     color: #fff;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
-    border-radius: 25px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s ease;
-    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .action-button:hover {
-    transform: translateY(-2px);
-    background: linear-gradient(90deg, #009688, #00c4b4);
+    background-color: #00a89a;
+    transform: scale(1.05);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
 
-    to {
-        opacity: 1;
-    }
-}
-
-/* Responsive Design */
-
-/* Tablet (786px - 1024px) */
 @media (min-width: 786px) and (max-width: 1024px) {
     .main-content {
         margin-left: 60px;
@@ -276,32 +236,30 @@
         font-size: 16px;
     }
 
-    .wildlife-grid {
+    .park-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 columns for tablet */
     }
 
-    .wildlife-image {
-        height: 140px;
+    .park-image {
+        height: 120px;
     }
 
-    .wildlife-name {
-        font-size: 16px;
+    .park-name {
+        font-size: 14px;
     }
 
-    .wildlife-habitat {
-        font-size: 12px;
+    .park-description {
+        font-size: 13px;
     }
 
     .action-button {
-        font-size: 12px;
-        padding: 8px 16px;
+        font-size: 11px;
+        padding: 6px 12px;
     }
 }
 
-/* Mobile (below 786px) */
 @media (max-width: 785px) {
-    .wildlife-container {
+    .explore-parks-container {
         padding: 5px;
     }
 
@@ -312,7 +270,6 @@
     .main-content {
         margin-left: 0;
         margin-bottom: 60px;
-        /* Space for the fixed sidebar on mobile */
     }
 
     .header {
@@ -346,7 +303,7 @@
     }
 
     .search-input {
-        padding: 10px 40px 10px 12px;
+        padding: 8px 40px 8px 12px;
         font-size: 12px;
     }
 
@@ -354,25 +311,24 @@
         font-size: 16px;
     }
 
-    .wildlife-grid {
+    .park-grid {
         grid-template-columns: 1fr;
-        /* 1 column for mobile */
     }
 
-    .wildlife-image {
-        height: 120px;
+    .park-image {
+        height: 100px;
     }
 
-    .wildlife-name {
+    .park-name {
         font-size: 14px;
     }
 
-    .wildlife-habitat {
-        font-size: 11px;
+    .park-description {
+        font-size: 12px;
     }
 
     .action-button {
-        font-size: 11px;
-        padding: 6px 12px;
+        font-size: 10px;
+        padding: 5px 10px;
     }
 }

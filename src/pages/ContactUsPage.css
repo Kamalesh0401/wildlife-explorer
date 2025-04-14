@@ -1,5 +1,5 @@
 /* General container styling */
-.wildlife-container {
+.contact-us-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -75,150 +75,157 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 30%;
+    width: 40%;
     height: 100%;
 }
 
-.filter-section {
+.contact-info-section {
     background-color: #2a2a2a;
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
-    flex: 1;
-    transition: box-shadow 0.3s ease;
+    border-left: 4px solid #00c4b4;
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease-out;
 }
 
-.filter-section:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.contact-info-section:hover {
+    box-shadow: 0 6px 12px rgba(0, 196, 180, 0.2);
+    transform: translateY(-5px);
 }
 
 .section-title {
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-transform: uppercase;
-}
-
-.filter-options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.filter-dropdown {
-    background-color: #3a3a3a;
-    border: none;
-    padding: 10px;
     color: #fff;
-    border-radius: 5px;
-    margin-top: 5px;
-    width: 100%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.filter-dropdown:hover {
-    background-color: #444;
+.section-icon {
+    font-size: 20px;
+    color: #00c4b4;
+    animation: pulse 2s infinite;
 }
 
-.filter-dropdown:focus {
-    outline: none;
-    box-shadow: 0 0 5px #00c4b4;
+.contact-info {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.contact-label {
+    font-weight: bold;
+    color: #fff;
+}
+
+.contact-link {
+    color: #00c4b4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #009688;
 }
 
 /* Right section */
 .right-section {
-    width: 70%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.search-bar {
-    position: relative;
-    margin-bottom: 20px;
+.contact-form-section {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
 }
 
-.search-input {
-    width: 100%;
-    padding: 12px 40px 12px 15px;
-    background-color: #2a2a2a;
+.contact-form-section:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #00c4b4;
+    text-transform: uppercase;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.form-input,
+.form-textarea {
+    padding: 10px;
+    background-color: #3a3a3a;
     border: 2px solid #333;
-    border-radius: 25px;
+    border-radius: 5px;
     color: #fff;
     font-size: 14px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.search-input:focus {
+.form-input:focus,
+.form-textarea:focus {
     border-color: #00c4b4;
     box-shadow: 0 0 8px rgba(0, 196, 180, 0.5);
     outline: none;
 }
 
-.search-icon {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #888;
-    transition: color 0.3s ease;
+.form-textarea {
+    resize: vertical;
 }
 
-.search-input:focus+.search-icon {
-    color: #00c4b4;
+.submit-button {
+    background: linear-gradient(90deg, #00c4b4, #009688);
+    border: none;
+    padding: 12px 20px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    align-self: flex-start;
 }
 
-.wildlife-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.submit-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(90deg, #009688, #00c4b4);
+}
+
+.confirmation-message {
+    text-align: center;
     animation: fadeIn 0.5s ease-in;
 }
 
-.wildlife-card {
-    background-color: #3a3a3a;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-}
-
-.wildlife-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-.wildlife-image-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px 10px 0 0;
-}
-
-.wildlife-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.wildlife-card:hover .wildlife-image {
-    transform: scale(1.1);
-}
-
-.wildlife-name {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 10px 0;
+.confirmation-message p {
+    font-size: 16px;
     color: #00c4b4;
-    text-transform: uppercase;
-}
-
-.wildlife-habitat {
-    font-size: 13px;
-    color: #bbb;
-    margin: 5px 0;
+    margin-bottom: 15px;
 }
 
 .action-button {
@@ -231,7 +238,6 @@
     border-radius: 25px;
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
-    margin-top: 10px;
 }
 
 .action-button:hover {
@@ -240,6 +246,18 @@
 }
 
 /* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -247,6 +265,20 @@
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
 
@@ -276,21 +308,30 @@
         font-size: 16px;
     }
 
-    .wildlife-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 columns for tablet */
+    .section-icon {
+        font-size: 18px;
     }
 
-    .wildlife-image {
-        height: 140px;
+    .contact-info {
+        font-size: 13px;
     }
 
-    .wildlife-name {
-        font-size: 16px;
+    .form-title {
+        font-size: 20px;
     }
 
-    .wildlife-habitat {
-        font-size: 12px;
+    .form-input,
+    .form-textarea {
+        font-size: 13px;
+    }
+
+    .submit-button {
+        font-size: 13px;
+        padding: 10px 18px;
+    }
+
+    .confirmation-message p {
+        font-size: 14px;
     }
 
     .action-button {
@@ -301,7 +342,7 @@
 
 /* Mobile (below 786px) */
 @media (max-width: 785px) {
-    .wildlife-container {
+    .contact-us-container {
         padding: 5px;
     }
 
@@ -341,34 +382,38 @@
         width: 100%;
     }
 
-    .search-bar {
-        margin-bottom: 15px;
+    .contact-info-section {
+        padding: 15px;
     }
 
-    .search-input {
-        padding: 10px 40px 10px 12px;
-        font-size: 12px;
-    }
-
-    .search-icon {
+    .section-title {
         font-size: 16px;
     }
 
-    .wildlife-grid {
-        grid-template-columns: 1fr;
-        /* 1 column for mobile */
+    .section-icon {
+        font-size: 16px;
     }
 
-    .wildlife-image {
-        height: 120px;
+    .contact-info {
+        font-size: 12px;
     }
 
-    .wildlife-name {
-        font-size: 14px;
+    .form-title {
+        font-size: 18px;
     }
 
-    .wildlife-habitat {
-        font-size: 11px;
+    .form-input,
+    .form-textarea {
+        font-size: 12px;
+    }
+
+    .submit-button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .confirmation-message p {
+        font-size: 13px;
     }
 
     .action-button {

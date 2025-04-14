@@ -14,7 +14,7 @@ import savannaforest from '../assets/images/forest/savanna-forest.jpg';
 import coniferousforest from '../assets/images/forest/coniferous-forest.jpg';
 import dryforest from '../assets/images/forest/dry-forest.jpg';
 import mediterraneanforest from '../assets/images/forest/mediterranean-forest.jpg';
-import './style.css';
+//import './style.css';
 
 
 import './ForestExplorer.css'; // Import CSS for styling

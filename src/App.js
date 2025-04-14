@@ -2,11 +2,16 @@ import './App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Home from './pages/Home';
-import Homepage from './pages/Homepage';
-import WildlifePage from './pages/WildlifePage';
+import Footer from './components/FooterAdvance';
+//import Homepage from './pages/Homepage';
+//import WildlifePageDetailsPage from './pages/WildlifePageDetailsPage';
+//import WildlifePage from './pages/WildlifePage';
+//import AboutUsPage from './pages/AboutUsPage';
+import ContactUsPage from './pages/ContactUsPage';
+//import ExploreParksPage from './pages/ExploreParksPage';
 import WildlifeGallery from './pages/WildlifeGallery';
 import ThreatsSection from './pages/ThreatsSection';
-import ContactForm from './pages/ContactForm';
+//import ContactForm from './pages/ContactForm';
 import ForestExplorer from './pages/ForestExplorer';
 import HeroSection from './pages/HeroSection';
 import SpeciesEncyclopedia from './pages/SpeciesEncyclopedia';
@@ -32,22 +37,29 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Routes>
-          {/* <Route path="/" element={<WildlifePage />}></Route> */}
-          <Route path="/" element={<Homepage />}></Route>
-          <Route path="/wildlife" element={<WildlifeGallery />}></Route>
-          <Route path="/threat" element={<ThreatsSection />}></Route>
-          <Route path="/contact" element={<ContactForm />}></Route>
-          <Route path="/forestexplorer" element={<ForestExplorer />}></Route>
-          <Route path="/hero" element={<HeroSection />}></Route>
-          <Route path="/quiz" element={<Quiz />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/encyclopedia" element={<SpeciesEncyclopedia />}></Route>
-          <Route path="/endangered" element={<EndangeredSpecies />}></Route>
-          <Route path="/community" element={<Community />}></Route>
-          <Route path="/blogs" element={<Blogs />}></Route>
-          <Route path="/kidscorner" element={<KidsCorner />}></Route>
-        </Routes>
+        <div className="app-container">
+          <Routes>
+            {/* <Route path="/" element={<AboutUsPage />}></Route> */}
+            <Route path="/" element={<ContactUsPage />}></Route>
+            {/* <Route path="/" element={<WildlifePageDetailsPage />}></Route> */}
+            {/* <Route path="/" element={<WildlifePage />}></Route> */}
+            {/* <Route path="/" element={<ExploreParksPage />}></Route> */}
+            {/* <Route path="/" element={<Homepage />}></Route> */}
+            <Route path="/wildlife" element={<WildlifeGallery />}></Route>
+            <Route path="/threat" element={<ThreatsSection />}></Route>
+            {/* <Route path="/contact" element={<ContactForm />}></Route> */}
+            <Route path="/forestexplorer" element={<ForestExplorer />}></Route>
+            <Route path="/hero" element={<HeroSection />}></Route>
+            <Route path="/quiz" element={<Quiz />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/encyclopedia" element={<SpeciesEncyclopedia />}></Route>
+            <Route path="/endangered" element={<EndangeredSpecies />}></Route>
+            <Route path="/community" element={<Community />}></Route>
+            <Route path="/blogs" element={<Blogs />}></Route>
+            <Route path="/kidscorner" element={<KidsCorner />}></Route>
+          </Routes>
+          <Footer />
+        </div>
       </Router>
     </div>
   );
