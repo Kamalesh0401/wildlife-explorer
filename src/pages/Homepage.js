@@ -126,17 +126,17 @@ function HomePage() {
         <div className="homepage-container">
             <div className="body-content">
                 <Sidebar />
-                <div className={`main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
+                <div className={`main-content`}>
                     <div className="header">
                         <h1 className="header-text">WILDLIFE EXPLORER</h1>
                         <p className="tagline">Discover Nature’s Wonders</p>
-                        <button
+                        {/* <button
                             className="mobile-menu"
                             onClick={toggleSidebar}
                             aria-label="Toggle Sidebar"
                         >
                             ≡
-                        </button>
+                        </button> */}
                     </div>
                     <div className="center-main-content">
                         <div className="sidebar-content">

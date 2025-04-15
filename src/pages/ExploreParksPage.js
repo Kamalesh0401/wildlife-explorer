@@ -4,10 +4,13 @@ import forest from '../assets/images/forest.jpg';
 import forest2 from '../assets/images/forest2.jpg';
 import forest3 from '../assets/images/forest3.jpg';
 import './ExploreParksPage.css';
+import { useNavigate } from 'react-router-dom';
 
 function ExploreParksPage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+
+    const naviagte = useNavigate();
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
@@ -117,6 +120,7 @@ function ExploreParksPage() {
                                         <button
                                             className="action-button"
                                             aria-label={`View details for ${park.name}`}
+                                            onClick={() => { naviagte("/parkdetails") }}
                                         >
                                             View Details
                                         </button>

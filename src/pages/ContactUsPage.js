@@ -59,7 +59,7 @@ function ContactUsPage() {
                                 </p>
                                 <p className="contact-info">
                                     <span className="contact-label">Phone:</span>{' '}
-                                    <a href="tel:+1234567890" className="contact-link">
+                                    <a href="tel:+91 8438920788" className="contact-link">
                                         +91 8438920788
                                     </a>
                                 </p>

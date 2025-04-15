@@ -4,11 +4,13 @@ import './WildlifePage.css';
 import deer from '../assets/images/deer.jpg';
 import elephant from '../assets/images/elephant.jpg';
 import roedeer from '../assets/images/roe-deer.jpg';
+import { useNavigate } from 'react-router-dom';
 
 function WildlifePage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
 
+    const naviagte = useNavigate();
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
@@ -117,6 +119,7 @@ function WildlifePage() {
                                         <button
                                             className="action-button"
                                             aria-label={`Learn more about ${animal.name}`}
+                                            onClick={()=>{naviagte("/wildlifedetail")}}
                                         >
                                             Learn More
                                         </button>
