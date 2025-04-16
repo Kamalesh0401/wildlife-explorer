@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
+import Footer from '../components/FooterAdvance';
 import forest from '../assets/images/forest.jpg';
 import forest2 from '../assets/images/forest2.jpg';
 import forest3 from '../assets/images/forest3.jpg';
@@ -52,7 +53,7 @@ function ExploreParksPage() {
 
     return (
         <div className="explore-parks-container">
-            <div className="body-content">
+            <div className="body-content mb-3">
                 <Sidebar />
                 <div className={`main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
                     <div className="header">
@@ -131,6 +132,7 @@ function ExploreParksPage() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

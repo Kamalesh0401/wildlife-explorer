@@ -12,8 +12,6 @@ import ExploreParksPage from './pages/ExploreParksPage';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 
 function App() {
@@ -27,18 +25,18 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div className="app-container">
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/explorepark" element={<ExploreParksPage />} />
-            <Route path="/wildlife" element={<WildlifePage />} />
-            <Route path="/wildlifedetail" element={<WildlifePageDetailsPage />} />
-            <Route path="/parkdetails" element={<ParkDetailsPage />} />
-            <Route path="/aboutus" element={<AboutUsPage />} />
-            <Route path="/contactus" element={<ContactUsPage />} />
-          </Routes>
-          <Footer />
-        </div>
+        {/* <div className="app-container"> */}
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/explorepark" element={<ExploreParksPage />} />
+          <Route path="/wildlife" element={<WildlifePage />} />
+          <Route path="/wildlifedetail" element={<WildlifePageDetailsPage />} />
+          <Route path="/parkdetails" element={<ParkDetailsPage />} />
+          <Route path="/aboutus" element={<AboutUsPage />} />
+          <Route path="/contactus" element={<ContactUsPage />} />
+        </Routes>
+        {/* <Footer /> */}
+        {/* </div> */}
       </Router>
     </div>
   );

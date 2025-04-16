@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
+import Footer from '../components/FooterAdvance';
 import './WildlifePage.css';
 import deer from '../assets/images/deer.jpg';
 import elephant from '../assets/images/elephant.jpg';
@@ -51,7 +52,7 @@ function WildlifePage() {
 
     return (
         <div className="wildlife-container">
-            <div className="body-content">
+            <div className="body-content mb-3">
                 <Sidebar />
                 <div className={`main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
                     <div className="header">
@@ -130,6 +131,7 @@ function WildlifePage() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

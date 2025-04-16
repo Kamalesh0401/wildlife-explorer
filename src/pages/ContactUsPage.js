@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
-import Footer from '../components/Footer';
+import Footer from '../components/FooterAdvance';
 import './ContactUsPage.css';
 
 function ContactUsPage() {
@@ -32,7 +32,7 @@ function ContactUsPage() {
 
     return (
         <div className="contact-us-container">
-            <div className="body-content">
+            <div className="body-content mb-3">
                 <Sidebar />
                 <div className={`main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
                     <div className="header">
@@ -132,6 +132,7 @@ function ContactUsPage() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }
