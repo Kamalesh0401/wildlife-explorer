@@ -91,6 +91,13 @@ function WildlifePage() {
                                         <option value="vulnerable">Vulnerable</option>
                                         <option value="least-concern">Least Concern</option>
                                     </select>
+                                    <label htmlFor="status">Diet :</label>
+                                    <select id="status" className="filter-dropdown">
+                                        <option value="">All</option>
+                                        <option value="herbivore">Herbivore</option>
+                                        <option value="carnivore">Carnivore</option>
+                                        <option value="omnivore">Omnivore</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -120,7 +127,7 @@ function WildlifePage() {
                                         <button
                                             className="action-button"
                                             aria-label={`Learn more about ${animal.name}`}
-                                            onClick={()=>{naviagte("/wildlifedetail")}}
+                                            onClick={() => { naviagte("/wildlifedetail") }}
                                         >
                                             Learn More
                                         </button>

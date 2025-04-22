@@ -116,7 +116,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
-import parkImage from '../assets/images/deer.jpg';
+import parkImage from '../assets/images/jungle_forest.jpg';
 import './ParkDetailsPage.css';
 
 function ParkDetailsPage() {
