@@ -137,7 +137,6 @@ function WildlifePageDetailsPage() {
         navigate('/wildlife');
     };
 
-    // Mock data for the current animal (replace with API call)
     const animal = {
         id: 'barasingha',
         name: 'Barasingha',
