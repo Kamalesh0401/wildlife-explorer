@@ -117,13 +117,39 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import deer from '../assets/images/deer.jpg';
 import './WildlifePageDetailsPage.css';
+import { Buildimg } from '../utlis';
 
 function WildlifePageDetailsPage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [likes, setLikes] = useState(0);
+    const [animal, setAnimal] = useState([]);
     const [relatedAnimals, setRelatedAnimals] = useState([]);
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
-    const { animalId } = useParams(); // Assuming dynamic routing (e.g., /wildlife/:animalId)
+    const { id } = useParams(); // Assuming dynamic routing (e.g., /wildlife/:animalId)
+
+    // Fetch animal details
+    useEffect(() => {
+        const fetchAnimalDetails = async () => {
+            try {
+                const options = {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }
+                const res = await fetch(`http://localhost:6003/api/animals/id/${id}`, options);
+                const response = await res.json();
+                console.log("Response of Details : ", response);
+                setAnimal(response);
+                setLoading(false);
+            } catch (err) {
+                //setError('Failed to load animal details');
+                setLoading(false);
+            }
+        };
+        fetchAnimalDetails();
+    }, [id]);
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
@@ -137,23 +163,23 @@ function WildlifePageDetailsPage() {
         navigate('/wildlife');
     };
 
-    const animal = {
-        id: 'barasingha',
-        name: 'Barasingha',
-        scientificName: 'Rucervus duvaucelii',
-        habitat: 'Wetland',
-        description:
-            'The barasingha, also called swamp deer, is a deer species distributed in the Indian subcontinent. Populations in northern and central India are fragmented, and two isolated populations occur in southwestern Nepal and Assam, India. Known for its multi-tined antlers, it thrives in wetland habitats.',
-        conservationStatus: 'Vulnerable',
-        populationTrend: 'Decreasing',
-        geographicRange: ['Northern India', 'Nepal'],
-        threats: ['Habitat loss', 'Poaching', 'Human-wildlife conflict'],
-        weight: '170-280 kg',
-        lifespan: '15-20 years',
-        diet: 'Herbivore (grasses, aquatic plants)',
-        foundIn: ['Manas National Park', 'Kaziranga National Park', 'Dudhwa National Park'],
-        image: deer,
-    };
+    // const animal = {
+    //     id: 'barasingha',
+    //     name: 'Barasingha',
+    //     scientificName: 'Rucervus duvaucelii',
+    //     habitat: 'Wetland',
+    //     description:
+    //         'The barasingha, also called swamp deer, is a deer species distributed in the Indian subcontinent. Populations in northern and central India are fragmented, and two isolated populations occur in southwestern Nepal and Assam, India. Known for its multi-tined antlers, it thrives in wetland habitats.',
+    //     conservationStatus: 'Vulnerable',
+    //     populationTrend: 'Decreasing',
+    //     geographicRange: ['Northern India', 'Nepal'],
+    //     threats: ['Habitat loss', 'Poaching', 'Human-wildlife conflict'],
+    //     weight: '170-280 kg',
+    //     lifespan: '15-20 years',
+    //     diet: 'Herbivore (grasses, aquatic plants)',
+    //     foundIn: ['Manas National Park', 'Kaziranga National Park', 'Dudhwa National Park'],
+    //     image: deer,
+    // };
 
     // Mock data for all animals (replace with API call)
     const allAnimals = [
@@ -165,17 +191,17 @@ function WildlifePageDetailsPage() {
     ];
 
     // Logic to fetch related animals based on habitat
-    useEffect(() => {
-        const fetchRelatedAnimals = () => {
-            // Filter animals with the same habitat, excluding the current animal
-            const related = allAnimals
-                .filter((a) => a.habitat === animal.habitat && a.id !== animal.id)
-                .slice(0, 3); // Limit to 3 related animals
-            setRelatedAnimals(related);
-        };
+    // useEffect(() => {
+    //     const fetchRelatedAnimals = () => {
+    //         // Filter animals with the same habitat, excluding the current animal
+    //         const related = allAnimals
+    //             .filter((a) => a.habitat === animal.habitat && a.id !== animal.id)
+    //             .slice(0, 3); // Limit to 3 related animals
+    //         setRelatedAnimals(related);
+    //     };
 
-        fetchRelatedAnimals();
-    }, [animal.id, animal.habitat]);
+    //     fetchRelatedAnimals();
+    // }, [animal._id, animal.habitat]);
 
     // useEffect(() => {
     //     const fetchRelatedAnimals = async () => {
@@ -213,7 +239,7 @@ function WildlifePageDetailsPage() {
                             <div className="found-in-section">
                                 <h3 className="section-title">Found In</h3>
                                 <ul className="found-in-list">
-                                    {animal.foundIn.map((park, index) => (
+                                    {animal?.foundIn?.map((park, index) => (
                                         <li key={index} className="found-in-item">
                                             {park}
                                         </li>
@@ -224,7 +250,7 @@ function WildlifePageDetailsPage() {
                                 <h3 className="section-title">Related Habitat Animals</h3>
                                 {relatedAnimals.length > 0 ? (
                                     <div className="related-animals-list">
-                                        {relatedAnimals.map((relatedAnimal) => (
+                                        {relatedAnimals?.map((relatedAnimal) => (
                                             <div
                                                 key={relatedAnimal.id}
                                                 className="related-animal-item"
@@ -235,7 +261,7 @@ function WildlifePageDetailsPage() {
                                                 aria-label={`View details for ${relatedAnimal.name}`}
                                             >
                                                 <img
-                                                    src={relatedAnimal.image}
+                                                    src={Buildimg(relatedAnimal.image)}
                                                     alt={relatedAnimal.name}
                                                     className="related-animal-image"
                                                 />
@@ -250,7 +276,7 @@ function WildlifePageDetailsPage() {
                         </div>
                         <div className="right-section">
                             <div className="main-image">
-                                <img src={animal.image} alt={animal.name} className="animal-image" />
+                                <img src={Buildimg(animal.image)} alt={animal.name} className="animal-image" />
                             </div>
                             <div className="animal-info">
                                 <h2 className="animal-name">{animal.name}</h2>
@@ -268,7 +294,7 @@ function WildlifePageDetailsPage() {
                                     </p>
                                     <p>
                                         <span className="detail-label">Geographic Range:</span>{' '}
-                                        {animal.geographicRange.join(', ')}
+                                        {animal?.geographicRange?.join(', ')}
                                     </p>
                                     {/* <p>
                                         <span className="detail-label">Threats:</span> {animal.threats.join(', ')}

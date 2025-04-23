@@ -47,6 +47,11 @@ function WildlifePage() {
         }
     };
 
+    // Handle animal click
+    const handleAnimalClick = (id) => {
+        naviagte(`/wildlifedetail/${encodeURIComponent(id)}`);
+    };
+
     return (
         <>
             <div className="wildlife-container">
@@ -126,7 +131,7 @@ function WildlifePage() {
                                             <button
                                                 className="action-button"
                                                 aria-label={`Learn more about ${animal.name}`}
-                                                onClick={() => { naviagte("/wildlifedetail") }}
+                                                onClick={() => { handleAnimalClick(animal._id) }}
                                             >
                                                 Learn More
                                             </button>

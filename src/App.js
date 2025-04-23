@@ -9,6 +9,7 @@ import WildlifePage from './pages/WildlifePage';
 import AboutUsPage from './pages/AboutUsPage';
 import ContactUsPage from './pages/ContactUsPage';
 import ExploreParksPage from './pages/ExploreParksPage';
+import ForestExplorer from './pages/ForestPage';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -28,9 +29,10 @@ function App() {
         {/* <div className="app-container"> */}
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/forest" element={<ForestExplorer />} />
           <Route path="/explorepark" element={<ExploreParksPage />} />
           <Route path="/wildlife" element={<WildlifePage />} />
-          <Route path="/wildlifedetail" element={<WildlifePageDetailsPage />} />
+          <Route path="//wildlifedetail/:id" element={<WildlifePageDetailsPage />} />
           <Route path="/parkdetails" element={<ParkDetailsPage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />
           <Route path="/contactus" element={<ContactUsPage />} />
