@@ -394,7 +394,7 @@
 } */
 
 
-.wildlife-container {
+.wd-wildlife-dtls-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -407,12 +407,12 @@
     overflow-y: auto;
 }
 
-.body-content {
+.wd-wildlife-dtls-body-content {
     display: flex;
     flex: 1;
 }
 
-.header {
+.wd-wildlife-dtls-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -423,7 +423,7 @@
     animation: fadeIn 0.5s ease-in;
 }
 
-.header-text {
+.wd-wildlife-dtls-header-text {
     font-size: 32px;
     font-weight: bold;
     margin: 0;
@@ -431,7 +431,7 @@
     color: #00c4b4;
 }
 
-.close-button {
+.wd-wildlife-dtls-close-button {
     background: none;
     border: none;
     color: #fff;
@@ -440,26 +440,26 @@
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.close-button:hover {
+.wd-wildlife-dtls-close-button:hover {
     transform: scale(1.2);
     color: #00a89a;
 }
 
-.main-content {
+.wd-wildlife-dtls-main-content {
     display: flex;
     flex-direction: column;
     flex: 1;
     margin-left: 60px;
 }
 
-.center-main-content {
+.wd-wildlife-dtls-center-main-content {
     display: flex;
     flex: 1;
     gap: 30px;
     animation: slideIn 0.5s ease-out;
 }
 
-.sidebar-content {
+.wd-wildlife-dtls-sidebar-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -467,7 +467,7 @@
     min-width: 250px;
 }
 
-.found-in-section {
+.wd-wildlife-dtls-found-in-section {
     background-color: #2a2a2a;
     padding: 20px;
     border-radius: 10px;
@@ -475,12 +475,12 @@
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.found-in-section:hover {
+.wd-wildlife-dtls-found-in-section:hover {
     box-shadow: 0 6px 12px rgba(0, 196, 180, 0.2);
     transform: translateY(-5px);
 }
 
-.section-title {
+.wd-wildlife-dtls-section-title {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -488,13 +488,13 @@
     text-transform: uppercase;
 }
 
-.found-in-list {
+.wd-wildlife-dtls-found-in-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.found-in-item {
+.wd-wildlife-dtls-found-in-item {
     font-size: 15px;
     color: #ccc;
     margin-bottom: 10px;
@@ -502,11 +502,11 @@
     cursor: pointer;
 }
 
-.found-in-item:hover {
+.wd-wildlife-dtls-found-in-item:hover {
     color: #00c4b4;
 }
 
-.related-animals-section {
+.wd-wildlife-dtls-related-animals-section {
     background-color: #2a2a2a;
     padding: 20px;
     border-radius: 10px;
@@ -514,18 +514,18 @@
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.related-animals-section:hover {
+.wd-wildlife-dtls-related-animals-section:hover {
     box-shadow: 0 6px 12px rgba(0, 196, 180, 0.2);
     transform: translateY(-5px);
 }
 
-.related-animals-list {
+.wd-wildlife-dtls-related-animals-list {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
 }
 
-.related-animal-item {
+.wd-wildlife-dtls-related-animal-item {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -539,12 +539,12 @@
     max-width: 250px;
 }
 
-.related-animal-item:hover {
+.wd-wildlife-dtls-related-animal-item:hover {
     transform: translateX(5px);
     background-color: #4a4a4a;
 }
 
-.related-animal-image {
+.wd-wildlife-dtls-related-animal-image {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -553,34 +553,34 @@
     transition: border-color 0.3s ease;
 }
 
-.related-animal-item:hover .related-animal-image {
+.wd-wildlife-dtls-related-animal-item:hover .wd-wildlife-dtls-related-animal-image {
     border-color: #00a89a;
 }
 
-.related-animal-name {
+.wd-wildlife-dtls-related-animal-name {
     font-size: 15px;
     color: #ccc;
     transition: color 0.3s ease;
 }
 
-.related-animal-item:hover .related-animal-name {
+.wd-wildlife-dtls-related-animal-item:hover .wd-wildlife-dtls-related-animal-name {
     color: #00c4b4;
 }
 
-.no-related-text {
+.wd-wildlife-dtls-no-related-text {
     font-size: 14px;
     color: #888;
     text-align: center;
 }
 
-.right-section {
+.wd-wildlife-dtls-right-section {
     width: 70%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.main-image {
+.wd-wildlife-dtls-main-image {
     height: 450px;
     border-radius: 15px;
     overflow: hidden;
@@ -588,29 +588,29 @@
     transition: transform 0.3s ease;
 }
 
-.animal-image {
+.wd-wildlife-dtls-animal-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.main-image:hover .animal-image {
+.wd-wildlife-dtls-main-image:hover .wd-wildlife-dtls-animal-image {
     transform: scale(1.05);
 }
 
-.animal-info {
+.wd-wildlife-dtls-animal-info {
     background-color: #2a2a2a;
     padding: 25px;
     border-radius: 15px;
     transition: box-shadow 0.3s ease;
 }
 
-.animal-info:hover {
+.wd-wildlife-dtls-animal-info:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-.animal-name {
+.wd-wildlife-dtls-animal-name {
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -618,44 +618,44 @@
     text-transform: uppercase;
 }
 
-.scientific-name {
+.wd-wildlife-dtls-scientific-name {
     font-size: 16px;
     font-style: italic;
     color: #888;
     margin-bottom: 15px;
 }
 
-.animal-description {
+.wd-wildlife-dtls-animal-description {
     font-size: 16px;
     line-height: 1.8;
     color: #bbb;
     margin-bottom: 20px;
 }
 
-.animal-details {
+.wd-wildlife-dtls-animal-details {
     margin-bottom: 20px;
     display: grid;
     gap: 10px;
 }
 
-.animal-details p {
+.wd-wildlife-dtls-animal-details p {
     margin: 0;
     font-size: 15px;
 }
 
-.detail-label {
+.wd-wildlife-dtls-detail-label {
     font-weight: bold;
     color: #fff;
     margin-right: 5px;
 }
 
-.like-section {
+.wd-wildlife-dtls-like-section {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.like-button {
+.wd-wildlife-dtls-like-button {
     background: linear-gradient(90deg, #00c4b4, #009688);
     border: none;
     padding: 10px 20px;
@@ -668,12 +668,12 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-.like-button:hover {
+.wd-wildlife-dtls-like-button:hover {
     transform: translateY(-3px);
     background: linear-gradient(90deg, #009688, #00c4b4);
 }
 
-.like-count {
+.wd-wildlife-dtls-like-count {
     font-size: 16px;
     color: #ccc;
     font-weight: bold;
@@ -703,197 +703,197 @@
 
 /* Responsive Design Enhancements */
 @media (min-width: 1200px) {
-    .main-image {
+    .wd-wildlife-dtls-main-image {
         height: 500px;
     }
 
-    .sidebar-content {
+    .wd-wildlife-dtls-sidebar-content {
         width: 25%;
     }
 
-    .right-section {
+    .wd-wildlife-dtls-right-section {
         width: 75%;
     }
 
-    .related-animal-item {
+    .wd-wildlife-dtls-related-animal-item {
         min-width: 220px;
     }
 }
 
 @media (min-width: 1024px) and (max-width: 1199px) {
-    .wildlife-container {
+    .wd-wildlife-dtls-container {
         padding: 15px;
     }
 
-    .header-text {
+    .wd-wildlife-dtls-header-text {
         font-size: 28px;
     }
 
-    .sidebar-content {
+    .wd-wildlife-dtls-sidebar-content {
         width: 35%;
         min-width: 220px;
     }
 
-    .right-section {
+    .wd-wildlife-dtls-right-section {
         width: 65%;
     }
 
-    .main-image {
+    .wd-wildlife-dtls-main-image {
         height: 400px;
     }
 
-    .animal-name {
+    .wd-wildlife-dtls-animal-name {
         font-size: 32px;
     }
 
-    .animal-description {
+    .wd-wildlife-dtls-animal-description {
         font-size: 15px;
     }
 
-    .related-animal-item {
+    .wd-wildlife-dtls-related-animal-item {
         min-width: 200px;
     }
 }
 
 @media (max-width: 1023px) and (min-width: 768px) {
-    .wildlife-container {
+    .wd-wildlife-dtls-container {
         padding: 10px;
     }
 
-    .header-text {
+    .wd-wildlife-dtls-header-text {
         font-size: 24px;
     }
 
-    .close-button {
+    .wd-wildlife-dtls-close-button {
         font-size: 24px;
     }
 
-    .center-main-content {
+    .wd-wildlife-dtls-center-main-content {
         flex-direction: column;
         gap: 20px;
     }
 
-    .sidebar-content {
+    .wd-wildlife-dtls-sidebar-content {
         width: 100%;
     }
 
-    .right-section {
+    .wd-wildlife-dtls-right-section {
         width: 100%;
     }
 
-    .main-image {
+    .wd-wildlife-dtls-main-image {
         height: 350px;
     }
 
-    .animal-name {
+    .wd-wildlife-dtls-animal-name {
         font-size: 28px;
     }
 
-    .animal-description {
+    .wd-wildlife-dtls-animal-description {
         font-size: 14px;
     }
 
-    .related-animals-list {
+    .wd-wildlife-dtls-related-animals-list {
         flex-direction: row;
         justify-content: space-around;
     }
 
-    .related-animal-item {
+    .wd-wildlife-dtls-related-animal-item {
         min-width: 180px;
         max-width: 200px;
     }
 
-    .related-animal-image {
+    .wd-wildlife-dtls-related-animal-image {
         width: 40px;
         height: 40px;
     }
 
-    .related-animal-name {
+    .wd-wildlife-dtls-related-animal-name {
         font-size: 14px;
     }
 }
 
 @media (max-width: 767px) {
-    .wildlife-container {
+    .wd-wildlife-dtls-container {
         padding: 10px;
     }
 
-    .body-content {
+    .wd-wildlife-dtls-body-content {
         flex-direction: column;
     }
 
-    .main-content {
+    .wd-wildlife-dtls-main-content {
         margin-left: 0;
         margin-bottom: 60px;
     }
 
-    .header-text {
+    .wd-wildlife-dtls-header-text {
         font-size: 20px;
     }
 
-    .close-button {
+    .wd-wildlife-dtls-close-button {
         font-size: 20px;
     }
 
-    .center-main-content {
+    .wd-wildlife-dtls-center-main-content {
         flex-direction: column;
         gap: 15px;
     }
 
-    .sidebar-content {
+    .wd-wildlife-dtls-sidebar-content {
         width: 100%;
     }
 
-    .right-section {
+    .wd-wildlife-dtls-right-section {
         width: 100%;
     }
 
-    .main-image {
+    .wd-wildlife-dtls-main-image {
         height: 250px;
     }
 
-    .animal-name {
+    .wd-wildlife-dtls-animal-name {
         font-size: 24px;
     }
 
-    .scientific-name {
+    .wd-wildlife-dtls-scientific-name {
         font-size: 14px;
     }
 
-    .animal-description {
+    .wd-wildlife-dtls-animal-description {
         font-size: 13px;
     }
 
-    .animal-details p {
+    .wd-wildlife-dtls-animal-details p {
         font-size: 14px;
     }
 
-    .related-animals-list {
+    .wd-wildlife-dtls-related-animals-list {
         flex-direction: column;
         align-items: center;
     }
 
-    .related-animal-item {
+    .wd-wildlife-dtls-related-animal-item {
         min-width: 100%;
         max-width: 100%;
         justify-content: center;
     }
 
-    .related-animal-image {
+    .wd-wildlife-dtls-related-animal-image {
         width: 35px;
         height: 35px;
     }
 
-    .related-animal-name {
+    .wd-wildlife-dtls-related-animal-name {
         font-size: 13px;
     }
 
-    .like-button {
+    .wd-wildlife-dtls-like-button {
         font-size: 14px;
         padding: 8px 16px;
     }
 
-    .like-count {
+    .wd-wildlife-dtls-like-count {
         font-size: 14px;
     }
 }

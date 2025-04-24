@@ -1,4 +1,4 @@
-.wd-park-container {
+.wd-forest-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -11,12 +11,12 @@
     overflow-y: auto;
 }
 
-.wd-park-body-content {
+.wd-forest-body-content {
     display: flex;
     flex: 1;
 }
 
-.wd-park-header {
+.wd-forest-header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -27,7 +27,7 @@
     position: relative;
 }
 
-.wd-park-header-text {
+.wd-forest-header-text {
     font-size: 28px;
     font-weight: bold;
     margin: 0;
@@ -35,7 +35,7 @@
     letter-spacing: 1px;
 }
 
-.wd-park-mobile-menu {
+.wd-forest-mobile-menu {
     display: none;
     background: none;
     border: none;
@@ -48,24 +48,24 @@
     transition: transform 0.2s ease;
 }
 
-.wd-park-mobile-menu:hover {
+.wd-forest-mobile-menu:hover {
     transform: scale(1.2);
 }
 
-.wd-park-main-content {
+.wd-forest-main-content {
     display: flex;
     flex-direction: column;
     flex: 1;
     margin-left: 60px;
 }
 
-.wd-park-center-main-content {
+.wd-forest-center-main-content {
     display: flex;
     flex: 1;
     gap: 20px;
 }
 
-.wd-park-sidebar-content {
+.wd-forest-sidebar-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -73,7 +73,7 @@
     height: 100%;
 }
 
-.wd-park-filter-section {
+.wd-forest-info-section {
     background-color: #2a2a2a;
     padding: 15px;
     border-radius: 10px;
@@ -81,52 +81,37 @@
     transition: box-shadow 0.3s ease;
 }
 
-.wd-park-filter-section:hover {
+.wd-forest-info-section:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.wd-park-section-title {
+.wd-forest-section-title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
-.wd-park-filter-options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.wd-forest-info-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 5px 0;
+    color: #888;
 }
 
-.wd-park-filter-dropdown {
-    background-color: #3a3a3a;
-    border: none;
-    padding: 8px;
-    color: #fff;
-    border-radius: 5px;
-    margin-top: 5px;
-    width: 100%;
-    cursor: pointer;
-}
-
-.wd-park-filter-dropdown:focus {
-    outline: none;
-    box-shadow: 0 0 5px #00c4b4;
-}
-
-.wd-park-right-section {
+.wd-forest-right-section {
     width: 70%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.wd-park-search-bar {
+.wd-forest-search-bar {
     position: relative;
     margin-bottom: 20px;
 }
 
-.wd-park-search-input {
+.wd-forest-search-input {
     width: 100%;
     padding: 10px 40px 10px 15px;
     background-color: #2a2a2a;
@@ -136,12 +121,12 @@
     font-size: 14px;
 }
 
-.wd-park-search-input:focus {
+.wd-forest-search-input:focus {
     outline: none;
     box-shadow: 0 0 5px #00c4b4;
 }
 
-.wd-park-search-icon {
+.wd-forest-search-icon {
     position: absolute;
     right: 10px;
     top: 50%;
@@ -150,13 +135,13 @@
     color: #888;
 }
 
-.wd-park-park-grid {
+.wd-forest-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-.wd-park-park-card {
+.wd-forest-card {
     background-color: #3a3a3a;
     padding: 15px;
     border-radius: 5px;
@@ -164,12 +149,12 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.wd-park-park-card:hover {
+.wd-forest-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.wd-park-park-image {
+.wd-forest-image {
     width: 100%;
     height: 150px;
     object-fit: cover;
@@ -177,25 +162,21 @@
     margin-bottom: 10px;
 }
 
-.wd-park-park-name {
+.wd-forest-name {
     font-size: 16px;
     font-weight: bold;
     margin: 5px 0;
+    color: #00c4b4;
 }
 
-.wd-park-park-location {
-    font-size: 12px;
-    color: #888;
-    margin: 5px 0;
-}
-
-.wd-park-park-description {
+.wd-forest-description {
     font-size: 14px;
     line-height: 1.5;
     margin: 5px 0;
+    color: #888;
 }
 
-.wd-park-action-button {
+.wd-forest-action-button {
     background-color: #00c4b4;
     border: none;
     padding: 8px 15px;
@@ -207,126 +188,133 @@
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.wd-park-action-button:hover {
+.wd-forest-action-button:hover {
     background-color: #00a89a;
     transform: scale(1.05);
 }
 
+.wd-forest-additional-info {
+    margin-top: 20px;
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 10px;
+}
+
 @media (min-width: 786px) and (max-width: 1024px) {
-    .wd-park-main-content {
+    .wd-forest-main-content {
         margin-left: 60px;
     }
 
-    .wd-park-center-main-content {
+    .wd-forest-center-main-content {
         gap: 15px;
     }
 
-    .wd-park-sidebar-content {
+    .wd-forest-sidebar-content {
         width: 35%;
         min-width: 280px;
     }
 
-    .wd-park-right-section {
+    .wd-forest-right-section {
         width: 65%;
         min-width: 400px;
     }
 
-    .wd-park-section-title {
+    .wd-forest-section-title {
         font-size: 16px;
     }
 
-    .wd-park-park-grid {
+    .wd-forest-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .wd-park-park-image {
+    .wd-forest-image {
         height: 120px;
     }
 
-    .wd-park-park-name {
+    .wd-forest-name {
         font-size: 14px;
     }
 
-    .wd-park-park-description {
+    .wd-forest-description {
         font-size: 13px;
     }
 
-    .wd-park-action-button {
+    .wd-forest-action-button {
         font-size: 11px;
         padding: 6px 12px;
     }
 }
 
 @media (max-width: 785px) {
-    .wd-park-container {
+    .wd-forest-container {
         padding: 5px;
     }
 
-    .wd-park-body-content {
+    .wd-forest-body-content {
         flex-direction: column;
     }
 
-    .wd-park-main-content {
+    .wd-forest-main-content {
         margin-left: 0;
         margin-bottom: 60px;
     }
 
-    .wd-park-header {
+    .wd-forest-header {
         padding: 10px;
     }
 
-    .wd-park-header-text {
+    .wd-forest-header-text {
         font-size: 20px;
     }
 
-    .wd-park-mobile-menu {
+    .wd-forest-mobile-menu {
         display: block;
     }
 
-    .wd-park-center-main-content {
+    .wd-forest-center-main-content {
         flex-direction: column;
         gap: 10px;
     }
 
-    .wd-park-sidebar-content {
+    .wd-forest-sidebar-content {
         width: 100%;
         height: auto;
     }
 
-    .wd-park-right-section {
+    .wd-forest-right-section {
         width: 100%;
     }
 
-    .wd-park-search-bar {
+    .wd-forest-search-bar {
         margin-bottom: 15px;
     }
 
-    .wd-park-search-input {
+    .wd-forest-search-input {
         padding: 8px 40px 8px 12px;
         font-size: 12px;
     }
 
-    .wd-park-search-icon {
+    .wd-forest-search-icon {
         font-size: 16px;
     }
 
-    .wd-park-park-grid {
+    .wd-forest-grid {
         grid-template-columns: 1fr;
     }
 
-    .wd-park-park-image {
+    .wd-forest-image {
         height: 100px;
     }
 
-    .wd-park-park-name {
+    .wd-forest-name {
         font-size: 14px;
     }
 
-    .wd-park-park-description {
+    .wd-forest-description {
         font-size: 12px;
     }
 
-    .wd-park-action-button {
+    .wd-forest-action-button {
         font-size: 10px;
         padding: 5px 10px;
     }

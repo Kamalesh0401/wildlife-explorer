@@ -342,8 +342,10 @@
     }
 } */
 
+
+
 /* General container styling */
-.about-us-container {
+.wd-aboutpage-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -357,13 +359,13 @@
 }
 
 /* Body content */
-.body-content {
+.wd-aboutpage-body-content {
     display: flex;
     flex: 1;
 }
 
 /* Header styling */
-.header {
+.wd-aboutpage-header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -374,7 +376,7 @@
     position: relative;
 }
 
-.header-text {
+.wd-aboutpage-header-text {
     font-size: 28px;
     font-weight: bold;
     margin: 0;
@@ -382,7 +384,7 @@
     letter-spacing: 1px;
 }
 
-.mobile-menu {
+.wd-aboutpage-mobile-menu {
     display: none;
     background: none;
     border: none;
@@ -395,12 +397,12 @@
     transition: transform 0.2s ease;
 }
 
-.mobile-menu:hover {
+.wd-aboutpage-mobile-menu:hover {
     transform: scale(1.2);
 }
 
 /* Main content */
-.main-content {
+.wd-aboutpage-main-content {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -408,14 +410,14 @@
     /* Account for the Sidebar component's width */
 }
 
-.center-main-content {
+.wd-aboutpage-center-main-content {
     display: flex;
     flex: 1;
     gap: 20px;
 }
 
 /* Sidebar content */
-.sidebar-content {
+.wd-aboutpage-sidebar-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -423,25 +425,21 @@
     height: 100%;
 }
 
-.mission-section {
-    /* background: linear-gradient(rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.9)), url('/src/assets/images/forest.jpg');
-    background-size: cover;
-    background-position: center; */
+.wd-aboutpage-mission-section {
     background-color: #2a2a2a;
     padding: 20px;
     border-radius: 10px;
-    /* border-left: 4px solid #00c4b4; */
     transition: all 0.3s ease;
     animation: slideIn 0.5s ease-out;
     justify-items: center;
 }
 
-.mission-section:hover {
+.wd-aboutpage-mission-section:hover {
     box-shadow: 0 6px 12px rgba(0, 196, 180, 0.2);
     transform: translateY(-5px);
 }
 
-.mission-button {
+.wd-aboutpage-mission-button {
     background: linear-gradient(90deg, #00c4b4, #009688);
     border: none;
     padding: 8px 16px;
@@ -454,12 +452,12 @@
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.mission-button:hover {
+.wd-aboutpage-mission-button:hover {
     transform: translateY(-2px);
     background: linear-gradient(90deg, #009688, #00c4b4);
 }
 
-.section-title {
+.wd-aboutpage-section-title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -470,13 +468,13 @@
     gap: 8px;
 }
 
-.section-icon {
+.wd-aboutpage-section-icon {
     font-size: 20px;
     color: #00c4b4;
     animation: pulse 2s infinite;
 }
 
-.mission-statement {
+.wd-aboutpage-mission-statement {
     font-size: 14px;
     line-height: 1.7;
     color: #ccc;
@@ -484,25 +482,25 @@
 }
 
 /* Right section */
-.right-section {
+.wd-aboutpage-right-section {
     width: 60%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.purpose-section {
+.wd-aboutpage-purpose-section {
     background-color: #2a2a2a;
     padding: 20px;
     border-radius: 10px;
     transition: box-shadow 0.3s ease;
 }
 
-.purpose-section:hover {
+.wd-aboutpage-purpose-section:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.purpose-title {
+.wd-aboutpage-purpose-title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -510,24 +508,24 @@
     text-transform: uppercase;
 }
 
-.purpose-text {
+.wd-aboutpage-purpose-text {
     font-size: 14px;
     line-height: 1.6;
     color: #bbb;
 }
 
-.team-section {
+.wd-aboutpage-team-section {
     background-color: #2a2a2a;
     padding: 20px;
     border-radius: 10px;
     transition: box-shadow 0.3s ease;
 }
 
-.team-section:hover {
+.wd-aboutpage-team-section:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.team-title {
+.wd-aboutpage-team-title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -535,14 +533,14 @@
     text-transform: uppercase;
 }
 
-.team-grid {
+.wd-aboutpage-team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     animation: fadeIn 0.5s ease-in;
 }
 
-.team-card {
+.wd-aboutpage-team-card {
     background-color: #3a3a3a;
     padding: 15px;
     border-radius: 10px;
@@ -551,29 +549,29 @@
     overflow: hidden;
 }
 
-.team-card:hover {
+.wd-aboutpage-team-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-.team-image-container {
+.wd-aboutpage-team-image-container {
     position: relative;
     overflow: hidden;
     border-radius: 10px 10px 0 0;
 }
 
-.team-image {
+.wd-aboutpage-team-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.team-card:hover .team-image {
+.wd-aboutpage-team-card:hover .wd-aboutpage-team-image {
     transform: scale(1.1);
 }
 
-.team-name {
+.wd-aboutpage-team-name {
     font-size: 18px;
     font-weight: bold;
     margin: 10px 0;
@@ -581,7 +579,7 @@
     text-transform: uppercase;
 }
 
-.team-role {
+.wd-aboutpage-team-role {
     font-size: 14px;
     color: #bbb;
     margin: 5px 0;
@@ -628,144 +626,144 @@
 
 /* Tablet (786px - 1024px) */
 @media (min-width: 786px) and (max-width: 1024px) {
-    .main-content {
+    .wd-aboutpage-main-content {
         margin-left: 60px;
     }
 
-    .center-main-content {
+    .wd-aboutpage-center-main-content {
         gap: 15px;
     }
 
-    .sidebar-content {
+    .wd-aboutpage-sidebar-content {
         width: 35%;
         min-width: 280px;
     }
 
-    .right-section {
+    .wd-aboutpage-right-section {
         width: 65%;
         min-width: 400px;
     }
 
-    .section-title {
+    .wd-aboutpage-section-title {
         font-size: 16px;
     }
 
-    .section-icon {
+    .wd-aboutpage-section-icon {
         font-size: 18px;
     }
 
-    .mission-statement {
+    .wd-aboutpage-mission-statement {
         font-size: 13px;
     }
 
-    .purpose-title,
-    .team-title {
+    .wd-aboutpage-purpose-title,
+    .wd-aboutpage-team-title {
         font-size: 20px;
     }
 
-    .purpose-text {
+    .wd-aboutpage-purpose-text {
         font-size: 13px;
     }
 
-    .team-grid {
+    .wd-aboutpage-team-grid {
         grid-template-columns: repeat(2, 1fr);
         /* 2 columns for tablet */
     }
 
-    .team-image {
+    .wd-aboutpage-team-image {
         height: 160px;
     }
 
-    .team-name {
+    .wd-aboutpage-team-name {
         font-size: 16px;
     }
 
-    .team-role {
+    .wd-aboutpage-team-role {
         font-size: 13px;
     }
 }
 
 /* Mobile (below 786px) */
 @media (max-width: 785px) {
-    .about-us-container {
+    .wd-aboutpage-container {
         padding: 5px;
     }
 
-    .body-content {
+    .wd-aboutpage-body-content {
         flex-direction: column;
     }
 
-    .main-content {
+    .wd-aboutpage-main-content {
         margin-left: 0;
         margin-bottom: 60px;
         /* Space for the fixed sidebar on mobile */
     }
 
-    .header {
+    .wd-aboutpage-header {
         padding: 10px;
     }
 
-    .header-text {
+    .wd-aboutpage-header-text {
         font-size: 20px;
     }
 
-    .mobile-menu {
+    .wd-aboutpage-mobile-menu {
         display: block;
     }
 
-    .center-main-content {
+    .wd-aboutpage-center-main-content {
         flex-direction: column;
         gap: 10px;
     }
 
-    .sidebar-content {
+    .wd-aboutpage-sidebar-content {
         width: 100%;
         height: auto;
     }
 
-    .right-section {
+    .wd-aboutpage-right-section {
         width: 100%;
     }
 
-    .mission-section {
+    .wd-aboutpage-mission-section {
         padding: 15px;
     }
 
-    .section-title {
+    .wd-aboutpage-section-title {
         font-size: 16px;
     }
 
-    .section-icon {
+    .wd-aboutpage-section-icon {
         font-size: 16px;
     }
 
-    .mission-statement {
+    .wd-aboutpage-mission-statement {
         font-size: 12px;
     }
 
-    .purpose-title,
-    .team-title {
+    .wd-aboutpage-purpose-title,
+    .wd-aboutpage-team-title {
         font-size: 18px;
     }
 
-    .purpose-text {
+    .wd-aboutpage-purpose-text {
         font-size: 12px;
     }
 
-    .team-grid {
+    .wd-aboutpage-team-grid {
         grid-template-columns: 1fr;
         /* 1 column for mobile */
     }
 
-    .team-image {
+    .wd-aboutpage-team-image {
         height: 140px;
     }
 
-    .team-name {
+    .wd-aboutpage-team-name {
         font-size: 14px;
     }
 
-    .team-role {
+    .wd-aboutpage-team-role {
         font-size: 12px;
     }
 }

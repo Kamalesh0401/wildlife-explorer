@@ -12,7 +12,7 @@ function WildlifePage() {
     const [animalsData, setAnimalsData] = useState(null);
     const [search, setSearch] = useState("");
     const [loading, setLoading] = useState(false);
-    const naviagte = useNavigate();
+    const navigate = useNavigate();
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
@@ -49,54 +49,53 @@ function WildlifePage() {
 
     // Handle animal click
     const handleAnimalClick = (id) => {
-        naviagte(`/wildlifedetail/${encodeURIComponent(id)}`);
+        navigate(`/wildlifedetail/${encodeURIComponent(id)}`);
     };
 
     return (
         <>
-            <div className="wildlife-container">
-
-                <div className="body-content mb-3">
+            <div className="wd-wildlife-container">
+                <div className="wd-wildlife-body-content mb-3">
                     <Sidebar />
-                    <div className={`main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-                        <div className="header">
-                            <h1 className="header-text">WILDLIFE SPECIES</h1>
+                    <div className={`wd-wildlife-main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
+                        <div className="wd-wildlife-header">
+                            <h1 className="wd-wildlife-header-text">WILDLIFE SPECIES</h1>
                             <button
-                                className="mobile-menu"
+                                className="wd-wildlife-mobile-menu"
                                 onClick={toggleSidebar}
                                 aria-label="Toggle Sidebar"
                             >
                                 ≡
                             </button>
                         </div>
-                        <div className="center-main-content">
-                            <div className="sidebar-content">
-                                <div className="filter-section">
-                                    <h3 className="section-title">FILTERS</h3>
-                                    <div className="filter-options">
+                        <div className="wd-wildlife-center-main-content">
+                            <div className="wd-wildlife-sidebar-content">
+                                <div className="wd-wildlife-filter-section">
+                                    <h3 className="wd-wildlife-section-title">FILTERS</h3>
+                                    <div className="wd-wildlife-filter-options">
                                         <label htmlFor="species">Species:</label>
-                                        <select id="species" className="filter-dropdown">
+                                        <select id="species" className="wd-wildlife-filter-dropdown">
                                             <option value="">All</option>
                                             <option value="mammal">Mammal</option>
                                             <option value="bird">Bird</option>
                                             <option value="reptile">Reptile</option>
                                         </select>
                                         <label htmlFor="habitat">Habitat:</label>
-                                        <select id="habitat" className="filter-dropdown">
+                                        <select id="habitat" className="wd-wildlife-filter-dropdown">
                                             <option value="">All</option>
                                             <option value="forest">Forest</option>
                                             <option value="wetland">Wetland</option>
                                             <option value="grassland">Grassland</option>
                                         </select>
                                         <label htmlFor="status">Conservation Status:</label>
-                                        <select id="status" className="filter-dropdown">
+                                        <select id="status" className="wd-wildlife-filter-dropdown">
                                             <option value="">All</option>
                                             <option value="endangered">Endangered</option>
                                             <option value="vulnerable">Vulnerable</option>
                                             <option value="least-concern">Least Concern</option>
                                         </select>
                                         <label htmlFor="status">Diet :</label>
-                                        <select id="status" className="filter-dropdown">
+                                        <select id="status" className="wd-wildlife-filter-dropdown">
                                             <option value="">All</option>
                                             <option value="herbivore">Herbivore</option>
                                             <option value="carnivore">Carnivore</option>
@@ -105,31 +104,31 @@ function WildlifePage() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="right-section">
-                                <div className="search-bar">
+                            <div className="wd-wildlife-right-section">
+                                <div className="wd-wildlife-search-bar">
                                     <input
                                         type="text"
                                         placeholder="Search wildlife..."
                                         value={searchTerm}
                                         onChange={(e) => handleSearch(e.target.value)}
-                                        className="search-input"
+                                        className="wd-wildlife-search-input"
                                     />
-                                    <span className="search-icon">🔍</span>
+                                    <span className="wd-wildlife-search-icon">🔍</span>
                                 </div>
-                                <div className="wildlife-grid">
+                                <div className="wd-wildlife-grid">
                                     {animalsData?.map((animal, index) => (
-                                        <div className="wildlife-card" key={index}>
-                                            <div className="wildlife-image-container">
+                                        <div className="wd-wildlife-card" key={index}>
+                                            <div className="wd-wildlife-image-container">
                                                 <img
                                                     src={Buildimg(animal.image)}
                                                     alt={animal.name}
-                                                    className="wildlife-image"
+                                                    className="wd-wildlife-image"
                                                 />
                                             </div>
-                                            <h3 className="wildlife-name">{animal.name}</h3>
-                                            <p className="wildlife-habitat">Habitat: {animal.habitat}</p>
+                                            <h3 className="wd-wildlife-name">{animal.name}</h3>
+                                            <p className="wd-wildlife-habitat">Habitat: {animal.habitat}</p>
                                             <button
-                                                className="action-button"
+                                                className="wd-wildlife-action-button"
                                                 aria-label={`Learn more about ${animal.name}`}
                                                 onClick={() => { handleAnimalClick(animal._id) }}
                                             >
@@ -149,9 +148,6 @@ function WildlifePage() {
 }
 
 export default WildlifePage;
-
-
-
 
 
 

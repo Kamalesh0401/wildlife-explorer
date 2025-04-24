@@ -1,5 +1,5 @@
 /* General container styling */
-.wildlife-container {
+.wd-wildlife-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -13,13 +13,13 @@
 }
 
 /* Body content */
-.body-content {
+.wd-wildlife-body-content {
     display: flex;
     flex: 1;
 }
 
 /* Header styling */
-.header {
+.wd-wildlife-header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -30,7 +30,7 @@
     position: relative;
 }
 
-.header-text {
+.wd-wildlife-header-text {
     font-size: 28px;
     font-weight: bold;
     margin: 0;
@@ -38,7 +38,7 @@
     letter-spacing: 1px;
 }
 
-.mobile-menu {
+.wd-wildlife-mobile-menu {
     display: none;
     background: none;
     border: none;
@@ -51,12 +51,12 @@
     transition: transform 0.2s ease;
 }
 
-.mobile-menu:hover {
+.wd-wildlife-mobile-menu:hover {
     transform: scale(1.2);
 }
 
 /* Main content */
-.main-content {
+.wd-wildlife-main-content {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -64,14 +64,14 @@
     /* Account for the Sidebar component's width */
 }
 
-.center-main-content {
+.wd-wildlife-center-main-content {
     display: flex;
     flex: 1;
     gap: 20px;
 }
 
 /* Sidebar content */
-.sidebar-content {
+.wd-wildlife-sidebar-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -79,7 +79,7 @@
     height: 100%;
 }
 
-.filter-section {
+.wd-wildlife-filter-section {
     background-color: #2a2a2a;
     padding: 15px;
     border-radius: 10px;
@@ -87,24 +87,24 @@
     transition: box-shadow 0.3s ease;
 }
 
-.filter-section:hover {
+.wd-wildlife-filter-section:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.section-title {
+.wd-wildlife-section-title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
-.filter-options {
+.wd-wildlife-filter-options {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.filter-dropdown {
+.wd-wildlife-filter-dropdown {
     background-color: #3a3a3a;
     border: none;
     padding: 10px;
@@ -116,29 +116,29 @@
     transition: background-color 0.3s ease;
 }
 
-.filter-dropdown:hover {
+.wd-wildlife-filter-dropdown:hover {
     background-color: #444;
 }
 
-.filter-dropdown:focus {
+.wd-wildlife-filter-dropdown:focus {
     outline: none;
     box-shadow: 0 0 5px #00c4b4;
 }
 
 /* Right section */
-.right-section {
+.wd-wildlife-right-section {
     width: 70%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.search-bar {
+.wd-wildlife-search-bar {
     position: relative;
     margin-bottom: 20px;
 }
 
-.search-input {
+.wd-wildlife-search-input {
     width: 100%;
     padding: 12px 40px 12px 15px;
     background-color: #2a2a2a;
@@ -149,13 +149,13 @@
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.search-input:focus {
+.wd-wildlife-search-input:focus {
     border-color: #00c4b4;
     box-shadow: 0 0 8px rgba(0, 196, 180, 0.5);
     outline: none;
 }
 
-.search-icon {
+.wd-wildlife-search-icon {
     position: absolute;
     right: 15px;
     top: 50%;
@@ -165,18 +165,18 @@
     transition: color 0.3s ease;
 }
 
-.search-input:focus+.search-icon {
+.wd-wildlife-search-input:focus+.wd-wildlife-search-icon {
     color: #00c4b4;
 }
 
-.wildlife-grid {
+.wd-wildlife-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     animation: fadeIn 0.5s ease-in;
 }
 
-.wildlife-card {
+.wd-wildlife-card {
     background-color: #3a3a3a;
     padding: 15px;
     border-radius: 10px;
@@ -185,29 +185,29 @@
     overflow: hidden;
 }
 
-.wildlife-card:hover {
+.wd-wildlife-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-.wildlife-image-container {
+.wd-wildlife-image-container {
     position: relative;
     overflow: hidden;
     border-radius: 10px 10px 0 0;
 }
 
-.wildlife-image {
+.wd-wildlife-image {
     width: 100%;
     height: 180px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.wildlife-card:hover .wildlife-image {
+.wd-wildlife-card:hover .wd-wildlife-image {
     transform: scale(1.1);
 }
 
-.wildlife-name {
+.wd-wildlife-name {
     font-size: 18px;
     font-weight: bold;
     margin: 10px 0;
@@ -215,13 +215,13 @@
     text-transform: uppercase;
 }
 
-.wildlife-habitat {
+.wd-wildlife-habitat {
     font-size: 13px;
     color: #bbb;
     margin: 5px 0;
 }
 
-.action-button {
+.wd-wildlife-action-button {
     background: linear-gradient(90deg, #00c4b4, #009688);
     border: none;
     padding: 10px 20px;
@@ -234,7 +234,7 @@
     margin-top: 10px;
 }
 
-.action-button:hover {
+.wd-wildlife-action-button:hover {
     transform: translateY(-2px);
     background: linear-gradient(90deg, #009688, #00c4b4);
 }
@@ -254,46 +254,46 @@
 
 /* Tablet (786px - 1024px) */
 @media (min-width: 786px) and (max-width: 1024px) {
-    .main-content {
+    .wd-wildlife-main-content {
         margin-left: 60px;
     }
 
-    .center-main-content {
+    .wd-wildlife-center-main-content {
         gap: 15px;
     }
 
-    .sidebar-content {
+    .wd-wildlife-sidebar-content {
         width: 35%;
         min-width: 280px;
     }
 
-    .right-section {
+    .wd-wildlife-right-section {
         width: 65%;
         min-width: 400px;
     }
 
-    .section-title {
+    .wd-wildlife-section-title {
         font-size: 16px;
     }
 
-    .wildlife-grid {
+    .wd-wildlife-grid {
         grid-template-columns: repeat(2, 1fr);
         /* 2 columns for tablet */
     }
 
-    .wildlife-image {
+    .wd-wildlife-image {
         height: 140px;
     }
 
-    .wildlife-name {
+    .wd-wildlife-name {
         font-size: 16px;
     }
 
-    .wildlife-habitat {
+    .wd-wildlife-habitat {
         font-size: 12px;
     }
 
-    .action-button {
+    .wd-wildlife-action-button {
         font-size: 12px;
         padding: 8px 16px;
     }
@@ -301,77 +301,77 @@
 
 /* Mobile (below 786px) */
 @media (max-width: 785px) {
-    .wildlife-container {
+    .wd-wildlife-container {
         padding: 5px;
     }
 
-    .body-content {
+    .wd-wildlife-body-content {
         flex-direction: column;
     }
 
-    .main-content {
+    .wd-wildlife-main-content {
         margin-left: 0;
         margin-bottom: 60px;
         /* Space for the fixed sidebar on mobile */
     }
 
-    .header {
+    .wd-wildlife-header {
         padding: 10px;
     }
 
-    .header-text {
+    .wd-wildlife-header-text {
         font-size: 20px;
     }
 
-    .mobile-menu {
+    .wd-wildlife-mobile-menu {
         display: block;
     }
 
-    .center-main-content {
+    .wd-wildlife-center-main-content {
         flex-direction: column;
         gap: 10px;
     }
 
-    .sidebar-content {
+    .wd-wildlife-sidebar-content {
         width: 100%;
         height: auto;
     }
 
-    .right-section {
+    .wd-wildlife-right-section {
         width: 100%;
     }
 
-    .search-bar {
+    .wd-wildlife-search-bar {
         margin-bottom: 15px;
     }
 
-    .search-input {
+    .wd-wildlife-search-input {
         padding: 10px 40px 10px 12px;
         font-size: 12px;
     }
 
-    .search-icon {
+    .wd-wildlife-search-icon {
         font-size: 16px;
     }
 
-    .wildlife-grid {
+    .wd-wildlife-grid {
         grid-template-columns: 1fr;
         /* 1 column for mobile */
     }
 
-    .wildlife-image {
+    .wd-wildlife-image {
         height: 120px;
     }
 
-    .wildlife-name {
+    .wd-wildlife-name {
         font-size: 14px;
     }
 
-    .wildlife-habitat {
+    .wd-wildlife-habitat {
         font-size: 11px;
     }
 
-    .action-button {
+    .wd-wildlife-action-button {
         font-size: 11px;
         padding: 6px 12px;
     }

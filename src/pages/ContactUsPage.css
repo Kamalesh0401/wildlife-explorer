@@ -1,5 +1,5 @@
 /* General container styling */
-.contact-us-container {
+.wd-contactpage-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -13,13 +13,13 @@
 }
 
 /* Body content */
-.body-content {
+.wd-contactpage-body-content {
     display: flex;
     flex: 1;
 }
 
 /* Header styling */
-.header {
+.wd-contactpage-header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -30,7 +30,7 @@
     position: relative;
 }
 
-.header-text {
+.wd-contactpage-header-text {
     font-size: 28px;
     font-weight: bold;
     margin: 0;
@@ -38,7 +38,7 @@
     letter-spacing: 1px;
 }
 
-.mobile-menu {
+.wd-contactpage-mobile-menu {
     display: none;
     background: none;
     border: none;
@@ -51,12 +51,12 @@
     transition: transform 0.2s ease;
 }
 
-.mobile-menu:hover {
+.wd-contactpage-mobile-menu:hover {
     transform: scale(1.2);
 }
 
 /* Main content */
-.main-content {
+.wd-contactpage-main-content {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -64,14 +64,14 @@
     /* Account for the Sidebar component's width */
 }
 
-.center-main-content {
+.wd-contactpage-center-main-content {
     display: flex;
     flex: 1;
     gap: 20px;
 }
 
 /* Sidebar content */
-.sidebar-content {
+.wd-contactpage-sidebar-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -79,7 +79,7 @@
     height: 100%;
 }
 
-.contact-info-section {
+.wd-contactpage-contact-info-section {
     background-color: #2a2a2a;
     padding: 20px;
     border-radius: 10px;
@@ -88,12 +88,12 @@
     animation: slideIn 0.5s ease-out;
 }
 
-.contact-info-section:hover {
+.wd-contactpage-contact-info-section:hover {
     box-shadow: 0 6px 12px rgba(0, 196, 180, 0.2);
     transform: translateY(-5px);
 }
 
-.section-title {
+.wd-contactpage-section-title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -104,54 +104,54 @@
     gap: 8px;
 }
 
-.section-icon {
+.wd-contactpage-section-icon {
     font-size: 20px;
     color: #00c4b4;
     animation: pulse 2s infinite;
 }
 
-.contact-info {
+.wd-contactpage-contact-info {
     font-size: 14px;
     line-height: 1.7;
     color: #ccc;
     margin-bottom: 10px;
 }
 
-.contact-label {
+.wd-contactpage-contact-label {
     font-weight: bold;
     color: #fff;
 }
 
-.contact-link {
+.wd-contactpage-contact-link {
     color: #00c4b4;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.contact-link:hover {
+.wd-contactpage-contact-link:hover {
     color: #009688;
 }
 
 /* Right section */
-.right-section {
+.wd-contactpage-right-section {
     width: 60%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.contact-form-section {
+.wd-contactpage-contact-form-section {
     background-color: #2a2a2a;
     padding: 20px;
     border-radius: 10px;
     transition: box-shadow 0.3s ease;
 }
 
-.contact-form-section:hover {
+.wd-contactpage-contact-form-section:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.form-title {
+.wd-contactpage-form-title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -159,26 +159,26 @@
     text-transform: uppercase;
 }
 
-.contact-form {
+.wd-contactpage-contact-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
     animation: fadeIn 0.5s ease-in;
 }
 
-.form-group {
+.wd-contactpage-form-group {
     display: flex;
     flex-direction: column;
 }
 
-.form-group label {
+.wd-contactpage-form-group label {
     font-size: 14px;
     margin-bottom: 5px;
     color: #fff;
 }
 
-.form-input,
-.form-textarea {
+.wd-contactpage-form-input,
+.wd-contactpage-form-textarea {
     padding: 10px;
     background-color: #3a3a3a;
     border: 2px solid #333;
@@ -188,18 +188,18 @@
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.form-input:focus,
-.form-textarea:focus {
+.wd-contactpage-form-input:focus,
+.wd-contactpage-form-textarea:focus {
     border-color: #00c4b4;
     box-shadow: 0 0 8px rgba(0, 196, 180, 0.5);
     outline: none;
 }
 
-.form-textarea {
+.wd-contactpage-form-textarea {
     resize: vertical;
 }
 
-.submit-button {
+.wd-contactpage-submit-button {
     background: linear-gradient(90deg, #00c4b4, #009688);
     border: none;
     padding: 12px 20px;
@@ -212,23 +212,23 @@
     align-self: flex-start;
 }
 
-.submit-button:hover {
+.wd-contactpage-submit-button:hover {
     transform: translateY(-2px);
     background: linear-gradient(90deg, #009688, #00c4b4);
 }
 
-.confirmation-message {
+.wd-contactpage-confirmation-message {
     text-align: center;
     animation: fadeIn 0.5s ease-in;
 }
 
-.confirmation-message p {
+.wd-contactpage-confirmation-message p {
     font-size: 16px;
     color: #00c4b4;
     margin-bottom: 15px;
 }
 
-.action-button {
+.wd-contactpage-action-button {
     background: linear-gradient(90deg, #00c4b4, #009688);
     border: none;
     padding: 10px 20px;
@@ -240,7 +240,7 @@
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.action-button:hover {
+.wd-contactpage-action-button:hover {
     transform: translateY(-2px);
     background: linear-gradient(90deg, #009688, #00c4b4);
 }
@@ -286,55 +286,55 @@
 
 /* Tablet (786px - 1024px) */
 @media (min-width: 786px) and (max-width: 1024px) {
-    .main-content {
+    .wd-contactpage-main-content {
         margin-left: 60px;
     }
 
-    .center-main-content {
+    .wd-contactpage-center-main-content {
         gap: 15px;
     }
 
-    .sidebar-content {
+    .wd-contactpage-sidebar-content {
         width: 35%;
         min-width: 280px;
     }
 
-    .right-section {
+    .wd-contactpage-right-section {
         width: 65%;
         min-width: 400px;
     }
 
-    .section-title {
+    .wd-contactpage-section-title {
         font-size: 16px;
     }
 
-    .section-icon {
+    .wd-contactpage-section-icon {
         font-size: 18px;
     }
 
-    .contact-info {
+    .wd-contactpage-contact-info {
         font-size: 13px;
     }
 
-    .form-title {
+    .wd-contactpage-form-title {
         font-size: 20px;
     }
 
-    .form-input,
-    .form-textarea {
+    .wd-contactpage-form-input,
+    .wd-contactpage-form-textarea {
         font-size: 13px;
     }
 
-    .submit-button {
+    .wd-contactpage-submit-button {
         font-size: 13px;
         padding: 10px 18px;
     }
 
-    .confirmation-message p {
+    .wd-contactpage-confirmation-message p {
         font-size: 14px;
     }
 
-    .action-button {
+    .wd-contactpage-action-button {
         font-size: 12px;
         padding: 8px 16px;
     }
@@ -342,81 +342,81 @@
 
 /* Mobile (below 786px) */
 @media (max-width: 785px) {
-    .contact-us-container {
+    .wd-contactpage-container {
         padding: 5px;
     }
 
-    .body-content {
+    .wd-contactpage-body-content {
         flex-direction: column;
     }
 
-    .main-content {
+    .wd-contactpage-main-content {
         margin-left: 0;
         margin-bottom: 60px;
         /* Space for the fixed sidebar on mobile */
     }
 
-    .header {
+    .wd-contactpage-header {
         padding: 10px;
     }
 
-    .header-text {
+    .wd-contactpage-header-text {
         font-size: 20px;
     }
 
-    .mobile-menu {
+    .wd-contactpage-mobile-menu {
         display: block;
     }
 
-    .center-main-content {
+    .wd-contactpage-center-main-content {
         flex-direction: column;
         gap: 10px;
     }
 
-    .sidebar-content {
+    .wd-contactpage-sidebar-content {
         width: 100%;
         height: auto;
     }
 
-    .right-section {
+    .wd-contactpage-right-section {
         width: 100%;
     }
 
-    .contact-info-section {
+    .wd-contactpage-contact-info-section {
         padding: 15px;
     }
 
-    .section-title {
+    .wd-contactpage-section-title {
         font-size: 16px;
     }
 
-    .section-icon {
+    .wd-contactpage-section-icon {
         font-size: 16px;
     }
 
-    .contact-info {
+    .wd-contactpage-contact-info {
         font-size: 12px;
     }
 
-    .form-title {
+    .wd-contactpage-form-title {
         font-size: 18px;
     }
 
-    .form-input,
-    .form-textarea {
+    .wd-contactpage-form-input,
+    .wd-contactpage-form-textarea {
         font-size: 12px;
     }
 
-    .submit-button {
+    .wd-contactpage-submit-button {
         font-size: 12px;
         padding: 8px 16px;
     }
 
-    .confirmation-message p {
+    .wd-contactpage-confirmation-message p {
         font-size: 13px;
     }
 
-    .action-button {
+    .wd-contactpage-action-button {
         font-size: 11px;
         padding: 6px 12px;
     }

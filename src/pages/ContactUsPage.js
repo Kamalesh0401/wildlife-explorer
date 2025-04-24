@@ -31,59 +31,59 @@ function ContactUsPage() {
     };
 
     return (
-        <div className="contact-us-container">
-            <div className="body-content mb-3">
+        <div className="wd-contactpage-container">
+            <div className="wd-contactpage-body-content mb-3">
                 <Sidebar />
-                <div className={`main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-                    <div className="header">
-                        <h1 className="header-text">CONTACT US</h1>
+                <div className={`wd-contactpage-main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
+                    <div className="wd-contactpage-header">
+                        <h1 className="wd-contactpage-header-text">CONTACT US</h1>
                         <button
-                            className="mobile-menu"
+                            className="wd-contactpage-mobile-menu"
                             onClick={toggleSidebar}
                             aria-label="Toggle Sidebar"
                         >
                             ≡
                         </button>
                     </div>
-                    <div className="center-main-content">
-                        <div className="sidebar-content">
-                            <div className="contact-info-section">
-                                <h3 className="section-title">
-                                    <span className="section-icon">📧</span> GET IN TOUCH
+                    <div className="wd-contactpage-center-main-content">
+                        <div className="wd-contactpage-sidebar-content">
+                            <div className="wd-contactpage-contact-info-section">
+                                <h3 className="wd-contactpage-section-title">
+                                    <span className="wd-contactpage-section-icon">📧</span> GET IN TOUCH
                                 </h3>
-                                <p className="contact-info">
-                                    <span className="contact-label">Email:</span>{' '}
-                                    <a href="mailto:wildlifeexplorer0415@gmail.com" className="contact-link">
+                                <p className="wd-contactpage-contact-info">
+                                    <span className="wd-contactpage-contact-label">Email:</span>{' '}
+                                    <a href="mailto:wildlifeexplorer0415@gmail.com" className="wd-contactpage-contact-link">
                                         wildlifeexplorer0415@gmail.com
                                     </a>
                                 </p>
-                                <p className="contact-info">
-                                    <span className="contact-label">Phone:</span>{' '}
-                                    <a href="tel:+91 8438920788" className="contact-link">
+                                <p className="wd-contactpage-contact-info">
+                                    <span className="wd-contactpage-contact-label">Phone:</span>{' '}
+                                    <a href="tel:+91 8438920788" className="wd-contactpage-contact-link">
                                         +91 8438920788
                                     </a>
                                 </p>
-                                <p className="contact-info">
-                                    <span className="contact-label">Address:</span>Bengaluru , Karnataka
+                                <p className="wd-contactpage-contact-info">
+                                    <span className="wd-contactpage-contact-label">Address:</span> Bengaluru, Karnataka
                                 </p>
                             </div>
                         </div>
-                        <div className="right-section">
-                            <div className="contact-form-section">
-                                <h2 className="form-title">Send Us a Message</h2>
+                        <div className="wd-contactpage-right-section">
+                            <div className="wd-contactpage-contact-form-section">
+                                <h2 className="wd-contactpage-form-title">Send Us a Message</h2>
                                 {isSubmitted ? (
-                                    <div className="confirmation-message">
+                                    <div className="wd-contactpage-confirmation-message">
                                         <p>Thank you for your message! We'll get back to you soon.</p>
                                         <button
-                                            className="action-button"
+                                            className="wd-contactpage-action-button"
                                             onClick={() => setIsSubmitted(false)}
                                         >
                                             Send Another Message
                                         </button>
                                     </div>
                                 ) : (
-                                    <form onSubmit={handleSubmit} className="contact-form">
-                                        <div className="form-group">
+                                    <form onSubmit={handleSubmit} className="wd-contactpage-contact-form">
+                                        <div className="wd-contactpage-form-group">
                                             <label htmlFor="name">Name</label>
                                             <input
                                                 type="text"
@@ -92,11 +92,11 @@ function ContactUsPage() {
                                                 value={formData.name}
                                                 onChange={handleInputChange}
                                                 required
-                                                className="form-input"
+                                                className="wd-contactpage-form-input"
                                                 placeholder="Your Name"
                                             />
                                         </div>
-                                        <div className="form-group">
+                                        <div className="wd-contactpage-form-group">
                                             <label htmlFor="email">Email</label>
                                             <input
                                                 type="email"
@@ -105,11 +105,11 @@ function ContactUsPage() {
                                                 value={formData.email}
                                                 onChange={handleInputChange}
                                                 required
-                                                className="form-input"
+                                                className="wd-contactpage-form-input"
                                                 placeholder="Your Email"
                                             />
                                         </div>
-                                        <div className="form-group">
+                                        <div className="wd-contactpage-form-group">
                                             <label htmlFor="message">Message</label>
                                             <textarea
                                                 id="message"
@@ -117,12 +117,12 @@ function ContactUsPage() {
                                                 value={formData.message}
                                                 onChange={handleInputChange}
                                                 required
-                                                className="form-textarea"
+                                                className="wd-contactpage-form-textarea"
                                                 placeholder="Your Message"
                                                 rows="5"
                                             />
                                         </div>
-                                        <button type="submit" className="submit-button">
+                                        <button type="submit" className="wd-contactpage-submit-button">
                                             Submit
                                         </button>
                                     </form>

@@ -11,7 +11,7 @@ function ExploreParksPage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
 
-    const naviagte = useNavigate();
+    const navigate = useNavigate();
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
@@ -24,7 +24,6 @@ function ExploreParksPage() {
             location: 'Assam, India',
             description: 'Home to the rare Barasingha and diverse wildlife.',
             image: forest,
-            //image: `${process.env.PUBLIC_URL}/src/assets/images/manas.jpg`,
         },
         {
             name: 'Jim Corbett National Park',
@@ -52,27 +51,27 @@ function ExploreParksPage() {
     );
 
     return (
-        <div className="explore-parks-container">
-            <div className="body-content mb-3">
+        <div className="wd-park-container">
+            <div className="wd-park-body-content mb-3">
                 <Sidebar />
-                <div className={`main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-                    <div className="header">
-                        <h1 className="header-text">EXPLORE NATIONAL PARKS</h1>
+                <div className={`wd-park-main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
+                    <div className="wd-park-header">
+                        <h1 className="wd-park-header-text">EXPLORE NATIONAL PARKS</h1>
                         <button
-                            className="mobile-menu"
+                            className="wd-park-mobile-menu"
                             onClick={toggleSidebar}
                             aria-label="Toggle Sidebar"
                         >
                             ≡
                         </button>
                     </div>
-                    <div className="center-main-content">
-                        <div className="sidebar-content">
-                            <div className="filter-section">
-                                <h3 className="section-title">FILTERS</h3>
-                                <div className="filter-options">
+                    <div className="wd-park-center-main-content">
+                        <div className="wd-park-sidebar-content">
+                            <div className="wd-park-filter-section">
+                                <h3 className="wd-park-section-title">FILTERS</h3>
+                                <div className="wd-park-filter-options">
                                     <label htmlFor="region">Region:</label>
-                                    <select id="region" className="filter-dropdown">
+                                    <select id="region" className="wd-park-filter-dropdown">
                                         <option value="">All</option>
                                         <option value="assam">Assam</option>
                                         <option value="karnataka">Karnataka</option>
@@ -80,14 +79,14 @@ function ExploreParksPage() {
                                         <option value="madhya-pradesh">Madhya Pradesh</option>
                                     </select>
                                     <label htmlFor="wildlife">Wildlife:</label>
-                                    <select id="wildlife" className="filter-dropdown">
+                                    <select id="wildlife" className="wd-park-filter-dropdown">
                                         <option value="">All</option>
                                         <option value="deer">Deer</option>
                                         <option value="tiger">Tiger</option>
                                         <option value="rhinoceros">Rhinoceros</option>
                                     </select>
                                     <label htmlFor="activity">Activities:</label>
-                                    <select id="activity" className="filter-dropdown">
+                                    <select id="activity" className="wd-park-filter-dropdown">
                                         <option value="">All</option>
                                         <option value="hiking">Hiking</option>
                                         <option value="safari">Safari</option>
@@ -96,32 +95,32 @@ function ExploreParksPage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="right-section">
-                            <div className="search-bar">
+                        <div className="wd-park-right-section">
+                            <div className="wd-park-search-bar">
                                 <input
                                     type="text"
                                     placeholder="Search parks..."
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
-                                    className="search-input"
+                                    className="wd-park-search-input"
                                 />
-                                <span className="search-icon">🔍</span>
+                                <span className="wd-park-search-icon">🔍</span>
                             </div>
-                            <div className="park-grid">
+                            <div className="wd-park-park-grid">
                                 {filteredParks.map((park, index) => (
-                                    <div className="park-card" key={index}>
+                                    <div className="wd-park-park-card" key={index}>
                                         <img
                                             src={park.image}
                                             alt={park.name}
-                                            className="park-image"
+                                            className="wd-park-park-image"
                                         />
-                                        <h3 className="park-name">{park.name}</h3>
-                                        <p className="park-location">{park.location}</p>
-                                        <p className="park-description">{park.description}</p>
+                                        <h3 className="wd-park-park-name">{park.name}</h3>
+                                        <p className="wd-park-park-location">{park.location}</p>
+                                        <p className="wd-park-park-description">{park.description}</p>
                                         <button
-                                            className="action-button"
+                                            className="wd-park-action-button"
                                             aria-label={`View details for ${park.name}`}
-                                            onClick={() => { naviagte("/parkdetails") }}
+                                            onClick={() => { navigate("/parkdetails") }}
                                         >
                                             View Details
                                         </button>

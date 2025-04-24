@@ -1,0 +1,501 @@
+.wd-forest-dtls-container {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/images/forest2.jpg') no-repeat center center/cover;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.wd-forest-dtls-body-content {
+    display: flex;
+    flex: 1;
+}
+
+.wd-forest-dtls-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #444;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease-in;
+}
+
+.wd-forest-dtls-header-text {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    color: #00c4b4;
+}
+
+.wd-forest-dtls-close-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.wd-forest-dtls-close-button:hover {
+    transform: scale(1.2);
+    color: #00a89a;
+}
+
+.wd-forest-dtls-main-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 60px;
+}
+
+.wd-forest-dtls-center-main-content {
+    display: flex;
+    flex: 1;
+    gap: 30px;
+    animation: slideIn 0.5s ease-out;
+}
+
+.wd-forest-dtls-sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 30%;
+    min-width: 250px;
+}
+
+.wd-forest-dtls-you-are-here-section {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #00c4b4;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.wd-forest-dtls-you-are-here-section:hover {
+    box-shadow: 0 6px 12px rgba(0, 196, 180, 0.2);
+    transform: translateY(-5px);
+}
+
+.wd-forest-dtls-section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.wd-forest-dtls-map-placeholder {
+    height: 150px;
+    background-color: #3a3a3a;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.wd-forest-dtls-description {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #bbb;
+}
+
+.wd-forest-dtls-spot-nearby-section {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #00c4b4;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.wd-forest-dtls-spot-nearby-section:hover {
+    box-shadow: 0 6px 12px rgba(0, 196, 180, 0.2);
+    transform: translateY(-5px);
+}
+
+.wd-forest-dtls-spot-nearby-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.wd-forest-dtls-carousel-inner {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.wd-forest-dtls-carousel-inner::-webkit-scrollbar {
+    display: none;
+}
+
+.wd-forest-dtls-spot-nearby-item {
+    flex: 0 0 auto;
+    width: 120px;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wd-forest-dtls-spot-nearby-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 196, 180, 0.3);
+}
+
+.wd-forest-dtls-spot-nearby-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.wd-forest-dtls-spot-nearby-item:hover .wd-forest-dtls-spot-nearby-image {
+    filter: grayscale(0%);
+}
+
+.wd-forest-dtls-spot-nearby-name {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    padding: 5px 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: color 0.3s ease;
+}
+
+.wd-forest-dtls-spot-nearby-item:hover .wd-forest-dtls-spot-nearby-name {
+    color: #00c4b4;
+}
+
+.wd-forest-dtls-carousel-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.wd-forest-dtls-carousel-next:hover {
+    background: #00c4b4;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.wd-forest-dtls-right-section {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wd-forest-dtls-forest-main-image {
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.wd-forest-dtls-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.wd-forest-dtls-forest-main-image:hover .wd-forest-dtls-image {
+    transform: scale(1.05);
+}
+
+.wd-forest-dtls-forest-info {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.wd-forest-dtls-forest-info:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.wd-forest-dtls-forest-name {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #00c4b4;
+    text-transform: uppercase;
+}
+
+.wd-forest-dtls-forest-description {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+.wd-forest-dtls-gallery-section {
+    margin-bottom: 15px;
+}
+
+.wd-forest-dtls-gallery-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.wd-forest-dtls-gallery-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.wd-forest-dtls-gallery-inner {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.wd-forest-dtls-gallery-inner::-webkit-scrollbar {
+    display: none;
+}
+
+.wd-forest-dtls-gallery-item {
+    flex: 0 0 auto;
+    width: 150px;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wd-forest-dtls-gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 196, 180, 0.3);
+}
+
+.wd-forest-dtls-gallery-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.wd-forest-dtls-gallery-item:hover .wd-forest-dtls-gallery-image {
+    transform: scale(1.1);
+}
+
+.wd-forest-dtls-gallery-caption {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #ccc;
+    padding: 5px 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.wd-forest-dtls-like-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wd-forest-dtls-like-button {
+    background: linear-gradient(90deg, #00c4b4, #009688);
+    border: none;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.wd-forest-dtls-like-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(90deg, #009688, #00c4b4);
+}
+
+.wd-forest-dtls-like-count {
+    font-size: 14px;
+    color: #ccc;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .wd-forest-dtls-container {
+        padding: 15px;
+    }
+
+    .wd-forest-dtls-header-text {
+        font-size: 24px;
+    }
+
+    .wd-forest-dtls-center-main-content {
+        gap: 20px;
+    }
+
+    .wd-forest-dtls-sidebar-content {
+        width: 40%;
+        min-width: 200px;
+    }
+
+    .wd-forest-dtls-right-section {
+        width: 60%;
+    }
+
+    .wd-forest-dtls-forest-main-image {
+        height: 300px;
+    }
+
+    .wd-forest-dtls-forest-name {
+        font-size: 28px;
+    }
+
+    .wd-forest-dtls-section-title {
+        font-size: 16px;
+    }
+
+    .wd-forest-dtls-description,
+    .wd-forest-dtls-forest-description,
+    .wd-forest-dtls-like-count {
+        font-size: 13px;
+    }
+
+    .wd-forest-dtls-spot-nearby-item {
+        width: 100px;
+    }
+
+    .wd-forest-dtls-spot-nearby-image {
+        height: 100px;
+    }
+
+    .wd-forest-dtls-like-button {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wd-forest-dtls-container {
+        padding: 10px;
+    }
+
+    .wd-forest-dtls-body-content {
+        flex-direction: column;
+    }
+
+    .wd-forest-dtls-main-content {
+        margin-left: 0;
+        margin-bottom: 60px;
+    }
+
+    .wd-forest-dtls-header {
+        position: relative;
+    }
+
+    .wd-forest-dtls-header-text {
+        font-size: 20px;
+    }
+
+    .wd-forest-dtls-close-button {
+        font-size: 20px;
+    }
+
+    .wd-forest-dtls-center-main-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .wd-forest-dtls-sidebar-content {
+        width: 100%;
+    }
+
+    .wd-forest-dtls-right-section {
+        width: 100%;
+    }
+
+    .wd-forest-dtls-forest-main-image {
+        height: 250px;
+    }
+
+    .wd-forest-dtls-forest-name {
+        font-size: 24px;
+    }
+
+    .wd-forest-dtls-section-title {
+        font-size: 14px;
+    }
+
+    .wd-forest-dtls-description,
+    .wd-forest-dtls-forest-description,
+    .wd-forest-dtls-like-count {
+        font-size: 12px;
+    }
+
+    .wd-forest-dtls-spot-nearby-item {
+        width: 80px;
+    }
+
+    .wd-forest-dtls-spot-nearby-image {
+        height: 80px;
+    }
+
+    .wd-forest-dtls-carousel-inner {
+        justify-content: center;
+    }
+
+    .wd-forest-dtls-carousel-next {
+        display: none;
+    }
+
+    .wd-forest-dtls-like-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
