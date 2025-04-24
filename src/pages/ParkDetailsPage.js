@@ -118,7 +118,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import Sidebar from '../components/Sidebar';
 import parkImage from '../assets/images/jungle_forest.jpg';
 import './ParkDetailsPage.css';
@@ -163,13 +162,13 @@ function ParkDetailsPage() {
 
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/forests/some-id')
-            .then(response => {
-                setPark(response.data.data.forest);
-            })
-            .catch(error => {
-                console.error('Error fetching park details:', error);
-            });
+        // axios.get('http://localhost:5000/api/forests/some-id')
+        //     .then(response => {
+        //         setPark(response.data.data.forest);
+        //     })
+        //     .catch(error => {
+        //         console.error('Error fetching park details:', error);
+        //     });
     }, []);
 
     const handleAnimalClick = (animalId) => {
