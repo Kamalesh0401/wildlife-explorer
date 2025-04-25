@@ -13,6 +13,8 @@ import ForestExplorer from './pages/ForestPage';
 import ForestDetailsPage from './pages/ForestDetailsPage';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -26,22 +28,21 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <Router>
-        {/* <div className="app-container"> */}
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/exploreforests" element={<ForestExplorer />} />
-          <Route path="/forestdetails/:id" element={<ForestDetailsPage />} />
-          <Route path="/explorepark" element={<ExploreParksPage />} />
-          <Route path="/wildlife" element={<WildlifePage />} />
-          <Route path="/wildlifedetail/:id" element={<WildlifePageDetailsPage />} />
-          <Route path="/parkdetails" element={<ParkDetailsPage />} />
-          <Route path="/aboutus" element={<AboutUsPage />} />
-          <Route path="/contactus" element={<ContactUsPage />} />
-        </Routes>
-        {/* <Footer /> */}
-        {/* </div> */}
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/exploreforests" element={<ForestExplorer />} />
+            <Route path="/forestdetails/:id" element={<ForestDetailsPage />} />
+            <Route path="/explorepark" element={<ExploreParksPage />} />
+            <Route path="/wildlife" element={<WildlifePage />} />
+            <Route path="/wildlifedetail/:id" element={<WildlifePageDetailsPage />} />
+            <Route path="/parkdetails" element={<ParkDetailsPage />} />
+            <Route path="/aboutus" element={<AboutUsPage />} />
+            <Route path="/contactus" element={<ContactUsPage />} />
+          </Routes>
+        </Router>
+      </Provider>
     </div>
   );
 }

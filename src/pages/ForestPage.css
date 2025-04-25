@@ -200,6 +200,35 @@
     border-radius: 10px;
 }
 
+.wd-forest-search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.wd-forest-clear-button {
+    background-color: #ff4d4d;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.wd-forest-clear-button:hover {
+    background-color: #cc0000;
+}
+
+.wd-forest-grid p {
+    text-align: center;
+    color: #ccc;
+    font-size: 16px;
+    margin: 20px 0;
+}
+
 @media (min-width: 786px) and (max-width: 1024px) {
     .wd-forest-main-content {
         margin-left: 60px;

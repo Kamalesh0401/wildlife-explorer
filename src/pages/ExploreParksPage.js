@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 function ExploreParksPage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+    const [parksData, setParksData] = useState([]);
 
     const navigate = useNavigate();
 
@@ -49,6 +50,29 @@ function ExploreParksPage() {
     const filteredParks = parks.filter((park) =>
         park.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    const handleSearch = async (query) => {
+        setSearchTerm(query);
+        query = query.toLowerCase();
+        if (query.length >= 3) {
+            try {
+                const options = {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                };
+                const res = await fetch(`http://localhost:6005/api/parks/name/${query}`, options);
+                const response = await res.json();
+                console.log("Response : ", response);
+                setParksData(response);
+            } catch (ex) {
+                console.error("Error fetching species data:", ex);
+            } finally {
+                //setLoading(false);
+            }
+        }
+    };
 
     return (
         <div className="wd-park-container">
@@ -101,13 +125,13 @@ function ExploreParksPage() {
                                     type="text"
                                     placeholder="Search parks..."
                                     value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    onChange={(e) => handleSearch(e.target.value)}
                                     className="wd-park-search-input"
                                 />
                                 <span className="wd-park-search-icon">🔍</span>
                             </div>
                             <div className="wd-park-park-grid">
-                                {filteredParks.map((park, index) => (
+                                {(parksData && parksData.length > 0) ? parksData.map((park, index) => (
                                     <div className="wd-park-park-card" key={index}>
                                         <img
                                             src={park.image}
@@ -125,7 +149,7 @@ function ExploreParksPage() {
                                             View Details
                                         </button>
                                     </div>
-                                ))}
+                                )) : <p>No parks found</p>}
                             </div>
                         </div>
                     </div>

@@ -13,6 +13,8 @@ function ForestDetailsPage() {
     const navigate = useNavigate();
     const { id } = useParams();
 
+    console.log("id of Forest Details : ", id);
+
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
@@ -56,10 +58,10 @@ function ForestDetailsPage() {
                         "Content-Type": "application/json"
                     }
                 }
-                const res = await fetch(`http://localhost:6003/api/forests/${id}`, options);
+                const res = await fetch(`http://localhost:6003/api/forests/id/${id}`, options);
                 const response = await res.json();
                 console.log("Response of Details : ", response);
-                setForest(response);
+                setForest(response?.data?.forest);
                 setLoading(false);
             } catch (err) {
                 //setError('Failed to load animal details');
@@ -136,7 +138,7 @@ function ForestDetailsPage() {
                                     <h3 className="wd-forest-dtls-gallery-title">Gallery</h3>
                                     <div className="wd-forest-dtls-gallery-carousel">
                                         <div className="wd-forest-dtls-gallery-inner">
-                                            {forest.gallery.map((item) => (
+                                            {forest?.gallery?.map((item) => (
                                                 <div key={item.id} className="wd-forest-dtls-gallery-item">
                                                     <img
                                                         src={Buildimg(item.image)}

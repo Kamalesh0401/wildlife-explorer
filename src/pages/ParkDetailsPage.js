@@ -117,7 +117,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import parkImage from '../assets/images/jungle_forest.jpg';
 import './ParkDetailsPage.css';
@@ -126,7 +126,9 @@ function ParkDetailsPage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [likes, setLikes] = useState(0);
     const [park, setPark] = useState(null);
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+    const { id } = useParams();
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
@@ -139,6 +141,28 @@ function ParkDetailsPage() {
     const handleClose = () => {
         navigate('/explorepark');
     };
+    useEffect(() => {
+        const fetchParkDetails = async () => {
+            try {
+                const options = {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }
+                const res = await fetch(`http://localhost:6005/api/parks/id/${id}`, options);
+                const response = await res.json();
+                console.log("Response of Details : ", response);
+                setPark(response?.data?.forest);
+                setLoading(false);
+            } catch (err) {
+                //setError('Failed to load animal details');
+                setLoading(false);
+            }
+        };
+        fetchParkDetails();
+    }, [id]);
+
 
     const park1 = {
         name: 'Manas National Park, Assam',
@@ -152,6 +176,11 @@ function ParkDetailsPage() {
             { id: 2, image: parkImage, caption: 'Jungle Trail' },
             { id: 3, image: parkImage, caption: 'Wildlife Spot' },
         ],
+        majorAnimals: [
+            { id: 1, name: 'Hog Deer', image: parkImage },
+            { id: 2, name: 'Chital Deer', image: parkImage },
+            { id: 3, name: 'Asian Water Buffalo', image: parkImage },
+        ]
     };
 
     const parkAnimals = [

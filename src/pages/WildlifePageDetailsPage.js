@@ -136,7 +136,7 @@ function WildlifePageDetailsPage() {
                         "Content-Type": "application/json"
                     }
                 }
-                const res = await fetch(`http://localhost:6003/api/animals/id/${id}`, options);
+                const res = await fetch(`http://localhost:6004/api/animals/id/${id}`, options);
                 const response = await res.json();
                 console.log("Response of Details : ", response);
                 setAnimal(response);
