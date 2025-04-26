@@ -44,9 +44,9 @@ function ForestDetailsPage() {
     };
 
     const forestSpecies = [
-        { id: 1, name: 'Jaguar', image: forestImage },
-        { id: 2, name: 'Macaw', image: forestImage },
-        { id: 3, name: 'Sloth', image: forestImage },
+        { id: 2, name: 'Macaw', caption: 'Macaw', image: forestImage },
+        { id: 3, name: 'Sloth', caption: 'Sloth', image: forestImage },
+        { id: 1, name: 'Jaguar', caption: 'Jaguar', image: forestImage },
     ];
 
     useEffect(() => {
