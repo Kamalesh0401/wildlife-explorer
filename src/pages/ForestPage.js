@@ -1,156 +1,9 @@
-// import React, { useState, useEffect } from 'react';
-// import Sidebar from '../components/Sidebar';
-// import Footer from '../components/FooterAdvance';
-// import './ForestPage.css';
-// import { useNavigate } from 'react-router-dom';
-// import { Buildimg } from '../utlis';
-
-// function ForestExplorer() {
-//     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-//     const [searchTerm, setSearchTerm] = useState('');
-//     const [forestData, setForestData] = useState(null);
-//     const [loading, setLoading] = useState(false);
-//     const navigate = useNavigate();
-
-//     useEffect(() => {
-//         const query = '';
-//         const fetchForests = async () => {
-//             try {
-//                 const options = {
-//                     method: "GET",
-//                     headers: {
-//                         "Content-Type": "application/json"
-//                     }
-//                 };
-//                 const res = await fetch(`http://localhost:6003/api/forests/name/ `, options);
-//                 const response = await res.json();
-//                 console.log("Response : ", response);
-//                 setForestData(response?.data?.forests);
-//             } catch (error) {
-//                 console.error('Error fetching forests:', error);
-//             }
-//         };
-//         fetchForests();
-//     }, []);
-
-//     const toggleSidebar = () => {
-//         setIsSidebarOpen(!isSidebarOpen);
-//     };
-
-//     const handleSearch = async (query) => {
-//         setSearchTerm(query);
-//         query = query.toLowerCase();
-
-//         if (query.length >= 3) {
-//             setLoading(true);
-//             try {
-//                 const options = {
-//                     method: "GET",
-//                     headers: {
-//                         "Content-Type": "application/json"
-//                     }
-//                 };
-//                 const res = await fetch(`http://localhost:6003/api/forests/name/${query}`, options);
-//                 const response = await res.json();
-//                 console.log("Response : ", response);
-//                 setForestData(response?.data?.forests);
-
-//             } catch (ex) {
-//                 console.error("Error fetching species data:", ex);
-//             } finally {
-//                 setLoading(false);
-//             }
-//         }
-//         else {
-
-//         }
-//     };
-
-//     const handleForestClick = (id) => {
-//         navigate(`/forestdetails/${encodeURIComponent(id)}`);
-//     };
-
-//     return (
-//         <div className="wd-forest-container">
-//             <div className="wd-forest-body-content mb-3">
-//                 <Sidebar />
-//                 <div className={`wd-forest-main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-//                     <div className="wd-forest-header">
-//                         <h1 className="wd-forest-header-text">EXPLORE FORESTS</h1>
-//                         <button
-//                             className="wd-forest-mobile-menu"
-//                             onClick={toggleSidebar}
-//                             aria-label="Toggle Sidebar"
-//                         >
-//                             ≡
-//                         </button>
-//                     </div>
-//                     <div className="wd-forest-center-main-content">
-//                         <div className="wd-forest-sidebar-content">
-//                             <div className="wd-forest-info-section">
-//                                 <h3 className="wd-forest-section-title">FOREST INFO</h3>
-//                                 <p className="wd-forest-info-text">
-//                                     Forests cover about 31% of the Earth's land surface, playing a vital role in carbon sequestration and oxygen production.
-//                                 </p>
-//                                 <p className="wd-forest-info-text">
-//                                     They are home to 80% of the world's terrestrial biodiversity, including countless species of plants, animals, and microorganisms.
-//                                 </p>
-//                             </div>
-//                         </div>
-//                         <div className="wd-forest-right-section">
-//                             <div className="wd-forest-search-bar">
-//                                 <input
-//                                     type="text"
-//                                     placeholder="Search forests..."
-//                                     value={searchTerm}
-//                                     onChange={(e) => handleSearch(e.target.value)}
-//                                     className="wd-forest-search-input"
-//                                 />
-//                                 <span className="wd-forest-search-icon">🔍</span>
-//                             </div>
-//                             <div className="wd-forest-grid">
-//                                 {(forestData && forestData.length > 0) && forestData.map((forest, index) => (
-//                                     <div className="wd-forest-card" key={index}>
-//                                         <img
-//                                             src={Buildimg(forest.image)}
-//                                             alt={forest.name}
-//                                             className="wd-forest-image"
-//                                         />
-//                                         <h3 className="wd-forest-name">{forest.name}</h3>
-//                                         <p className="wd-forest-description">{forest.overview}</p>
-//                                         <button
-//                                             className="wd-forest-action-button"
-//                                             aria-label={`View details for ${forest.name}`}
-//                                             onClick={() => { handleForestClick(forest._id) }}
-//                                         >
-//                                             View Details
-//                                         </button>
-//                                     </div>
-//                                 ))}
-//                             </div>
-//                             <section className="wd-forest-additional-info">
-//                                 <h3 className="wd-forest-section-title">Why Forests Matter</h3>
-//                                 <p className="wd-forest-info-text">
-//                                     Forests are critical for global ecosystems. They regulate climate, store carbon, and provide resources like timber, food, and medicine. Protecting forests helps combat climate change and preserves habitats for future generations.
-//                                 </p>
-//                             </section>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//             <Footer />
-//         </div>
-//     );
-// }
-
-// export default ForestExplorer;
-
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setforestData, setSearchTerm, clearSearch } from '../store/forestSlice';
 import Sidebar from '../components/Sidebar';
+import Loader from '../components/Loader';
 import Footer from '../components/FooterAdvance';
 import './ForestPage.css';
 import { Buildimg } from '../utlis';
@@ -261,7 +114,7 @@ function ForestExplorer() {
                                 </button>}
                             </div>
                             {loading ? (
-                                <p>Loading...</p>
+                                <Loader />
                             ) : error ? (
                                 <p>Error: {error}</p>
                             ) : forestData && forestData.length > 0 ? (

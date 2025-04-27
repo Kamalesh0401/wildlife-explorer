@@ -169,11 +169,12 @@
 // export default ExploreParksPage;
 
 
-import React, { useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { debounce } from 'lodash';
 import Sidebar from '../components/Sidebar';
+import Loader from '../components/Loader';
 import Footer from '../components/FooterAdvance';
 import { Buildimg } from '../utlis';
 import { fetchParks, setSearchTerm, toggleSidebar, setParksData } from '../store/parkSlice';
@@ -182,7 +183,8 @@ import './ExploreParksPage.css';
 function ExploreParksPage() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { searchTerm, parksData, loading, error, isSidebarOpen } = useSelector((state) => state.park);
+    const [loading, setLoading] = useState(false);
+    const { searchTerm, parksData, error, isSidebarOpen } = useSelector((state) => state.park);
 
     // Debounced search handler
     // const debouncedFetchParks = useCallback(
@@ -203,7 +205,9 @@ function ExploreParksPage() {
         dispatch(setSearchTerm(query));
         query = query.toLowerCase();
         if (query.length >= 3) {
+
             try {
+                setLoading(true);
                 const options = {
                     method: "GET",
                     headers: {
@@ -214,8 +218,10 @@ function ExploreParksPage() {
                 const response = await res.json();
                 console.log("Response : ", response);
                 dispatch(setParksData(response.data.parks));
+                setLoading(false);
             } catch (ex) {
                 console.error("Error fetching species data:", ex);
+                setLoading(false);
             } finally {
                 //setLoading(false);
             }
@@ -233,94 +239,97 @@ function ExploreParksPage() {
     };
 
     return (
-        <div className="wd-park-container">
-            <div className="wd-park-body-content mb-3">
-                <Sidebar isOpen={isSidebarOpen} toggleSidebar={() => dispatch(toggleSidebar())} />
-                <div className={`wd-park-main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-                    <div className="wd-park-header">
-                        <h1 className="wd-park-header-text">EXPLORE NATIONAL PARKS</h1>
-                        <button
-                            className="wd-park-mobile-menu"
-                            onClick={() => dispatch(toggleSidebar())}
-                            aria-label="Toggle Sidebar"
-                        >
-                            ≡
-                        </button>
-                    </div>
-                    <div className="wd-park-center-main-content">
-                        <div className="wd-park-sidebar-content">
-                            <div className="wd-park-filter-section">
-                                <h3 className="wd-park-section-title">FILTERS</h3>
-                                <div className="wd-park-filter-options">
-                                    <label htmlFor="region">Region:</label>
-                                    <select id="region" className="wd-park-filter-dropdown">
-                                        <option value="">All</option>
-                                        <option value="assam">Assam</option>
-                                        <option value="karnataka">Karnataka</option>
-                                        <option value="uttarakhand">Uttarakhand</option>
-                                        <option value="madhya-pradesh">Madhya Pradesh</option>
-                                    </select>
-                                    <label htmlFor="wildlife">Wildlife:</label>
-                                    <select id="wildlife" className="wd-park-filter-dropdown">
-                                        <option value="">All</option>
-                                        <option value="deer">Deer</option>
-                                        <option value="tiger">Tiger</option>
-                                        <option value="rhinoceros">Rhinoceros</option>
-                                    </select>
-                                    <label htmlFor="activity">Activities:</label>
-                                    <select id="activity" className="wd-park-filter-dropdown">
-                                        <option value="">All</option>
-                                        <option value="hiking">Hiking</option>
-                                        <option value="safari">Safari</option>
-                                        <option value="bird-watching">Bird Watching</option>
-                                    </select>
+        <>
+            {/* {loading && <Loader />} */}
+            <div className="wd-park-container">
+                <div className="wd-park-body-content mb-3">
+                    <Sidebar isOpen={isSidebarOpen} toggleSidebar={() => dispatch(toggleSidebar())} />
+                    <div className={`wd-park-main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
+                        <div className="wd-park-header">
+                            <h1 className="wd-park-header-text">EXPLORE NATIONAL PARKS</h1>
+                            <button
+                                className="wd-park-mobile-menu"
+                                onClick={() => dispatch(toggleSidebar())}
+                                aria-label="Toggle Sidebar"
+                            >
+                                ≡
+                            </button>
+                        </div>
+                        <div className="wd-park-center-main-content">
+                            <div className="wd-park-sidebar-content">
+                                <div className="wd-park-filter-section">
+                                    <h3 className="wd-park-section-title">FILTERS</h3>
+                                    <div className="wd-park-filter-options">
+                                        <label htmlFor="region">Region:</label>
+                                        <select id="region" className="wd-park-filter-dropdown">
+                                            <option value="">All</option>
+                                            <option value="assam">Assam</option>
+                                            <option value="karnataka">Karnataka</option>
+                                            <option value="uttarakhand">Uttarakhand</option>
+                                            <option value="madhya-pradesh">Madhya Pradesh</option>
+                                        </select>
+                                        <label htmlFor="wildlife">Wildlife:</label>
+                                        <select id="wildlife" className="wd-park-filter-dropdown">
+                                            <option value="">All</option>
+                                            <option value="deer">Deer</option>
+                                            <option value="tiger">Tiger</option>
+                                            <option value="rhinoceros">Rhinoceros</option>
+                                        </select>
+                                        <label htmlFor="activity">Activities:</label>
+                                        <select id="activity" className="wd-park-filter-dropdown">
+                                            <option value="">All</option>
+                                            <option value="hiking">Hiking</option>
+                                            <option value="safari">Safari</option>
+                                            <option value="bird-watching">Bird Watching</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="wd-park-right-section">
-                            <div className="wd-park-search-bar">
-                                <input
-                                    type="text"
-                                    placeholder="Search parks..."
-                                    value={searchTerm}
-                                    onChange={(e) => handleSearch(e.target.value)}
-                                    className="wd-park-search-input"
-                                    aria-label="Search national parks"
-                                />
-                                <span className="wd-park-search-icon">🔍</span>
-                            </div>
-                            {loading && <div className="wd-park-loading">Loading...</div>}
-                            {error && <div className="wd-park-error">{error}</div>}
-                            <div className="wd-park-park-grid">
-                                {parksData.length > 0 ? (
-                                    parksData.map((park) => (
-                                        <div className="wd-park-park-card" key={park._id}>
-                                            <img
-                                                src={Buildimg(park.image) || 'https://via.placeholder.com/300?text=Park+Image'}
-                                                alt={park.name}
-                                                className="wd-park-park-image"
-                                            />
-                                            <h3 className="wd-park-park-name">{park.name}</h3>
-                                            <p className="wd-park-park-location">{park.location}</p>
-                                            <button
-                                                className="wd-park-action-button"
-                                                aria-label={`View details for ${park.name}`}
-                                                onClick={() => handleParkClick(park._id)}
-                                            >
-                                                View Details
-                                            </button>
-                                        </div>
-                                    ))
-                                ) : (
-                                    !loading && <p>No parks found</p>
-                                )}
+                            <div className="wd-park-right-section">
+                                <div className="wd-park-search-bar">
+                                    <input
+                                        type="text"
+                                        placeholder="Search parks..."
+                                        value={searchTerm}
+                                        onChange={(e) => handleSearch(e.target.value)}
+                                        className="wd-park-search-input"
+                                        aria-label="Search national parks"
+                                    />
+                                    <span className="wd-park-search-icon">🔍</span>
+                                </div>
+                                {loading && <Loader />}
+                                {error && <div className="wd-park-error">{error}</div>}
+                                <div className="wd-park-park-grid">
+                                    {parksData.length > 0 ? (
+                                        parksData.map((park) => (
+                                            <div className="wd-park-park-card" key={park._id}>
+                                                <img
+                                                    src={Buildimg(park.image) || 'https://via.placeholder.com/300?text=Park+Image'}
+                                                    alt={park.name}
+                                                    className="wd-park-park-image"
+                                                />
+                                                <h3 className="wd-park-park-name">{park.name}</h3>
+                                                <p className="wd-park-park-location">{park.location}</p>
+                                                <button
+                                                    className="wd-park-action-button"
+                                                    aria-label={`View details for ${park.name}`}
+                                                    onClick={() => handleParkClick(park._id)}
+                                                >
+                                                    View Details
+                                                </button>
+                                            </div>
+                                        ))
+                                    ) : (
+                                        !loading && <p>No parks found</p>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
-            <Footer />
-        </div>
+        </>
     );
 }
 

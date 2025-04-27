@@ -164,7 +164,8 @@ function WildlifePage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { searchTerm, animalsData, loading, error, filters } = useSelector((state) => state.wildlife);
+    const [loading, setLoading] = useState(false);
+    const { searchTerm, animalsData, error, filters } = useSelector((state) => state.wildlife);
 
     // Fetch animals when searchTerm or filters change
     // useEffect(() => {
@@ -180,6 +181,7 @@ function WildlifePage() {
         query = query.toLowerCase();
         if (query.length >= 3) {
             try {
+                setLoading(true);
                 const options = {
                     method: "GET",
                     headers: {
@@ -190,7 +192,9 @@ function WildlifePage() {
                 const response = await res.json();
                 console.log("Response : ", response);
                 dispatch(setAnimalsData(response));
+                setLoading(false);
             } catch (ex) {
+                setLoading(false);
                 console.error("Error fetching species data:", ex);
             } finally {
                 //setLoading(false);
@@ -213,6 +217,7 @@ function WildlifePage() {
 
     return (
         <>
+            {loading && <Loader />}
             <div className="wd-wildlife-container">
                 <div className="wd-wildlife-body-content mb-3">
                     <Sidebar />
