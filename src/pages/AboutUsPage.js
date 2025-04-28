@@ -90,6 +90,7 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/FooterAdvance';
+import { Buildimg } from '../utlis';
 import './AboutUsPage.css';
 import deer from '../assets/images/deer.jpg';
 import elephant from '../assets/images/elephant.jpg';
@@ -162,7 +163,7 @@ function AboutUsPage() {
                                         <div className="wd-aboutpage-team-card" key={index}>
                                             <div className="wd-aboutpage-team-image-container">
                                                 <img
-                                                    src={member.image}
+                                                    src={Buildimg('')}
                                                     alt={member.name}
                                                     className="wd-aboutpage-team-image"
                                                 />

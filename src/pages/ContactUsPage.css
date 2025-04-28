@@ -1,5 +1,4 @@
-/* General container styling */
-.wd-contactpage-container {
+/* .wd-contactpage-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -12,13 +11,11 @@
     overflow-y: auto;
 }
 
-/* Body content */
 .wd-contactpage-body-content {
     display: flex;
     flex: 1;
 }
 
-/* Header styling */
 .wd-contactpage-header {
     display: flex;
     align-items: center;
@@ -55,13 +52,11 @@
     transform: scale(1.2);
 }
 
-/* Main content */
 .wd-contactpage-main-content {
     display: flex;
     flex-direction: column;
     flex: 1;
     margin-left: 100px;
-    /* Account for the Sidebar component's width */
 }
 
 .wd-contactpage-center-main-content {
@@ -70,7 +65,6 @@
     gap: 20px;
 }
 
-/* Sidebar content */
 .wd-contactpage-sidebar-content {
     display: flex;
     flex-direction: column;
@@ -132,7 +126,6 @@
     color: #009688;
 }
 
-/* Right section */
 .wd-contactpage-right-section {
     width: 60%;
     display: flex;
@@ -245,7 +238,6 @@
     background: linear-gradient(90deg, #009688, #00c4b4);
 }
 
-/* Animations */
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -282,9 +274,6 @@
     }
 }
 
-/* Responsive Design */
-
-/* Tablet (786px - 1024px) */
 @media (min-width: 786px) and (max-width: 1024px) {
     .wd-contactpage-main-content {
         margin-left: 60px;
@@ -340,7 +329,6 @@
     }
 }
 
-/* Mobile (below 786px) */
 @media (max-width: 785px) {
     .wd-contactpage-container {
         padding: 5px;
@@ -353,7 +341,6 @@
     .wd-contactpage-main-content {
         margin-left: 0;
         margin-bottom: 60px;
-        /* Space for the fixed sidebar on mobile */
     }
 
     .wd-contactpage-header {
@@ -388,6 +375,577 @@
 
     .wd-contactpage-section-title {
         font-size: 16px;
+    }
+
+    .wd-contactpage-section-icon {
+        font-size: 16px;
+    }
+
+    .wd-contactpage-contact-info {
+        font-size: 12px;
+    }
+
+    .wd-contactpage-form-title {
+        font-size: 18px;
+    }
+
+    .wd-contactpage-form-input,
+    .wd-contactpage-form-textarea {
+        font-size: 12px;
+    }
+
+    .wd-contactpage-submit-button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .wd-contactpage-confirmation-message p {
+        font-size: 13px;
+    }
+
+    .wd-contactpage-action-button {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+} */
+
+
+/* Contact Us Page CSS */
+.wd-contactpage-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.wd-contactpage-body-content {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+}
+
+.wd-contactpage-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: linear-gradient(180deg, rgba(50, 50, 50, 0.9), rgba(20, 20, 20, 1));
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.wd-contactpage-header-text {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: linear-gradient(45deg, #00c4b4, #4caf50);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.wd-contactpage-mobile-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.wd-contactpage-mobile-menu:hover {
+    transform: rotate(90deg);
+}
+
+.wd-contactpage-hero {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in;
+}
+
+.wd-contactpage-hero-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #00c4b4;
+    margin-bottom: 10px;
+}
+
+.wd-contactpage-hero-text {
+    font-size: 16px;
+    color: #aaaaaa;
+    line-height: 1.6;
+}
+
+.wd-contactpage-main-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 100px;
+    transition: margin-left 0.3s ease;
+}
+
+.wd-contactpage-main-content.sidebar-open {
+    margin-left: 0;
+}
+
+.wd-contactpage-center-main-content {
+    display: flex;
+    flex: 1;
+    gap: 30px;
+}
+
+.wd-contactpage-sidebar-content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wd-contactpage-contact-info-section {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideIn 0.5s ease-out;
+}
+
+.wd-contactpage-contact-info-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.wd-contactpage-section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #00c4b4;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wd-contactpage-section-icon {
+    font-size: 22px;
+    color: #00c4b4;
+    animation: pulse 2s infinite;
+}
+
+.wd-contactpage-contact-info {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #cccccc;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wd-contactpage-contact-label {
+    font-weight: 600;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.wd-contactpage-contact-link {
+    color: #00c4b4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.wd-contactpage-contact-link:hover {
+    color: #009688;
+}
+
+.wd-contactpage-social-links {
+    margin-top: 20px;
+}
+
+.wd-contactpage-social-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #00c4b4;
+    margin-bottom: 10px;
+}
+
+.wd-contactpage-social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.wd-contactpage-social-link {
+    color: #ffffff;
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.wd-contactpage-social-link:hover {
+    color: #00c4b4;
+    transform: scale(1.2);
+}
+
+.wd-contactpage-right-section {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.wd-contactpage-contact-form-section {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wd-contactpage-contact-form-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.wd-contactpage-form-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #00c4b4;
+    text-transform: uppercase;
+}
+
+.wd-contactpage-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.wd-contactpage-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.wd-contactpage-form-group label {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.wd-contactpage-form-input,
+.wd-contactpage-form-textarea {
+    padding: 12px;
+    background-color: #2a2a2a;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    transition: box-shadow 0.3s ease;
+}
+
+.wd-contactpage-form-input:focus,
+.wd-contactpage-form-textarea:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 196, 180, 0.5);
+}
+
+.wd-contactpage-form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.wd-contactpage-submit-button {
+    background-color: #00c4b4;
+    border: none;
+    padding: 12px 24px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wd-contactpage-submit-button:hover {
+    background-color: #009688;
+    transform: scale(1.05);
+}
+
+.wd-contactpage-submit-button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.wd-contactpage-confirmation-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.wd-contactpage-confirmation-message p {
+    font-size: 16px;
+    color: #00c4b4;
+    margin-bottom: 20px;
+}
+
+.wd-contactpage-action-button {
+    background-color: #00c4b4;
+    border: none;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.wd-contactpage-action-button:hover {
+    background-color: #009688;
+    transform: scale(1.05);
+}
+
+.wd-contactpage-error {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (min-width: 786px) and (max-width: 1024px) {
+    .wd-contactpage-main-content {
+        margin-left: 80px;
+    }
+
+    .wd-contactpage-center-main-content {
+        gap: 20px;
+    }
+
+    .wd-contactpage-sidebar-content {
+        width: 35%;
+        min-width: 300px;
+    }
+
+    .wd-contactpage-right-section {
+        width: 65%;
+    }
+
+    .wd-contactpage-header-text {
+        font-size: 28px;
+    }
+
+    .wd-contactpage-hero-title {
+        font-size: 24px;
+    }
+
+    .wd-contactpage-hero-text {
+        font-size: 15px;
+    }
+
+    .wd-contactpage-section-title {
+        font-size: 18px;
+    }
+
+    .wd-contactpage-section-icon {
+        font-size: 20px;
+    }
+
+    .wd-contactpage-contact-info {
+        font-size: 14px;
+    }
+
+    .wd-contactpage-form-title {
+        font-size: 22px;
+    }
+
+    .wd-contactpage-form-input,
+    .wd-contactpage-form-textarea {
+        font-size: 14px;
+    }
+
+    .wd-contactpage-submit-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .wd-contactpage-confirmation-message p {
+        font-size: 15px;
+    }
+
+    .wd-contactpage-action-button {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 785px) {
+    .wd-contactpage-container {
+        padding: 10px;
+    }
+
+    .wd-contactpage-body-content {
+        flex-direction: column;
+    }
+
+    .wd-contactpage-main-content {
+        margin-left: 0;
+        margin-bottom: 80px;
+    }
+
+    .wd-contactpage-header {
+        padding: 12px;
+    }
+
+    .wd-contactpage-header-text {
+        font-size: 24px;
+    }
+
+    .wd-contactpage-mobile-menu {
+        display: block;
+    }
+
+    .wd-contactpage-hero {
+        padding: 15px;
+    }
+
+    .wd-contactpage-hero-title {
+        font-size: 20px;
+    }
+
+    .wd-contactpage-hero-text {
+        font-size: 14px;
+    }
+
+    .wd-contactpage-center-main-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .wd-contactpage-sidebar-content {
+        width: 100%;
+        height: auto;
+    }
+
+    .wd-contactpage-right-section {
+        width: 100%;
+    }
+
+    .wd-contactpage-contact-info-section {
+        padding: 15px;
+    }
+
+    .wd-contactpage-section-title {
+        font-size: 16px;
+    }
+
+    .wd-contactpage-section-icon {
+        font-size: 18px;
+    }
+
+    .wd-contactpage-contact-info {
+        font-size: 13px;
+    }
+
+    .wd-contactpage-form-title {
+        font-size: 20px;
+    }
+
+    .wd-contactpage-form-input,
+    .wd-contactpage-form-textarea {
+        font-size: 13px;
+    }
+
+    .wd-contactpage-submit-button {
+        font-size: 13px;
+        padding: 10px 18px;
+    }
+
+    .wd-contactpage-confirmation-message p {
+        font-size: 14px;
+    }
+
+    .wd-contactpage-action-button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wd-contactpage-header-text {
+        font-size: 20px;
+    }
+
+    .wd-contactpage-hero-title {
+        font-size: 18px;
+    }
+
+    .wd-contactpage-hero-text {
+        font-size: 13px;
+    }
+
+    .wd-contactpage-section-title {
+        font-size: 15px;
     }
 
     .wd-contactpage-section-icon {

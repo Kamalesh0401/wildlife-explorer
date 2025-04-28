@@ -1,7 +1,5 @@
-// src/store/forestSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-// Async thunk for fetching forests
 export const fetchForests = createAsyncThunk(
     'forest/fetchForests',
     async (query = '', { rejectWithValue }) => {

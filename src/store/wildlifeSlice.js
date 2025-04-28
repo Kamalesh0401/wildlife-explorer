@@ -58,7 +58,7 @@ const wildlifeSlice = createSlice({
             state.filters[key] = value;
         },
         clearSearchAndFilters: (state) => {
-            state.searchTerm = '';
+            //state.searchTerm = '';
             state.filters = {
                 species: '',
                 habitat: '',

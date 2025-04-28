@@ -344,7 +344,6 @@
 
 
 
-/* General container styling */
 .wd-aboutpage-container {
     display: flex;
     flex-direction: column;
@@ -358,13 +357,11 @@
     overflow-y: auto;
 }
 
-/* Body content */
 .wd-aboutpage-body-content {
     display: flex;
     flex: 1;
 }
 
-/* Header styling */
 .wd-aboutpage-header {
     display: flex;
     align-items: center;
@@ -401,13 +398,11 @@
     transform: scale(1.2);
 }
 
-/* Main content */
 .wd-aboutpage-main-content {
     display: flex;
     flex-direction: column;
     flex: 1;
     margin-left: 100px;
-    /* Account for the Sidebar component's width */
 }
 
 .wd-aboutpage-center-main-content {
@@ -416,7 +411,6 @@
     gap: 20px;
 }
 
-/* Sidebar content */
 .wd-aboutpage-sidebar-content {
     display: flex;
     flex-direction: column;
@@ -481,7 +475,6 @@
     font-style: italic;
 }
 
-/* Right section */
 .wd-aboutpage-right-section {
     width: 60%;
     display: flex;
@@ -585,7 +578,6 @@
     margin: 5px 0;
 }
 
-/* Animations */
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -622,9 +614,7 @@
     }
 }
 
-/* Responsive Design */
 
-/* Tablet (786px - 1024px) */
 @media (min-width: 786px) and (max-width: 1024px) {
     .wd-aboutpage-main-content {
         margin-left: 60px;
@@ -667,7 +657,6 @@
 
     .wd-aboutpage-team-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 columns for tablet */
     }
 
     .wd-aboutpage-team-image {
@@ -683,7 +672,6 @@
     }
 }
 
-/* Mobile (below 786px) */
 @media (max-width: 785px) {
     .wd-aboutpage-container {
         padding: 5px;
@@ -696,7 +684,6 @@
     .wd-aboutpage-main-content {
         margin-left: 0;
         margin-bottom: 60px;
-        /* Space for the fixed sidebar on mobile */
     }
 
     .wd-aboutpage-header {
@@ -752,7 +739,6 @@
 
     .wd-aboutpage-team-grid {
         grid-template-columns: 1fr;
-        /* 1 column for mobile */
     }
 
     .wd-aboutpage-team-image {

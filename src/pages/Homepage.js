@@ -40,9 +40,10 @@ function HomePage() {
     const sliderImages = [forest2, forest3, jungle];
 
     const categories1 = [
-        { name: 'Nature', image: forest, path: '/nature' },
-        { name: 'Forest', image: forest2, path: '/forest' },
         { name: 'Wildlife', image: 'https://res.cloudinary.com/dhwlzmuhm/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1745430426/lion_ogishm.jpg', path: '/wildlife' },
+        { name: 'Forest', image: forest2, path: '/exploreforests' },
+        { name: 'Parks', image: jungle, path: '/explorepark' },
+        { name: 'Nature', image: forest, path: '/nature' },
         { name: 'Animal', image: elephant, path: '/animal' },
         { name: 'Ocean', image: forest3, path: '/ocean' },
         { name: 'Climate', image: jungle, path: '/climate' },

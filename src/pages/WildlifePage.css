@@ -1,4 +1,3 @@
-/* General container styling */
 .wd-wildlife-container {
     display: flex;
     flex-direction: column;
@@ -12,13 +11,11 @@
     overflow-y: auto;
 }
 
-/* Body content */
 .wd-wildlife-body-content {
     display: flex;
     flex: 1;
 }
 
-/* Header styling */
 .wd-wildlife-header {
     display: flex;
     align-items: center;
@@ -55,13 +52,11 @@
     transform: scale(1.2);
 }
 
-/* Main content */
 .wd-wildlife-main-content {
     display: flex;
     flex-direction: column;
     flex: 1;
     margin-left: 100px;
-    /* Account for the Sidebar component's width */
 }
 
 .wd-wildlife-center-main-content {
@@ -70,7 +65,6 @@
     gap: 20px;
 }
 
-/* Sidebar content */
 .wd-wildlife-sidebar-content {
     display: flex;
     flex-direction: column;
@@ -125,7 +119,6 @@
     box-shadow: 0 0 5px #00c4b4;
 }
 
-/* Right section */
 .wd-wildlife-right-section {
     width: 70%;
     display: flex;
@@ -268,7 +261,6 @@
     margin: 20px 0;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -279,9 +271,6 @@
     }
 }
 
-/* Responsive Design */
-
-/* Tablet (786px - 1024px) */
 @media (min-width: 786px) and (max-width: 1024px) {
     .wd-wildlife-main-content {
         margin-left: 60px;
@@ -307,7 +296,6 @@
 
     .wd-wildlife-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 columns for tablet */
     }
 
     .wd-wildlife-image {
@@ -328,7 +316,6 @@
     }
 }
 
-/* Mobile (below 786px) */
 @media (max-width: 785px) {
     .wd-wildlife-container {
         padding: 5px;
@@ -341,7 +328,6 @@
     .wd-wildlife-main-content {
         margin-left: 0;
         margin-bottom: 60px;
-        /* Space for the fixed sidebar on mobile */
     }
 
     .wd-wildlife-header {
@@ -385,7 +371,6 @@
 
     .wd-wildlife-grid {
         grid-template-columns: 1fr;
-        /* 1 column for mobile */
     }
 
     .wd-wildlife-image {

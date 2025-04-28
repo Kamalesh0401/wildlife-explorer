@@ -53,7 +53,7 @@ function ForestDetailsPage() {
 
 
     const handleSpeciesClick = (speciesId) => {
-        navigate(`/wildlifedetail/${speciesId}`);
+        navigate(`/wildlifedetail/${encodeURIComponent(speciesId)}`);
     };
 
     return (

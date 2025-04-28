@@ -62,7 +62,11 @@ function WildlifePageDetailsPage() {
     useEffect(() => {
         const fetchRelatedAnimals = async () => {
             try {
-                const response = await fetch(`http://localhost:6003/api/animals/habitat/${animal.habitat}`);
+                const queryParams = new URLSearchParams({
+                    //habitat: animal.habitat || '',
+                    diet: animal.diet || '',
+                }).toString();
+                const response = await fetch(`http://localhost:6004/api/animals/related?${queryParams}`);
                 const data = await response.json();
                 const related = data
                     .filter((a) => a._id !== animal._id)
@@ -110,14 +114,14 @@ function WildlifePageDetailsPage() {
                                     <h3 className="wd-wildlife-dtls-section-title">Related Habitat Animals</h3>
                                     {relatedAnimals.length > 0 ? (
                                         <div className="wd-wildlife-dtls-related-animals-list">
-                                            {relatedAnimals?.map((relatedAnimal) => (
+                                            {relatedAnimals?.map((relatedAnimal, i) => (
                                                 <div
                                                     key={relatedAnimal.id}
                                                     className="wd-wildlife-dtls-related-animal-item"
-                                                    onClick={() => handleRelatedAnimalClick(relatedAnimal.id)}
+                                                    onClick={() => handleRelatedAnimalClick(relatedAnimal._id)}
                                                     role="button"
-                                                    tabIndex={0}
-                                                    onKeyPress={(e) => e.key === 'Enter' && handleRelatedAnimalClick(relatedAnimal.id)}
+                                                    tabIndex={i}
+                                                    onKeyPress={(e) => e.key === 'Enter' && handleRelatedAnimalClick(relatedAnimal._id)}
                                                     aria-label={`View details for ${relatedAnimal.name}`}
                                                 >
                                                     <img
@@ -156,15 +160,14 @@ function WildlifePageDetailsPage() {
                                             <span className="wd-wildlife-dtls-detail-label">Geographic Range:</span>{' '}
                                             {animal?.geographicRange?.join(', ')}
                                         </p>
-                                        {/* <p>
-                                        <span className="wd-wildlife-dtls-detail-label">Threats:</span> {animal.threats.join(', ')}
-                                    </p> */}
-                                        {/* <p>
-                                        <span className="wd-wildlife-dtls-detail-label">Weight:</span> {animal.weight}
-                                    </p>
-                                    <p>
-                                        <span className="wd-wildlife-dtls-detail-label">Lifespan:</span> {animal.lifespan}
-                                    </p> */}
+                                        <p>
+                                            <span className="wd-wildlife-dtls-detail-label">Threats:</span> {animal?.threats?.join(', ')}
+                                        </p> <p>
+                                            <span className="wd-wildlife-dtls-detail-label">Weight:</span> {animal.weight}
+                                        </p>
+                                        <p>
+                                            <span className="wd-wildlife-dtls-detail-label">Lifespan:</span> {animal.lifespan}
+                                        </p>
                                         <p>
                                             <span className="wd-wildlife-dtls-detail-label">Diet:</span> {animal.diet}
                                         </p>

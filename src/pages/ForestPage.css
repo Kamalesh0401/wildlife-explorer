@@ -1,4 +1,4 @@
-.wd-forest-container {
+/* .wd-forest-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -346,5 +346,365 @@
     .wd-forest-action-button {
         font-size: 10px;
         padding: 5px 10px;
+    }
+} */
+
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+.wd-forest-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.wd-forest-body-content {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+}
+
+.wd-forest-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(42, 42, 42, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.wd-forest-header-text {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #00c4b4;
+}
+
+.wd-forest-mobile-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.wd-forest-mobile-menu:hover {
+    transform: rotate(90deg);
+}
+
+.wd-forest-main-content {
+    flex: 1;
+    margin-left: 100px;
+    transition: margin-left 0.3s ease;
+}
+
+.wd-forest-main-content.sidebar-open {
+    margin-left: 0;
+}
+
+.wd-forest-center-main-content {
+    display: flex;
+    gap: 25px;
+}
+
+.wd-forest-sidebar-content {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wd-forest-info-section {
+    background: rgba(42, 42, 42, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.wd-forest-info-section:hover {
+    transform: translateY(-5px);
+}
+
+.wd-forest-section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #00c4b4;
+}
+
+.wd-forest-info-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #b0b0b0;
+}
+
+.wd-forest-right-section {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.wd-forest-search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(42, 42, 42, 0.8);
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.wd-forest-search-input {
+    flex: 1;
+    padding: 12px 45px 12px 40px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.wd-forest-search-input:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 196, 180, 0.5);
+}
+
+.wd-forest-search-icon {
+    position: absolute;
+    left: 15px;
+    font-size: 20px;
+    color: #00c4b4;
+}
+
+.wd-forest-clear-button {
+    background: #ff4d4d;
+    border: none;
+    color: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.wd-forest-clear-button:hover {
+    background: #cc0000;
+}
+
+.wd-forest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.wd-forest-card {
+    background: rgba(58, 58, 58, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.wd-forest-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.wd-forest-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.wd-forest-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #00c4b4;
+}
+
+.wd-forest-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #b0b0b0;
+    margin-bottom: 15px;
+}
+
+.wd-forest-action-button {
+    background: #00c4b4;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.wd-forest-action-button:hover {
+    background: #009688;
+    transform: scale(1.05);
+}
+
+.wd-forest-additional-info {
+    background: rgba(42, 42, 42, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 25px;
+}
+
+.wd-forest-welcome {
+    text-align: center;
+    padding: 30px;
+    background: rgba(42, 42, 42, 0.8);
+    border-radius: 12px;
+}
+
+.wd-forest-welcome-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #00c4b4;
+    margin-bottom: 15px;
+}
+
+.wd-forest-welcome-text {
+    font-size: 16px;
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+.wd-forest-error {
+    text-align: center;
+    color: #ff4d4d;
+    font-size: 16px;
+    padding: 20px;
+}
+
+@media (min-width: 786px) and (max-width: 1024px) {
+    .wd-forest-main-content {
+        margin-left: 80px;
+    }
+
+    .wd-forest-center-main-content {
+        gap: 20px;
+    }
+
+    .wd-forest-sidebar-content {
+        width: 35%;
+        min-width: 300px;
+    }
+
+    .wd-forest-right-section {
+        width: 65%;
+    }
+
+    .wd-forest-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wd-forest-image {
+        height: 150px;
+    }
+
+    .wd-forest-name {
+        font-size: 16px;
+    }
+
+    .wd-forest-description {
+        font-size: 13px;
+    }
+
+    .wd-forest-action-button {
+        font-size: 13px;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 785px) {
+    .wd-forest-body-content {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .wd-forest-main-content {
+        margin-left: 0;
+    }
+
+    .wd-forest-header {
+        padding: 12px;
+    }
+
+    .wd-forest-header-text {
+        font-size: 24px;
+    }
+
+    .wd-forest-mobile-menu {
+        display: block;
+    }
+
+    .wd-forest-center-main-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .wd-forest-sidebar-content {
+        width: 100%;
+    }
+
+    .wd-forest-right-section {
+        width: 100%;
+    }
+
+    .wd-forest-search-input {
+        padding: 10px 45px 10px 40px;
+        font-size: 14px;
+    }
+
+    .wd-forest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wd-forest-image {
+        height: 120px;
+    }
+
+    .wd-forest-name {
+        font-size: 16px;
+    }
+
+    .wd-forest-description {
+        font-size: 13px;
+    }
+
+    .wd-forest-action-button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .wd-forest-welcome-title {
+        font-size: 20px;
+    }
+
+    .wd-forest-welcome-text {
+        font-size: 14px;
     }
 }
