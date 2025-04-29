@@ -179,6 +179,7 @@ function Footer() {
                             aria-label="Enter your email to subscribe"
                             required
                         />
+                        <br />
                         <button type="submit" className="newsletter-button">
                             <i className="fas fa-paper-plane"></i> Subscribe
                         </button>

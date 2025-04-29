@@ -374,11 +374,12 @@
 }
 
 .wd-aboutpage-header-text {
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 32px;
+    font-weight: 700;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    color: #00c4b4;
 }
 
 .wd-aboutpage-mobile-menu {
@@ -670,6 +671,10 @@
     .wd-aboutpage-team-role {
         font-size: 13px;
     }
+
+    .wd-aboutpage-header-text {
+        font-size: 28px;
+    }
 }
 
 @media (max-width: 785px) {
@@ -691,7 +696,7 @@
     }
 
     .wd-aboutpage-header-text {
-        font-size: 20px;
+        font-size: 24px;
     }
 
     .wd-aboutpage-mobile-menu {
@@ -751,5 +756,11 @@
 
     .wd-aboutpage-team-role {
         font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wd-aboutpage-header-text {
+        font-size: 20px;
     }
 }

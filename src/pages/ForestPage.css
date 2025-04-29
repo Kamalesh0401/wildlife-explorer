@@ -1,355 +1,3 @@
-/* .wd-forest-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-color: #1a1a1a;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    padding-left: 0;
-    padding-top: 10px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
-
-.wd-forest-body-content {
-    display: flex;
-    flex: 1;
-}
-
-.wd-forest-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 15px;
-    background: linear-gradient(180deg, rgba(42, 42, 42, 0.8), rgba(26, 26, 26, 1));
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.wd-forest-header-text {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.wd-forest-mobile-menu {
-    display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    transition: transform 0.2s ease;
-}
-
-.wd-forest-mobile-menu:hover {
-    transform: scale(1.2);
-}
-
-.wd-forest-main-content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    margin-left: 100px;
-}
-
-.wd-forest-center-main-content {
-    display: flex;
-    flex: 1;
-    gap: 20px;
-}
-
-.wd-forest-sidebar-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 30%;
-    height: 100%;
-}
-
-.wd-forest-info-section {
-    background-color: #2a2a2a;
-    padding: 15px;
-    border-radius: 10px;
-    flex: 1;
-    transition: box-shadow 0.3s ease;
-}
-
-.wd-forest-info-section:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.wd-forest-section-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.wd-forest-info-text {
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 5px 0;
-    color: #888;
-}
-
-.wd-forest-right-section {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.wd-forest-search-bar {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.wd-forest-search-input {
-    width: 100%;
-    padding: 10px 40px 10px 15px;
-    background-color: #2a2a2a;
-    border: none;
-    border-radius: 5px;
-    color: #ffffff;
-    font-size: 14px;
-}
-
-.wd-forest-search-input:focus {
-    outline: none;
-    box-shadow: 0 0 5px #00c4b4;
-}
-
-.wd-forest-search-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #888;
-}
-
-.wd-forest-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.wd-forest-card {
-    background-color: #3a3a3a;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.wd-forest-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.wd-forest-image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.wd-forest-name {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 5px 0;
-    color: #00c4b4;
-}
-
-.wd-forest-description {
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 5px 0;
-    color: #888;
-}
-
-.wd-forest-action-button {
-    background-color: #00c4b4;
-    border: none;
-    padding: 8px 15px;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.wd-forest-action-button:hover {
-    background-color: #00a89a;
-    transform: scale(1.05);
-}
-
-.wd-forest-additional-info {
-    margin-top: 20px;
-    background-color: #2a2a2a;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-.wd-forest-search-bar {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.wd-forest-clear-button {
-    background-color: #ff4d4d;
-    border: none;
-    color: #fff;
-    padding: 5px 10px;
-    margin-left: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-
-.wd-forest-clear-button:hover {
-    background-color: #cc0000;
-}
-
-.wd-forest-grid p {
-    text-align: center;
-    color: #ccc;
-    font-size: 16px;
-    margin: 20px 0;
-}
-
-@media (min-width: 786px) and (max-width: 1024px) {
-    .wd-forest-main-content {
-        margin-left: 60px;
-    }
-
-    .wd-forest-center-main-content {
-        gap: 15px;
-    }
-
-    .wd-forest-sidebar-content {
-        width: 35%;
-        min-width: 280px;
-    }
-
-    .wd-forest-right-section {
-        width: 65%;
-        min-width: 400px;
-    }
-
-    .wd-forest-section-title {
-        font-size: 16px;
-    }
-
-    .wd-forest-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .wd-forest-image {
-        height: 120px;
-    }
-
-    .wd-forest-name {
-        font-size: 14px;
-    }
-
-    .wd-forest-description {
-        font-size: 13px;
-    }
-
-    .wd-forest-action-button {
-        font-size: 11px;
-        padding: 6px 12px;
-    }
-}
-
-@media (max-width: 785px) {
-    .wd-forest-container {
-        padding: 5px;
-    }
-
-    .wd-forest-body-content {
-        flex-direction: column;
-    }
-
-    .wd-forest-main-content {
-        margin-left: 0;
-        margin-bottom: 60px;
-    }
-
-    .wd-forest-header {
-        padding: 10px;
-    }
-
-    .wd-forest-header-text {
-        font-size: 20px;
-    }
-
-    .wd-forest-mobile-menu {
-        display: block;
-    }
-
-    .wd-forest-center-main-content {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .wd-forest-sidebar-content {
-        width: 100%;
-        height: auto;
-    }
-
-    .wd-forest-right-section {
-        width: 100%;
-    }
-
-    .wd-forest-search-bar {
-        margin-bottom: 15px;
-    }
-
-    .wd-forest-search-input {
-        padding: 8px 40px 8px 12px;
-        font-size: 12px;
-    }
-
-    .wd-forest-search-icon {
-        font-size: 16px;
-    }
-
-    .wd-forest-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .wd-forest-image {
-        height: 100px;
-    }
-
-    .wd-forest-name {
-        font-size: 14px;
-    }
-
-    .wd-forest-description {
-        font-size: 12px;
-    }
-
-    .wd-forest-action-button {
-        font-size: 10px;
-        padding: 5px 10px;
-    }
-} */
-
-
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
 .wd-forest-container {
@@ -462,19 +110,35 @@
     position: relative;
     display: flex;
     align-items: center;
-    background: rgba(42, 42, 42, 0.8);
+    background-color: #1e1e1e;
     border-radius: 8px;
     padding: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0 o, 0, 0, 0.2);
 }
 
 .wd-forest-search-input {
-    flex: 1;
-    padding: 12px 45px 12px 40px;
-    background: transparent;
+    width: 100%;
+    padding: 12px 50px 12px 15px;
+    background-color: transparent;
     border: none;
-    color: #fff;
-    font-size: 16px;
     border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease;
+}
+
+.wd-forest-search-icon,
+.wd-forest-clear-button {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #00c4b4;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .wd-forest-search-input:focus {
@@ -482,28 +146,14 @@
     box-shadow: 0 0 8px rgba(0, 196, 180, 0.5);
 }
 
-.wd-forest-search-icon {
-    position: absolute;
-    left: 15px;
-    font-size: 20px;
-    color: #00c4b4;
-}
-
 .wd-forest-clear-button {
-    background: #ff4d4d;
-    border: none;
-    color: #fff;
-    padding: 8px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 16px;
-    position: absolute;
-    right: 10px;
-    transition: background-color 0.3s ease;
+    color: #ff4d4d;
 }
 
+.wd-forest-search-icon:hover,
 .wd-forest-clear-button:hover {
-    background: #cc0000;
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.2);
 }
 
 .wd-forest-grid {
@@ -637,6 +287,10 @@
         font-size: 13px;
         padding: 8px 15px;
     }
+
+    .wd-forest-header-text {
+        font-size: 28px;
+    }
 }
 
 @media (max-width: 785px) {
@@ -679,6 +333,11 @@
         font-size: 14px;
     }
 
+    .wd-forest-search-icon,
+    .wd-forest-clear-button {
+        font-size: 16px;
+    }
+
     .wd-forest-grid {
         grid-template-columns: 1fr;
     }
@@ -706,5 +365,11 @@
 
     .wd-forest-welcome-text {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wd-forest-header-text {
+        font-size: 20px;
     }
 }

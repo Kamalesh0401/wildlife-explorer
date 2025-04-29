@@ -57,8 +57,10 @@ const wildlifeSlice = createSlice({
             const { key, value } = action.payload;
             state.filters[key] = value;
         },
+        clearSearch: (state) => {
+            state.searchTerm = '';
+        },
         clearSearchAndFilters: (state) => {
-            //state.searchTerm = '';
             state.filters = {
                 species: '',
                 habitat: '',
@@ -90,5 +92,5 @@ const wildlifeSlice = createSlice({
     // },
 });
 
-export const { setSearchTerm, setFilter, clearSearchAndFilters, setAnimalsData } = wildlifeSlice.actions;
+export const { setSearchTerm, setFilter, clearSearchAndFilters, setAnimalsData, clearSearch } = wildlifeSlice.actions;
 export default wildlifeSlice.reducer;

@@ -447,10 +447,7 @@
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    background: linear-gradient(45deg, #00c4b4, #4caf50);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: #00c4b4;
 }
 
 .wd-contactpage-mobile-menu {

@@ -246,10 +246,9 @@ function ForestExplorer() {
                         </div>
                         <div className="wd-forest-right-section">
                             <div className="wd-forest-search-bar">
-                                <i className="fas fa-search wd-forest-search-icon"></i>
                                 <input
                                     type="text"
-                                    placeholder="Search for forests by name..."
+                                    placeholder="Search forests..."
                                     value={searchTerm}
                                     onChange={(e) => handleSearch(e.target.value)}
                                     className="wd-forest-search-input"
@@ -262,6 +261,19 @@ function ForestExplorer() {
                                     >
                                         <i className="fas fa-times"></i>
                                     </button>
+                                )}
+                                {searchTerm ? (
+                                    <button
+                                        onClick={handleClearSearch}
+                                        className="wd-forest-clear-button"
+                                        aria-label="Clear search"
+                                    >
+                                        <i className="fas fa-times"></i>
+                                    </button>
+                                ) : (
+                                    <span className="wd-forest-search-icon">
+                                        <i className="fas fa-search"></i>
+                                    </span>
                                 )}
                             </div>
                             {loading ? (

@@ -49,560 +49,12 @@
     flex-direction: column;
     flex: 1;
     margin-left: 100px;
-}
-
-.wd-home-center-main-content {
-    display: flex;
-    flex: 1;
-    gap: 30px;
-}
-
-.wd-home-sidebar-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 35%;
-    min-width: 250px;
-}
-
-.wd-home-intro-section {
-    background-color: #2a2a2a;
-    padding: 20px;
-    border-radius: 10px;
-    flex: 2;
-    transition: box-shadow 0.3s ease;
-}
-
-.wd-home-intro-section:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-.wd-home-quick-links-section {
-    background-color: #2a2a2a;
-    padding: 15px;
-    border-radius: 10px;
-    flex: 1;
-    transition: box-shadow 0.3s ease;
-}
-
-.wd-home-quick-links-section:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-.wd-home-quick-links {
-    list-style: none;
-    padding: 0;
-}
-
-.wd-home-quick-links li {
-    margin: 10px 0;
-}
-
-.wd-home-quick-links a {
-    color: #00c4b4;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.wd-home-quick-links a:hover {
-    color: #00a89a;
-}
-
-.wd-home-section-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    color: #00c4b4;
-}
-
-.wd-home-description {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #ccc;
-}
-
-.wd-home-right-section {
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.wd-home-hero-section {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.wd-home-hero-image {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: transform 0.3s ease;
-}
-
-.wd-home-hero-section:hover .wd-home-hero-image {
-    transform: scale(1.05);
-}
-
-.wd-home-hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.wd-home-explore-button {
-    background-color: #00c4b4;
-    border: none;
-    padding: 15px 30px;
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.wd-home-explore-button:hover {
-    background-color: #00a89a;
-    transform: scale(1.05);
-}
-
-.wd-home-featured-section {
-    background-color: #2a2a2a;
-    padding: 20px;
-    border-radius: 10px;
-    transition: box-shadow 0.3s ease;
-}
-
-.wd-home-featured-section:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-.wd-home-park-cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.wd-home-park-card {
-    background-color: #3a3a3a;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    flex: 1;
-    min-width: 200px;
-    max-width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.wd-home-park-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-.wd-home-park-image {
-    height: 150px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.wd-home-park-card h3 {
-    font-size: 18px;
-    margin: 10px 0;
-    color: #00c4b4;
-}
-
-.wd-home-park-card p {
-    font-size: 14px;
-    margin: 5px 0;
-    opacity: 0.9;
-    color: #ccc;
-}
-
-.wd-home-action-button {
-    background-color: #00c4b4;
-    border: none;
-    padding: 8px 16px;
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 10px;
-}
-
-.wd-home-action-button:hover {
-    background-color: #00a89a;
-    transform: scale(1.05);
-}
-
-.wd-home-categories-section {
-    background-color: #2a2a2a;
-    padding: 20px;
-    border-radius: 10px;
-    transition: box-shadow 0.3s ease;
-    margin-top: 20px;
-}
-
-.wd-home-categories-section:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-.wd-home-category-cards {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.wd-home-category-card {
-    background-color: #3a3a3a;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.wd-home-category-card:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-.wd-home-category-image {
-    width: 120px;
-    height: 120px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    margin-bottom: 5px;
-}
-
-.wd-home-category-name {
-    font-size: 14px;
-    margin: 0;
-    text-align: center;
-    color: #ccc;
-}
-
-.wd-home-species-slider {
-    margin-top: 15px;
-    border-radius: 5px;
-    overflow: hidden;
-    width: 100%;
-    max-width: 600px;
-    background-color: inherit;
-}
-
-.wd-home-species-image {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.wd-home-species-image:hover {
-    transform: scale(1.05);
-}
-
-.slick-dots {
-    bottom: 10px;
-}
-
-.slick-dots li button:before {
-    color: #fff;
-    opacity: 0.5;
-    font-size: 10px;
-}
-
-.slick-dots li.slick-active button:before {
-    color: #00c4b4;
-    opacity: 1;
-}
-
-@media (min-width: 1200px) {
-    .wd-home-sidebar-content {
-        width: 35%;
-    }
-
-    .wd-home-right-section {
-        width: 65%;
-    }
-
-    .wd-home-hero-image {
-        height: 500px;
-    }
-
-    .wd-home-park-card {
-        min-width: 250px;
-    }
-
-    .wd-home-category-card {
-        width: 160px;
-        height: 160px;
-    }
-
-    .wd-home-category-image {
-        width: 130px;
-        height: 130px;
-    }
-}
-
-@media (min-width: 1024px) and (max-width: 1199px) {
-    .wd-home-container {
-        padding: 15px;
-    }
-
-    .wd-home-header-text {
-        font-size: 28px;
-    }
-
-    .wd-home-tagline {
-        font-size: 16px;
-    }
-
-    .wd-home-sidebar-content {
-        width: 40%;
-    }
-
-    .wd-home-right-section {
-        width: 60%;
-    }
-
-    .wd-home-hero-image {
-        height: 400px;
-    }
-
-    .wd-home-park-card {
-        min-width: 220px;
-    }
-
-    .wd-home-category-card {
-        width: 140px;
-        height: 140px;
-    }
-
-    .wd-home-category-image {
-        width: 110px;
-        height: 110px;
-    }
-
-    .wd-home-species-image {
-        height: 280px;
-    }
-}
-
-@media (max-width: 1023px) and (min-width: 768px) {
-    .wd-home-container {
-        padding: 10px;
-    }
-
-    .wd-home-header-text {
-        font-size: 24px;
-    }
-
-    .wd-home-tagline {
-        font-size: 14px;
-    }
-
-    .wd-home-body-content {
-        flex-direction: column;
-    }
-
-    .wd-home-main-content {
-        margin-left: 0;
-        margin-bottom: 60px;
-    }
-
-    .wd-home-center-main-content {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .wd-home-sidebar-content {
-        width: 100%;
-    }
-
-    .wd-home-right-section {
-        width: 100%;
-    }
-
-    .wd-home-hero-image {
-        height: 300px;
-    }
-
-    .wd-home-park-cards {
-        justify-content: center;
-    }
-
-    .wd-home-park-card {
-        min-width: 200px;
-        max-width: 220px;
-    }
-
-    .wd-home-category-card {
-        width: 120px;
-        height: 120px;
-    }
-
-    .wd-home-category-image {
-        width: 100px;
-        height: 100px;
-    }
-
-    .wd-home-category-name {
-        font-size: 12px;
-    }
-
-    .wd-home-species-image {
-        height: 250px;
-    }
-}
-
-@media (max-width: 767px) {
-    .wd-home-container {
-        padding: 5px;
-    }
-
-    .wd-home-header-text {
-        font-size: 20px;
-    }
-
-    .wd-home-tagline {
-        font-size: 12px;
-    }
-
-    .wd-home-center-main-content {
-        gap: 15px;
-    }
-
-    .wd-home-hero-image {
-        height: 200px;
-    }
-
-    .wd-home-park-card {
-        min-width: 150px;
-        max-width: 180px;
-    }
-
-    .wd-home-park-image {
-        height: 100px;
-    }
-
-    .wd-home-category-cards {
-        justify-content: center;
-    }
-
-    .wd-home-category-card {
-        width: 90px;
-        height: 90px;
-    }
-
-    .wd-home-category-image {
-        width: 70px;
-        height: 70px;
-    }
-
-    .wd-home-category-name {
-        font-size: 10px;
-    }
-
-    .wd-home-species-image {
-        height: 180px;
-    }
-
-    .wd-home-action-button {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-
-    .wd-home-explore-button {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-} */
-
-
-.wd-home-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/images/jungle_forest.jpg') no-repeat center center/cover;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    padding: 10px 0;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
-
-.wd-home-body-content {
-    display: flex;
-    flex: 1;
-}
-
-.wd-home-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 15px;
-    background: linear-gradient(180deg, rgba(42, 42, 42, 0.8), rgba(26, 26, 26, 1));
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    position: relative;
-    text-align: center;
-}
-
-.wd-home-header-text {
-    font-size: 32px;
-    font-weight: bold;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #00c4b4;
-}
-
-.wd-home-tagline {
-    font-size: 18px;
-    margin: 5px 0 0;
-    opacity: 0.9;
-    color: #fff;
-}
-
-.wd-home-main-content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    margin-left: 100px;
-    /* Default margin when sidebar is fixed on the left */
     margin-bottom: 0;
     transition: margin-left 0.3s ease;
 }
 
 .wd-home-main-content.sidebar-open {
     margin-left: 100px;
-    /* Maintain margin when sidebar is open (fixed on left) */
 }
 
 .wd-home-center-main-content {
@@ -895,7 +347,42 @@
     opacity: 1;
 }
 
-/* Media Queries */
+.wd-home-conservation-section {
+    margin-top: 30px;
+}
+
+.wd-home-conservation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.wd-home-conservation-card {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wd-home-conservation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.wd-home-conservation-card h3 {
+    font-size: 18px;
+    color: #00c4b4;
+    margin-bottom: 10px;
+}
+
+.wd-home-conservation-card p {
+    font-size: 14px;
+    color: #aaaaaa;
+    line-height: 1.5;
+}
+
 @media (min-width: 1200px) {
     .wd-home-sidebar-content {
         width: 35%;
@@ -1032,6 +519,10 @@
 
     .wd-home-species-image {
         height: 250px;
+    }
+
+    .wd-home-conservation-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     }
 }
 
@@ -1051,12 +542,10 @@
     .wd-home-main-content {
         margin-left: 0;
         margin-bottom: 100px;
-        /* Space for bottom sidebar */
     }
 
     .wd-home-main-content.sidebar-open {
         margin-left: 0;
-        /* No left margin when sidebar is at bottom */
     }
 
     .wd-home-center-main-content {
@@ -1120,6 +609,10 @@
         font-size: 14px;
         padding: 10px 20px;
     }
+
+    .wd-home-conservation-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 468px) {
@@ -1138,12 +631,10 @@
     .wd-home-main-content {
         margin-left: 0;
         margin-bottom: 100px;
-        /* Space for bottom sidebar */
     }
 
     .wd-home-main-content.sidebar-open {
         margin-left: 0;
-        /* No left margin when sidebar is at bottom */
     }
 
     .wd-home-center-main-content {
@@ -1238,5 +729,748 @@
     .wd-home-featured-section,
     .wd-home-categories-section {
         padding: 15px;
+    }
+
+    .wd-home-conservation-card h3 {
+        font-size: 16px;
+    }
+
+    .wd-home-conservation-card p {
+        font-size: 12px;
+    }
+
+} */
+
+
+
+.wd-home-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/images/jungle_forest.jpg') no-repeat center center/cover; */
+    background: #000000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.wd-home-body-content {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+}
+
+.wd-home-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: linear-gradient(180deg, rgba(42, 42, 42, 0.8), rgba(26, 26, 26, 1));
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.wd-home-header-text {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00c4b4;
+}
+
+.wd-home-tagline {
+    font-size: 18px;
+    margin: 5px 0 0;
+    opacity: 0.9;
+    color: #fff;
+}
+
+.wd-home-main-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 100px;
+    transition: margin-left 0.3s ease;
+}
+
+.wd-home-main-content.sidebar-open {
+    margin-left: 0;
+}
+
+.wd-home-center-main-content {
+    display: flex;
+    flex: 1;
+    gap: 30px;
+}
+
+.wd-home-sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 35%;
+    min-width: 250px;
+}
+
+.wd-home-intro-section {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 2;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.wd-home-intro-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.wd-home-quick-links-section {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.wd-home-quick-links-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.wd-home-quick-links {
+    list-style: none;
+    padding: 0;
+}
+
+.wd-home-quick-links li {
+    margin: 10px 0;
+}
+
+.wd-home-quick-links a {
+    color: #00c4b4;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.wd-home-quick-links a:hover {
+    color: #00a89a;
+}
+
+.wd-home-section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #00c4b4;
+}
+
+.wd-home-description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #ccc;
+}
+
+.wd-home-right-section {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.wd-home-hero-section {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.wd-home-hero-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.wd-home-hero-section:hover .wd-home-hero-image {
+    transform: scale(1.05);
+}
+
+.wd-home-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wd-home-explore-button {
+    background-color: #00c4b4;
+    border: none;
+    padding: 15px 30px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.wd-home-explore-button:hover {
+    background-color: #00a89a;
+    transform: scale(1.05);
+}
+
+.wd-home-featured-section {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.wd-home-featured-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.wd-home-park-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.wd-home-park-card {
+    background-color: #3a3a3a;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.wd-home-park-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.wd-home-park-image {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.wd-home-park-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #00c4b4;
+}
+
+.wd-home-park-card p {
+    font-size: 14px;
+    margin: 5px 0;
+    opacity: 0.9;
+    color: #ccc;
+}
+
+.wd-home-action-button {
+    background-color: #00c4b4;
+    border: none;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.wd-home-action-button:hover {
+    background-color: #00a89a;
+    transform: scale(1.05);
+}
+
+.wd-home-categories-section {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.wd-home-categories-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.wd-home-category-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.wd-home-category-card {
+    background-color: #3a3a3a;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wd-home-category-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.wd-home-category-image {
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.wd-home-category-name {
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+    color: #ccc;
+}
+
+.wd-home-species-slider {
+    margin-top: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    background-color: inherit;
+}
+
+.wd-home-species-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.wd-home-species-image:hover {
+    transform: scale(1.05);
+}
+
+.slick-dots {
+    bottom: 10px;
+}
+
+.slick-dots li button:before {
+    color: #fff;
+    opacity: 0.5;
+    font-size: 10px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #00c4b4;
+    opacity: 1;
+}
+
+.wd-home-conservation-section {
+    margin-top: 30px;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.wd-home-conservation-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.wd-home-conservation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.wd-home-conservation-card {
+    background-color: #3a3a3a;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.wd-home-conservation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.wd-home-conservation-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.wd-home-conservation-card:hover .wd-home-conservation-image {
+    opacity: 0.9;
+}
+
+.wd-home-conservation-card h3 {
+    font-size: 18px;
+    color: #00c4b4;
+    margin-bottom: 10px;
+}
+
+.wd-home-conservation-card p {
+    font-size: 14px;
+    color: #aaaaaa;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (min-width: 1200px) {
+    .wd-home-sidebar-content {
+        width: 35%;
+    }
+
+    .wd-home-right-section {
+        width: 65%;
+    }
+
+    .wd-home-hero-image {
+        height: 500px;
+    }
+
+    .wd-home-category-card {
+        width: 160px;
+        height: 160px;
+    }
+
+    .wd-home-category-image {
+        width: 130px;
+        height: 130px;
+    }
+
+    .wd-home-species-image {
+        height: 320px;
+    }
+}
+
+@media (min-width: 786px) and (max-width: 1199px) {
+    .wd-home-container {
+        padding: 15px;
+    }
+
+    .wd-home-header-text {
+        font-size: 28px;
+    }
+
+    .wd-home-tagline {
+        font-size: 16px;
+    }
+
+    .wd-home-main-content {
+        margin-left: 80px;
+    }
+
+    .wd-home-sidebar-content {
+        width: 40%;
+        min-width: 300px;
+    }
+
+    .wd-home-right-section {
+        width: 60%;
+    }
+
+    .wd-home-hero-image {
+        height: 400px;
+    }
+
+    .wd-home-park-cards {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .wd-home-park-image {
+        height: 130px;
+    }
+
+    .wd-home-park-card h3 {
+        font-size: 16px;
+    }
+
+    .wd-home-park-card p {
+        font-size: 13px;
+    }
+
+    .wd-home-category-card {
+        width: 140px;
+        height: 140px;
+    }
+
+    .wd-home-category-image {
+        width: 110px;
+        height: 110px;
+    }
+
+    .wd-home-category-name {
+        font-size: 12px;
+    }
+
+    .wd-home-species-image {
+        height: 280px;
+    }
+
+    .wd-home-conservation-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .wd-home-conservation-image {
+        height: 130px;
+    }
+
+    .wd-home-conservation-card h3 {
+        font-size: 16px;
+    }
+
+    .wd-home-conservation-card p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 785px) {
+    .wd-home-container {
+        padding: 10px;
+    }
+
+    .wd-home-body-content {
+        flex-direction: column;
+    }
+
+    .wd-home-main-content {
+        margin-left: 0;
+        margin-bottom: 80px;
+    }
+
+    .wd-home-header {
+        padding: 12px;
+    }
+
+    .wd-home-header-text {
+        font-size: 24px;
+    }
+
+    .wd-home-tagline {
+        font-size: 14px;
+    }
+
+    .wd-home-center-main-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .wd-home-sidebar-content {
+        width: 100%;
+        height: auto;
+    }
+
+    .wd-home-right-section {
+        width: 100%;
+    }
+
+    .wd-home-hero-image {
+        height: 300px;
+    }
+
+    .wd-home-park-cards {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+
+    .wd-home-park-image {
+        height: 120px;
+    }
+
+    .wd-home-park-card h3 {
+        font-size: 16px;
+    }
+
+    .wd-home-park-card p {
+        font-size: 13px;
+    }
+
+    .wd-home-action-button {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .wd-home-category-card {
+        width: 120px;
+        height: 120px;
+    }
+
+    .wd-home-category-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .wd-home-category-name {
+        font-size: 12px;
+    }
+
+    .wd-home-species-image {
+        height: 250px;
+    }
+
+    .wd-home-conservation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wd-home-conservation-image {
+        height: 120px;
+    }
+
+    .wd-home-conservation-card h3 {
+        font-size: 16px;
+    }
+
+    .wd-home-conservation-card p {
+        font-size: 12px;
+    }
+
+    .wd-home-explore-button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wd-home-container {
+        padding: 5px;
+    }
+
+    .wd-home-header-text {
+        font-size: 20px;
+    }
+
+    .wd-home-tagline {
+        font-size: 12px;
+    }
+
+    .wd-home-main-content {
+        margin-bottom: 60px;
+    }
+
+    .wd-home-center-main-content {
+        gap: 10px;
+    }
+
+    .wd-home-sidebar-content {
+        min-width: 0;
+    }
+
+    .wd-home-hero-image {
+        height: 200px;
+    }
+
+    .wd-home-park-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .wd-home-park-image {
+        height: 100px;
+    }
+
+    .wd-home-park-card h3 {
+        font-size: 14px;
+    }
+
+    .wd-home-park-card p {
+        font-size: 12px;
+    }
+
+    .wd-home-action-button {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
+    .wd-home-category-card {
+        width: 100px;
+        height: 100px;
+    }
+
+    .wd-home-category-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .wd-home-category-name {
+        font-size: 10px;
+    }
+
+    .wd-home-species-image {
+        height: 180px;
+    }
+
+    .wd-home-conservation-image {
+        height: 100px;
+    }
+
+    .wd-home-conservation-card h3 {
+        font-size: 14px;
+    }
+
+    .wd-home-conservation-card p {
+        font-size: 11px;
+    }
+
+    .wd-home-section-title {
+        font-size: 16px;
+    }
+
+    .wd-home-description {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .wd-home-quick-links a {
+        font-size: 12px;
+    }
+
+    .wd-home-intro-section,
+    .wd-home-quick-links-section,
+    .wd-home-featured-section,
+    .wd-home-categories-section,
+    .wd-home-conservation-section {
+        padding: 15px;
+    }
+
+    .wd-home-explore-button {
+        font-size: 14px;
+        padding: 10px 20px;
     }
 }

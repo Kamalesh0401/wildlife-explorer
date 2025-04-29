@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { debounce } from 'lodash';
-import { fetchAnimals, setSearchTerm, setFilter, clearSearchAndFilters, setAnimalsData } from '../store/wildlifeSlice';
+import { fetchAnimals, setSearchTerm, setFilter, clearSearchAndFilters, clearSearch, setAnimalsData } from '../store/wildlifeSlice';
 import Sidebar from '../components/Sidebar';
 import Loader from '../components/Loader';
 import Footer from '../components/FooterAdvance';
@@ -83,7 +83,9 @@ function WildlifePage() {
         dispatch(clearSearchAndFilters());
         debouncedFetchAnimals(searchTerm, filters);
     };
-
+    const handleClearSearch = () => {
+        dispatch(clearSearch());
+    };
     const handleAnimalClick = (id) => {
         navigate(`/wildlifedetail/${encodeURIComponent(id)}`);
     };
@@ -142,6 +144,7 @@ function WildlifePage() {
                                             onChange={(e) => handleFilterChange('conservationStatus', e.target.value)}
                                         >
                                             <option value="">All</option>
+                                            <option value="Extinct">Extinct</option>
                                             <option value="endangered">Endangered</option>
                                             <option value="vulnerable">Vulnerable</option>
                                             <option value="least-concern">Least Concern</option>
@@ -180,7 +183,19 @@ function WildlifePage() {
                                         className="wd-wildlife-search-input"
                                         aria-label="Search wildlife"
                                     />
-                                    <span className="wd-wildlife-search-icon">🔍</span>
+                                    {searchTerm ? (
+                                        <button
+                                            onClick={handleClearSearch}
+                                            className="wd-park-clear-button"
+                                            aria-label="Clear search"
+                                        >
+                                            <i className="fas fa-times"></i>
+                                        </button>
+                                    ) : (
+                                        <span className="wd-wildlife-search-icon">
+                                            <i className="fas fa-search"></i>
+                                        </span>
+                                    )}
                                 </div>
                                 {loading ? (
                                     <p>Loading...</p>
