@@ -2,7 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { debounce } from 'lodash';
+import { Helmet } from "react-helmet-async";
 import { fetchAnimals, setSearchTerm, setFilter, clearSearchAndFilters, clearSearch, setAnimalsData } from '../store/wildlifeSlice';
+import { setFromPage } from '../store/generalSlice';
 import Sidebar from '../components/Sidebar';
 import Loader from '../components/Loader';
 import Footer from '../components/FooterAdvance';
@@ -16,11 +18,6 @@ function WildlifePage() {
     const [loading, setLoading] = useState(false);
     const { searchTerm, animalsData, error, filters } = useSelector((state) => state.wildlife);
 
-    // Fetch animals when searchTerm or filters change
-    // useEffect(() => {
-    //     dispatch(fetchAnimals({ searchTerm, filters }));
-    // }, [searchTerm, filters, dispatch]);
-
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
@@ -32,7 +29,6 @@ function WildlifePage() {
         }, 500),
         []
     );
-
 
     // Fetch animals with search term and filters
     const fetchAnimals = async (query, { species, habitat, conservationStatus, diet }) => {
@@ -87,6 +83,7 @@ function WildlifePage() {
         dispatch(clearSearch());
     };
     const handleAnimalClick = (id) => {
+        dispatch(setFromPage("/wildlife"));
         navigate(`/wildlifedetail/${encodeURIComponent(id)}`);
     };
 
@@ -94,6 +91,21 @@ function WildlifePage() {
         <>
             {loading && <Loader />}
             <div className="wd-wildlife-container">
+                <Helmet>
+                    <title>Wildlife Explorer - Discover Wildlife Species</title>
+                    <meta name="description" content="Explore diverse wildlife species with Wildlife Explorer. Search and filter by species, habitat, conservation status, or diet to discover fascinating animals." />
+                    <meta name="keywords" content="wildlife, animals, species, conservation, nature, biodiversity, exploration" />
+                    <meta name="author" content="Wildlife Explorer Team" />
+                    <meta property="og:title" content="Wildlife Explorer - Discover Wildlife Species" />
+                    <meta property="og:description" content="Discover wildlife species with Wildlife Explorer. Use filters to explore animals by species, habitat, conservation status, or diet." />
+                    <meta property="og:image" content="https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430426/lion_ogishm.jpg" />
+                    <meta property="og:url" content="https://www.wildlifeexplorer.com/wildlife" />
+                    <meta property="og:type" content="website" />
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content="Wildlife Explorer - Discover Wildlife Species" />
+                    <meta name="twitter:description" content="Explore wildlife species with Wildlife Explorer. Filter by species, habitat, or conservation status to learn more." />
+                    <meta name="twitter:image" content="https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430426/lion_ogishm.jpg" />
+                </Helmet>
                 <div className="wd-wildlife-body-content mb-3">
                     <Sidebar />
                     <div className={`wd-wildlife-main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
@@ -161,15 +173,6 @@ function WildlifePage() {
                                             <option value="Carnivore">Carnivore</option>
                                             <option value="Omnivore">Omnivore</option>
                                         </select>
-                                        {(filters.species || filters.habitat || filters.conservationStatus || filters.diet) && (
-                                            <button
-                                                onClick={handleClearSearchAndFilters}
-                                                className="wd-wildlife-clear-button"
-                                                aria-label="Clear search and filters"
-                                            >
-                                                Clear Filters
-                                            </button>
-                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -241,4 +244,4 @@ function WildlifePage() {
     );
 }
 
-export default WildlifePage; 
+export default WildlifePage;

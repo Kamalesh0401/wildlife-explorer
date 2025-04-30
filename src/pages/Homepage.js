@@ -198,7 +198,6 @@
 // export default HomePage;
 
 
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
@@ -207,20 +206,21 @@ import jungle from '../assets/images/roe-deer.jpg';
 import forest from '../assets/images/forest.jpg';
 import forest2 from '../assets/images/forest2.jpg';
 import forest3 from '../assets/images/forest3.jpg';
-import tiger from '../assets/images/lion.jpg';
 import elephant from '../assets/images/elephant.jpg';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Helmet } from "react-helmet-async";
 import './HomePage.css';
+import { Buildimg } from '../utlis'
 
 // Conservation effort images (you can replace these with actual image imports or URLs)
 const conservationImages = {
     project_tiger: "https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745777656/Indochinese_Tiger_srkokw.jpg",
     project_elephant: "https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430382/elephant_mugote.jpg",
-    gharial_conservation: 'https://via.placeholder.com/300?text=Gharial', // Placeholder, replace with actual image
-    vulture_recovery: 'https://via.placeholder.com/300?text=Vulture', // Placeholder, replace with actual image
-    one_horned_rhino: 'https://via.placeholder.com/300?text=Rhino', // Placeholder, replace with actual image
+    gharial_conservation: 'Gharial', // Placeholder, replace with actual image
+    vulture_recovery: 'Vulture', // Placeholder, replace with actual image
+    one_horned_rhino: 'Rhino', // Placeholder, replace with actual image
 };
 
 function HomePage() {
@@ -238,7 +238,9 @@ function HomePage() {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1,
+        slidesToScroll
+
+            : 1,
         autoplay: true,
         autoplaySpeed: 3000,
         arrows: false,
@@ -249,7 +251,8 @@ function HomePage() {
     const sliderImages = [
         "https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430370/deergroup2_nqwppe.jpg",
         "https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745777655/Saber-Toothed_Tiger_kbywoi.jpg",
-        "https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430379/roe-deer_s2xg2a.jpg"];
+        "https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430379/roe-deer_s2xg2a.jpg"
+    ];
 
     const categories1 = [
         { name: 'Wildlife', image: 'https://res.cloudinary.com/dhwlzmuhm/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1745430426/lion_ogishm.jpg', path: '/wildlife' },
@@ -299,6 +302,21 @@ function HomePage() {
 
     return (
         <div className="wd-home-container">
+            <Helmet>
+                <title>Wildlife Explorer - Discover Nature’s Wonders</title>
+                <meta name="description" content="Explore wildlife, national parks, and conservation efforts with Wildlife Explorer. Discover diverse ecosystems, endangered species, and plan your adventure into nature." />
+                <meta name="keywords" content="wildlife, national parks, conservation, nature, ecosystems, endangered species, adventure, travel" />
+                <meta name="author" content="Wildlife Explorer Team" />
+                <meta property="og:title" content="Wildlife Explorer - Discover Nature’s Wonders" />
+                <meta property="og:description" content="Join Wildlife Explorer to discover the beauty of wildlife, national parks, and conservation efforts. Plan your journey into nature today!" />
+                <meta property="og:image" content={Buildimg(jungle)} />
+                <meta property="og:url" content="https://www.wildlifeexplorer.com" />
+                <meta property="og:type" content="website" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Wildlife Explorer - Discover Nature’s Wonders" />
+                <meta name="twitter:description" content="Explore wildlife, national parks, and conservation efforts with Wildlife Explorer. Discover nature’s wonders!" />
+                <meta name="twitter:image" content={Buildimg(jungle)} />
+            </Helmet>
             <div className="wd-home-body-content mb-3">
                 <Sidebar />
                 <div className={`wd-home-main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
@@ -318,7 +336,7 @@ function HomePage() {
                                         {sliderImages.map((image, index) => (
                                             <div key={index}>
                                                 <img
-                                                    src={image}
+                                                    src={Buildimg(image)}
                                                     alt={`Wildlife Scene ${index + 1}`}
                                                     className="wd-home-species-image"
                                                 />
@@ -327,18 +345,10 @@ function HomePage() {
                                     </Slider>
                                 </div>
                             </div>
-                            {/* <div className="wd-home-quick-links-section">
-                                <h3 className="wd-home-section-title">Quick Links</h3>
-                                <ul className="wd-home-quick-links">
-                                    <li><a href="/about" onClick={(e) => { e.preventDefault(); navigate('/about'); }}>About Us</a></li>
-                                    <li><a href="/conservation" onClick={(e) => { e.preventDefault(); navigate('/conservation'); }}>Conservation Efforts</a></li>
-                                    <li><a href="/blog" onClick={(e) => { e.preventDefault(); navigate('/blog'); }}>Blog</a></li>
-                                </ul>
-                            </div> */}
                         </div>
                         <div className="wd-home-right-section">
                             <div className="wd-home-hero-section">
-                                <img src={jungle} alt="Wildlife Explorer Hero" className="wd-home-hero-image" />
+                                <img src={Buildimg(jungle)} alt="Wildlife Explorer Hero" className="wd-home-hero-image" />
                                 <div className="wd-home-hero-overlay">
                                     <button
                                         className="wd-home-explore-button"
@@ -390,7 +400,7 @@ function HomePage() {
                             {conservationEfforts.map((effort) => (
                                 <div key={effort.title} className="wd-home-conservation-card">
                                     <img
-                                        src={effort.image}
+                                        src={Buildimg(effort.image)}
                                         alt={effort.title}
                                         className="wd-home-conservation-image"
                                         loading="lazy"

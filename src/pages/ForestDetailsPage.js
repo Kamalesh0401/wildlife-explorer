@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { Helmet } from "react-helmet-async";
 import Sidebar from '../components/Sidebar';
 import ImageCard from "../components/ImageCard";
 import Loader from '../components/Loader';
 import './ForestDetailsPage.css';
 import { Buildimg } from '../utlis';
+import { setFromPage } from '../store/generalSlice';
 
 function ForestDetailsPage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -13,6 +16,7 @@ function ForestDetailsPage() {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const { id } = useParams();
+    const dispatch = useDispatch();
 
     console.log("id of Forest Details : ", id);
 
@@ -51,8 +55,8 @@ function ForestDetailsPage() {
         fetchForestDetails();
     }, [id]);
 
-
     const handleSpeciesClick = (speciesId) => {
+        dispatch(setFromPage(`/forestdetails/${encodeURIComponent(id)}`));
         navigate(`/wildlifedetail/${encodeURIComponent(speciesId)}`);
     };
 
@@ -60,6 +64,21 @@ function ForestDetailsPage() {
         <>
             {loading && <Loader />}
             <div className="wd-forest-dtls-container">
+                <Helmet>
+                    <title>{forest.name ? `${forest.name} - Forest Details` : 'Forest Details - Wildlife Explorer'}</title>
+                    <meta name="description" content={forest.overview ? `${forest.overview.substring(0, 160)}` : 'Explore detailed information about forests, including key species, conservation status, and stunning galleries on Wildlife Explorer.'} />
+                    <meta name="keywords" content="forest, ecosystem, biodiversity, conservation, wildlife, nature, key species" />
+                    <meta name="author" content="Wildlife Explorer Team" />
+                    <meta property="og:title" content={forest.name ? `${forest.name} - Forest Details` : 'Forest Details - Wildlife Explorer'} />
+                    <meta property="og:description" content={forest.overview ? `${forest.overview.substring(0, 160)}` : 'Discover forest ecosystems, key species, and conservation efforts with Wildlife Explorer.'} />
+                    <meta property="og:image" content={forest.image ? Buildimg(forest.image) : 'https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430379/forest2.jpg'} />
+                    <meta property="og:url" content={`https://www.wildlifeexplorer.com/forestdetails/${id}`} />
+                    <meta property="og:type" content="website" />
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content={forest.name ? `${forest.name} - Forest Details` : 'Forest Details - Wildlife Explorer'} />
+                    <meta name="twitter:description" content={forest.overview ? `${forest.overview.substring(0, 160)}` : 'Explore forest ecosystems and conservation with Wildlife Explorer.'} />
+                    <meta name="twitter:image" content={forest.image ? Buildimg(forest.image) : 'https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430379/forest2.jpg'} />
+                </Helmet>
                 <div className="wd-forest-dtls-body-content">
                     <Sidebar />
                     <div className={`wd-forest-dtls-main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>

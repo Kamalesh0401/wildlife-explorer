@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { Helmet } from "react-helmet-async";
 import Sidebar from '../components/Sidebar';
 import Loader from '../components/Loader';
-import './WildlifePageDetailsPage.css';
+import './WildlifeDetailsPage.css';
 import { Buildimg } from '../utlis';
+import { setFromPage } from '../store/generalSlice';
 
-function WildlifePageDetailsPage() {
+function WildlifeDetailsPage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [likes, setLikes] = useState(0);
     const [animal, setAnimal] = useState([]);
     const [relatedAnimals, setRelatedAnimals] = useState([]);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
-    const { id } = useParams(); // Assuming dynamic routing (e.g., /wildlife/:animalId)
+    const { id } = useParams();
+    const dispatch = useDispatch();
+    const { fromPage } = useSelector((state) => state.general);
 
-    // Fetch animal details
     useEffect(() => {
         const fetchAnimalDetails = async () => {
             try {
@@ -31,7 +35,6 @@ function WildlifePageDetailsPage() {
                 setAnimal(response);
                 setLoading(false);
             } catch (err) {
-                //setError('Failed to load animal details');
                 setLoading(false);
             }
         };
@@ -47,23 +50,14 @@ function WildlifePageDetailsPage() {
     };
 
     const handleClose = () => {
-        navigate('/wildlife');
+        navigate(fromPage);
+        dispatch(setFromPage(""));
     };
-
-    // // Mock data for all animals (replace with API call)
-    // const allAnimals = [
-    //     { id: 'hog-deer', name: 'Hog Deer', habitat: 'Wetland', image: deer },
-    //     { id: 'chital-deer', name: 'Chital Deer', habitat: 'Forest', image: deer },
-    //     { id: 'asian-water-buffalo', name: 'Asian Water Buffalo', habitat: 'Wetland', image: deer },
-    //     { id: 'bengal-tiger', name: 'Bengal Tiger', habitat: 'Forest', image: deer },
-    //     { id: 'indian-elephant', name: 'Indian Elephant', habitat: 'Forest', image: deer },
-    // ];
 
     useEffect(() => {
         const fetchRelatedAnimals = async () => {
             try {
                 const queryParams = new URLSearchParams({
-                    //habitat: animal.habitat || '',
                     diet: animal.diet || '',
                 }).toString();
                 const response = await fetch(`http://localhost:6004/api/animals/related?${queryParams}`);
@@ -89,6 +83,21 @@ function WildlifePageDetailsPage() {
         <>
             {loading && <Loader />}
             <div className="wd-wildlife-dtls-container">
+                <Helmet>
+                    <title>{animal.name ? `${animal.name} - Wildlife Details` : 'Wildlife Details - Wildlife Explorer'}</title>
+                    <meta name="description" content={animal.description ? `${animal.description.substring(0, 160)}` : 'Discover detailed information about wildlife species, including habitat, conservation status, and more on Wildlife Explorer.'} />
+                    <meta name="keywords" content="wildlife, animals, species, conservation, habitat, biodiversity, nature" />
+                    <meta name="author" content="Wildlife Explorer Team" />
+                    <meta property="og:title" content={animal.name ? `${animal.name} - Wildlife Details` : 'Wildlife Details - Wildlife Explorer'} />
+                    <meta property="og:description" content={animal.description ? `${animal.description.substring(0, 160)}` : 'Explore wildlife species, their habitats, and conservation status with Wildlife Explorer.'} />
+                    <meta property="og:image" content={animal.image ? Buildimg(animal.image) : 'https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430426/lion_ogishm.jpg'} />
+                    <meta property="og:url" content={`https://www.wildlifeexplorer.com/wildlifedetail/${id}`} />
+                    <meta property="og:type" content="website" />
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content={animal.name ? `${animal.name} - Wildlife Details` : 'Wildlife Details - Wildlife Explorer'} />
+                    <meta name="twitter:description" content={animal.description ? `${animal.description.substring(0, 160)}` : 'Learn about wildlife species and their conservation with Wildlife Explorer.'} />
+                    <meta name="twitter:image" content={animal.image ? Buildimg(animal.image) : 'https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430426/lion_ogishm.jpg'} />
+                </Helmet>
                 <div className="wd-wildlife-dtls-body-content">
                     <Sidebar />
                     <div className={`wd-wildlife-dtls-main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
@@ -162,7 +171,8 @@ function WildlifePageDetailsPage() {
                                         </p>
                                         <p>
                                             <span className="wd-wildlife-dtls-detail-label">Threats:</span> {animal?.threats?.join(', ')}
-                                        </p> <p>
+                                        </p>
+                                        <p>
                                             <span className="wd-wildlife-dtls-detail-label">Weight:</span> {animal.weight}
                                         </p>
                                         <p>
@@ -192,4 +202,4 @@ function WildlifePageDetailsPage() {
     );
 }
 
-export default WildlifePageDetailsPage;
+export default WildlifeDetailsPage;

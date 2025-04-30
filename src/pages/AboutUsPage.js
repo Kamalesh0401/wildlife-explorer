@@ -87,7 +87,11 @@
 
 // export default AboutUsPage;
 
+
+
+
 import React, { useState } from 'react';
+import { Helmet } from "react-helmet-async";
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/FooterAdvance';
 import { Buildimg } from '../utlis';
@@ -124,6 +128,21 @@ function AboutUsPage() {
 
     return (
         <div className="wd-aboutpage-container">
+            <Helmet>
+                <title>About Us - Wildlife Explorer</title>
+                <meta name="description" content="Learn about Wildlife Explorer's mission to inspire wildlife conservation and education. Meet our team and discover our purpose in connecting people with nature." />
+                <meta name="keywords" content="wildlife, conservation, nature, about us, team, mission, sustainability" />
+                <meta name="author" content="Wildlife Explorer Team" />
+                <meta property="og:title" content="About Us - Wildlife Explorer" />
+                <meta property="og:description" content="Discover Wildlife Explorer's mission to promote wildlife conservation and education. Meet the team behind our efforts to connect people with nature." />
+                <meta property="og:image" content="https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430379/roe-deer.jpg" />
+                <meta property="og:url" content="https://www.wildlifeexplorer.com/about" />
+                <meta property="og:type" content="website" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="About Us - Wildlife Explorer" />
+                <meta name="twitter:description" content="Learn about Wildlife Explorer's mission and meet the team dedicated to wildlife conservation and education." />
+                <meta name="twitter:image" content="https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430379/roe-deer.jpg" />
+            </Helmet>
             <div className="wd-aboutpage-body-content mb-3">
                 <Sidebar />
                 <div className={`wd-aboutpage-main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>

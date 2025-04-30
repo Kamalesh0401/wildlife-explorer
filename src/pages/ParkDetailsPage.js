@@ -1,8 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { Helmet } from "react-helmet-async";
 import axios from 'axios';
 import Sidebar from '../components/Sidebar';
 import Loader from '../components/Loader';
+import { Buildimg } from '../utlis';
+import { setFromPage } from '../store/generalSlice';
 import './ParkDetailsPage.css';
 
 function ParkDetailsPage() {
@@ -16,6 +20,7 @@ function ParkDetailsPage() {
     const { id } = useParams();
     const animalCarouselRef = useRef(null);
     const galleryCarouselRef = useRef(null);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchParkDetails = async () => {
@@ -41,26 +46,12 @@ function ParkDetailsPage() {
                 parkData.majorAnimals = Array.isArray(parkData.majorAnimals) ? parkData.majorAnimals : [];
 
                 setPark(parkData);
-
-                // Fetch animal details if majorAnimals contains ObjectIds
-                const animalPromises = parkData.majorAnimals.map(async (animalId) => {
-                    try {
-                        const animalResponse = await axios.get(`http://localhost:6005/api/animals/id/${animalId}`);
-                        return animalResponse.data?.data?.animal;
-                    } catch (err) {
-                        console.error(`Failed to fetch animal ${animalId}:`, err);
-                        return null;
-                    }
-                });
-                const animalData = (await Promise.all(animalPromises)).filter(Boolean);
-                setAnimals(animalData);
+                setAnimals(parkData.majorAnimals);
                 setLoading(false);
             } catch (err) {
                 console.error('Failed to load park details:', err);
                 setError('Failed to load park details. Please try again.');
                 setLoading(false);
-            } finally {
-                // setLoading(false);
             }
         };
 
@@ -90,7 +81,8 @@ function ParkDetailsPage() {
     const handleAnimalClick = (animalId) => {
         const animal = animals.find((a) => a._id === animalId);
         if (animal) {
-            navigate(`/wildlifedetail/${animalId}`, { state: { animal } });
+            dispatch(setFromPage(`/parkdetails/${encodeURIComponent(id)}`));
+            navigate(`/wildlifedetail/${animalId}`);
         }
     };
 
@@ -102,29 +94,38 @@ function ParkDetailsPage() {
     };
 
     if (loading) {
-        return (
-            // <div className="wd-park-dtls-container">
-            //     <div className="wd-park-dtls-loading">Loading...</div>
-            // </div>
-            <Loader />
-        );
+        return <Loader />;
     }
 
     if (error || !park) {
         return (
             <div className="wd-park-dtls-container">
-                <div className="wd-park-dtls-error">{error || 'Park not found'}</div>
+                <div className="wd-parkAt-dtls-error">{error || 'Park not found'}</div>
             </div>
         );
     }
 
-    const placeholderImage = 'https://via.placeholder.com/800x400?text=Park+Image';
     const placeholderMap = 'https://via.placeholder.com/300x150?text=Park+Map';
 
     return (
         <>
             {loading && <Loader />}
             <div className="wd-park-dtls-container">
+                <Helmet>
+                    <title>{park.name ? `${park.name} - Park Details` : 'Park Details - Wildlife Explorer'}</title>
+                    <meta name="description" content={park.overview ? `${park.overview.substring(0, 160)}` : 'Explore detailed information about national parks, including major animals, galleries, and conservation efforts on Wildlife Explorer.'} />
+                    <meta name="keywords" content="national park, wildlife, conservation, nature, animals, travel, adventure" />
+                    <meta name="author" content="Wildlife Explorer Team" />
+                    <meta property="og:title" content={park.name ? `${park.name} - Park Details` : 'Park Details - Wildlife Explorer'} />
+                    <meta property="og:description" content={park.overview ? `${park.overview.substring(0, 160)}` : 'Discover national parks, their wildlife, and conservation efforts with Wildlife Explorer.'} />
+                    <meta property="og:image" content={park.image ? Buildimg(park.image) : 'https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430379/roe-deer.jpg'} />
+                    <meta property="og:url" content={`https://www.wildlifeexplorer.com/parkdetails/${id}`} />
+                    <meta property="og:type" content="website" />
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content={park.name ? `${park.name} - Park Details` : 'Park Details - Wildlife Explorer'} />
+                    <meta name="twitter:description" content={park.overview ? `${park.overview.substring(0, 160)}` : 'Explore national parks and their wildlife with Wildlife Explorer.'} />
+                    <meta name="twitter:image" content={park.image ? Buildimg(park.image) : 'https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430379/roe-deer.jpg'} />
+                </Helmet>
                 <div className="wd-park-dtls-body-content">
                     <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
                     <div className={`wd-park-dtls-main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
@@ -144,7 +145,7 @@ function ParkDetailsPage() {
                                     <h3 className="wd-park-dtls-section-title">You Are Here</h3>
                                     <div className="wd-park-dtls-map-placeholder">
                                         <img
-                                            src={placeholderMap}
+                                            src={Buildimg(placeholderMap)}
                                             alt={`Map of ${park.name}`}
                                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                         />
@@ -167,7 +168,7 @@ function ParkDetailsPage() {
                                                         aria-label={`View details for ${animal.name}`}
                                                     >
                                                         <img
-                                                            src={animal.image || placeholderImage}
+                                                            src={Buildimg(animal.image)}
                                                             alt={animal.name}
                                                             className="wd-park-dtls-spot-nearby-image"
                                                         />
@@ -202,7 +203,7 @@ function ParkDetailsPage() {
                             <div className="wd-park-dtls-right-section">
                                 <div className="wd-park-dtls-park-main-image">
                                     <img
-                                        src={park.image || placeholderImage}
+                                        src={Buildimg(park.image)}
                                         alt={park.name}
                                         className="wd-park-dtls-parkdtl-image"
                                     />
@@ -213,7 +214,7 @@ function ParkDetailsPage() {
                                     {animals.length > 0 && (
                                         <div className="wd-park-dtls-featured-animal">
                                             <img
-                                                src={animals[0].image || placeholderImage}
+                                                src={Buildimg(animals[0].image)}
                                                 alt={animals[0].name}
                                                 className="wd-park-dtls-animal-thumbnail"
                                             />
@@ -245,7 +246,7 @@ function ParkDetailsPage() {
                                                             aria-label={`View ${galleryItem.caption}`}
                                                         >
                                                             <img
-                                                                src={galleryItem.image || placeholderImage}
+                                                                src={Buildimg(galleryItem.image)}
                                                                 alt={galleryItem.caption}
                                                                 className="wd-park-dtls-gallery-image"
                                                             />

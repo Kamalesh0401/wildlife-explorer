@@ -159,17 +159,21 @@
 // export default ForestExplorer;
 
 
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setforestData, setSearchTerm, clearSearch } from '../store/forestSlice';
 import Sidebar from '../components/Sidebar';
 import Loader from '../components/Loader';
+import { Helmet } from "react-helmet-async";
 import Footer from '../components/FooterAdvance';
 import './ForestPage.css';
 import { Buildimg } from '../utlis';
 
 function ForestExplorer() {
+
+    console.log("Page loaded");
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
@@ -179,11 +183,6 @@ function ForestExplorer() {
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
-
-    // // Fetch forests when searchTerm changes
-    // useEffect(() => {
-    //     //dispatch(fetchForests(searchTerm));
-    // }, [searchTerm, dispatch]);
 
     const handleSearch = async (query) => {
         dispatch(setSearchTerm(query));
@@ -219,6 +218,21 @@ function ForestExplorer() {
 
     return (
         <div className="wd-forest-container">
+            <Helmet>
+                <title>Forest Explorer - Wildlife Explorer</title>
+                <meta name="description" content="Discover the world's diverse forests with Wildlife Explorer. Search and explore unique ecosystems, biodiversity, and conservation insights." />
+                <meta name="keywords" content="forests, ecosystems, biodiversity, conservation, nature, wildlife, forest exploration" />
+                <meta name="author" content="Wildlife Explorer Team" />
+                <meta property="og:title" content="Forest Explorer - Wildlife Explorer" />
+                <meta property="og:description" content="Explore global forests, their ecosystems, and biodiversity with Wildlife Explorer. Learn about conservation efforts and plan your nature adventure." />
+                <meta property="og:image" content="https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430379/forest2.jpg" />
+                <meta property="og:url" content="https://www.wildlifeexplorer.com/exploreforests" />
+                <meta property="og:type" content="website" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Forest Explorer - Wildlife Explorer" />
+                <meta name="twitter:description" content="Discover forests and their ecosystems with Wildlife Explorer. Search now to explore biodiversity and conservation." />
+                <meta name="twitter:image" content="https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430379/forest2.jpg" />
+            </Helmet>
             <div className="wd-forest-body-content">
                 <Sidebar isOpen={isSidebarOpen} />
                 <div className={`wd-forest-main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>

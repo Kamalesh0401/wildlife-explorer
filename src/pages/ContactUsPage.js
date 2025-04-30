@@ -140,7 +140,12 @@
 // export default ContactUsPage;
 
 
+
+
+
+
 import React, { useState } from 'react';
+import { Helmet } from "react-helmet-async";
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/FooterAdvance';
 import './ContactUsPage.css';
@@ -163,7 +168,7 @@ function ContactUsPage() {
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-        setError(null); // Clear error on input change
+        setError(null);
     };
 
     const handleSubmit = async (e) => {
@@ -197,6 +202,21 @@ function ContactUsPage() {
 
     return (
         <div className="wd-contactpage-container">
+            <Helmet>
+                <title>Contact Us - Wildlife Explorer</title>
+                <meta name="description" content="Get in touch with Wildlife Explorer. Have questions or feedback? Reach out via our contact form, email, or phone to connect with our team." />
+                <meta name="keywords" content="contact, wildlife, conservation, nature, support, feedback, inquiry" />
+                <meta name="author" content="Wildlife Explorer Team" />
+                <meta property="og:title" content="Contact Us - Wildlife Explorer" />
+                <meta property="og:description" content="Reach out to Wildlife Explorer with your questions or feedback. Contact us via form, email, or phone to join our mission." />
+                <meta property="og:image" content="https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430379/roe-deer.jpg" />
+                <meta property="og:url" content="https://www.wildlifeexplorer.com/contact" />
+                <meta property="og:type" content="website" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Contact Us - Wildlife Explorer" />
+                <meta name="twitter:description" content="Connect with Wildlife Explorer. Use our contact form, email, or phone to share your questions or feedback." />
+                <meta name="twitter:image" content="https://res.cloudinary.com/dhwlzmuhm/image/upload/v1745430379/roe-deer.jpg" />
+            </Helmet>
             <div className="wd-contactpage-body-content mb-3">
                 <Sidebar />
                 <div className={`wd-contactpage-main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>

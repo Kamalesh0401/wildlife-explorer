@@ -1,0 +1,120 @@
+.wd-notfound-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f7f6;
+}
+
+.wd-notfound-body-content {
+    flex: 1;
+    display: flex;
+}
+
+.wd-notfound-main-content {
+    flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.wd-notfound-main-content.sidebar-open {
+    margin-left: 250px;
+    /* Adjust based on your Sidebar width */
+}
+
+.wd-notfound-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.wd-notfound-header-text {
+    font-size: 2.5rem;
+    color: #2d3e50;
+    font-weight: 700;
+}
+
+.wd-notfound-mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #2d3e50;
+}
+
+@media (max-width: 768px) {
+    .wd-notfound-mobile-menu {
+        display: block;
+    }
+
+    .wd-notfound-main-content.sidebar-open {
+        margin-left: 0;
+    }
+}
+
+.wd-notfound-center-main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+}
+
+.wd-notfound-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.wd-notfound-title {
+    font-size: 2rem;
+    color: #2d3e50;
+    margin-bottom: 10px;
+}
+
+.wd-notfound-message {
+    font-size: 1.2rem;
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.wd-notfound-cta {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.wd-notfound-action-button {
+    background-color: #10b981;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.wd-notfound-action-button:hover {
+    background-color: #059669;
+}
+
+.wd-notfound-action-button.secondary {
+    background-color: #6b7280;
+}
+
+.wd-notfound-action-button.secondary:hover {
+    background-color: #4b5563;
+}
+
+.wd-notfound-image {
+    max-width: 100%;
+}
+
+.wd-notfound-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
